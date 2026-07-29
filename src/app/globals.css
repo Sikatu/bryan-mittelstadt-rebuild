@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+/* ============================================================
+   Bryan Mittelstadt — Design System
+   Cinematic editorial palette with warm tones (Light Theme).
+   ============================================================ */
+
+@theme inline {
+  /* ---- Semantic Design Tokens ---- */
+  --color-bg-primary: #F8F7F3;
+  --color-bg-secondary: #FFFFFF;
+  --color-bg-light: #F0EEE9;
+  
+  --color-text-primary: #171717;
+  --color-text-secondary: #5F5B55;
+  --color-text-muted: #77736D;
+  
+  --color-border-subtle: #DDD9D2;
+  --color-border-light: #EBE7E0;
+  
+  --color-accent: #9A5D3A;
+  --color-accent-hover: #7D492A;
+  
+  --color-contrast-dark: #1D1D1D;
+  --color-contrast-light: #FFFFFF;
+
+  /* ---- Fonts ---- */
+  --font-serif: var(--font-playfair), "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-inter), Inter, system-ui, -apple-system, sans-serif;
+
+  /* ---- Easing ---- */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ============================================================
+   Base Styles
+   ============================================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ============================================================
+   Focus Styles
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   Skip Link
+   ============================================================ */
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 16px;
+  z-index: 100;
+  padding: 12px 24px;
+  background-color: var(--color-accent);
+  color: var(--color-contrast-light);
+  font-weight: 600;
+  font-size: 0.875rem;
+  border-radius: 0 0 4px 4px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* ============================================================
+   Typography Utilities
+   ============================================================ */
+
+.heading-display {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.1;
+}
+
+.heading-section {
+  font-family: var(--font-serif);
+  font-weight: 400;
+  letter-spacing: -0.005em;
+  line-height: 1.2;
+}
+
+.body-text {
+  font-family: var(--font-sans);
+  line-height: 1.65;
+  max-width: 65ch;
+}
+
+/* ============================================================
+   Selection
+   ============================================================ */
+
+::selection {
+  background-color: var(--color-accent);
+  color: var(--color-contrast-light);
+}
+
+/* ============================================================
+   Scrollbar (subtle, non-intrusive)
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-subtle);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
