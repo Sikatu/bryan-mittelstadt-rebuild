@@ -126,39 +126,31 @@ The technical gate is complete. The media-content gate closes when every discipl
 
 ## Phase 4 — About, Résumé, Headshots, and Contact Workflows
 
-**Status: Not started**
+**Status: Technical workflow implementation completed; client assets and production form provider remain open**
 
-### About
+### Delivered
 
-- Replace the portrait placeholder.
-- Finalize biography and physical details.
-- Add selected recognitions without duplicating the résumé.
+- ✅ Refined the About page with selected verified recognition and transparent casting-detail review status.
+- ✅ Added browser printing and provider-safe PDF download states to the résumé.
+- ✅ Added print-friendly letter-size résumé styling.
+- ✅ Added direct email and confirmed agency names without exposing unapproved representative contacts.
+- ✅ Built a keyboard-accessible headshot lightbox with focus restoration and arrow-key navigation.
+- ✅ Added optional individual downloads and casting ZIP integration points.
+- ✅ Added six inquiry categories, validation, accessible status output, spam honeypot, and privacy messaging.
+- ✅ Added an optional production endpoint with verified direct-email fallback.
+- ✅ Added a Phase 4 workflow audit to the validation gate.
 
-### Résumé
+### Remaining Client Deliveries
 
-- Centralize résumé data.
-- Reconcile HTML résumé with the approved PDF.
-- Add representation and contact details when approved.
-- Connect and test the downloadable PDF.
-- Add print-friendly styling.
-
-### Headshots
-
-- Add approved theatrical and commercial headshots.
-- Build keyboard-accessible lightbox behavior.
-- Add individual original-file downloads when approved.
-- Create and connect a casting ZIP package.
-
-### Contact
-
-- Decide between direct-email workflow and a proper contact form.
-- Add form validation, success/error states, spam protection, and privacy messaging if a form is selected.
-- Add inquiry categories such as acting, voice-over, music, press, and general.
-- Complete representation cards with verified contact information.
+- Final portrait, biography approval, and casting-stat confirmation.
+- Approved résumé PDF and reconciled credits.
+- Approved headshots, originals, labels, order, and casting ZIP.
+- Approved representation contact details.
+- Production contact-form provider, privacy policy, spam controls, and monitored delivery endpoint if direct form submission is desired.
 
 ### Exit Gate
 
-All core conversion workflows work on keyboard, touch, and desktop.
+The technical workflow gate is complete. The conversion-content gate closes when the real PDF, headshots, downloads, approved representation details, and selected contact delivery method are configured and tested.
 
 ---
 

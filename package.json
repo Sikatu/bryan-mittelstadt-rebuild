@@ -10,9 +10,10 @@
     "typecheck": "tsc --noEmit",
     "audit:readiness": "node scripts/audit-readiness.mjs",
     "audit:content": "node scripts/audit-content-verification.mjs",
-    "check": "npm run lint && npm run typecheck && npm run audit:readiness && npm run audit:content && npm run audit:media",
+    "check": "npm run lint && npm run typecheck && npm run audit:readiness && npm run audit:content && npm run audit:media && npm run audit:workflows",
     "validate": "npm run check && npm run build",
-    "audit:media": "node scripts/audit-media-readiness.mjs"
+    "audit:media": "node scripts/audit-media-readiness.mjs",
+    "audit:workflows": "node scripts/audit-portfolio-workflows.mjs"
   },
   "dependencies": {
     "next": "16.2.11",

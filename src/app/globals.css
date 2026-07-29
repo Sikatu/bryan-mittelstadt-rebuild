@@ -147,3 +147,55 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-text-muted);
 }
+
+/* ============================================================
+   Phase 4: Portfolio Workflows
+   ============================================================ */
+
+dialog::backdrop {
+  background: rgb(0 0 0 / 0.76);
+}
+
+.break-inside-avoid {
+  break-inside: avoid;
+}
+
+@media print {
+  @page {
+    size: letter;
+    margin: 0.45in;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+    font-size: 10pt;
+  }
+
+  header,
+  footer,
+  .no-print,
+  .skip-link {
+    display: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+
+  .resume-sheet {
+    border: 0 !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .resume-sheet * {
+    color: #111111 !important;
+    border-color: #b7b7b7 !important;
+  }
+
+  .resume-sheet a {
+    text-decoration: none !important;
+  }
+}

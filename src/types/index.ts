@@ -197,8 +197,26 @@ export interface Headshot {
   id: string;
   src: string;
   alt: string;
+  label?: string;
+  category?: 'Theatrical' | 'Commercial' | 'Character' | 'Editorial';
   downloadUrl?: string;
   verificationId?: string;
+}
+
+/** One selectable professional inquiry category. */
+export interface InquiryCategory {
+  id: string;
+  label: string;
+  subjectPrefix: string;
+  description?: string;
+}
+
+/** Provider-neutral contact workflow used by the public inquiry form. */
+export interface ContactFormConfig {
+  endpoint?: string;
+  categories: InquiryCategory[];
+  minimumMessageLength: number;
+  privacyNote: string;
 }
 
 /** A verified external resource such as a streaming or mailing-list link. */

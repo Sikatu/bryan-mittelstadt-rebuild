@@ -19,12 +19,13 @@ npm run typecheck
 npm run audit:readiness
 npm run audit:content
 npm run audit:media
+npm run audit:workflows
 npm run check
 npm run build
 npm run validate
 ```
 
-`npm run check` runs lint, strict TypeScript validation, the readiness audit, the Phase 2 source/approval audit, and the Phase 3 media architecture audit. `npm run validate` also creates a production build.
+`npm run check` runs lint, strict TypeScript validation, the readiness audit, the Phase 2 source/approval audit, the Phase 3 media architecture audit, and the Phase 4 portfolio workflow audit. `npm run validate` also creates a production build.
 
 ## Documentation
 
@@ -36,7 +37,9 @@ npm run validate
 - `docs/CONTENT-INVENTORY.md` — source content inventory.
 - `docs/CONTENT-VERIFICATION.md` — evidence-ledger architecture and approval policy.
 - `docs/MEDIA-INTEGRATION-GUIDE.md` — exact instructions for adding approved reels, audio, music links, and creative projects.
+- `docs/PORTFOLIO-WORKFLOW-GUIDE.md` — résumé, headshot, contact-form, and representation integration instructions.
 - `docs/PHASE-3-CHANGELOG.md` — delivered media architecture and remaining client dependencies.
+- `docs/PHASE-4-CHANGELOG.md` — delivered portfolio workflows and remaining production dependencies.
 - `src/content/content-verification.json` — machine-readable source and approval ledger.
 
 ## Architecture

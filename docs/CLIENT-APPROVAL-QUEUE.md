@@ -49,7 +49,8 @@ This is the exact Phase 2 decision queue. Each answer should be recorded in `src
 - Confirm whether CESD and Eris remain current.
 - Confirm whether agent names, direct email addresses, phone numbers, and agency websites may be public.
 - Confirm whether theatrical representation exists and should be displayed.
-- Decide whether the site should use direct email, a contact form, or both.
+- Decide whether the verified direct-email workflow should remain the primary path or whether to add a production form provider.
+- If a provider is selected, approve its privacy policy, spam controls, retention rules, monitored delivery endpoint, and fallback behavior.
 
 ## Social Profiles
 

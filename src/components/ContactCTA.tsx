@@ -19,10 +19,10 @@ export default function ContactCTA() {
             Available for casting, representation inquiries, production, writing collaborations, music projects, and creative partnerships.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <EditorialButton href="/contact" variant="primary">
+            <EditorialButton href="/contact#inquiry-form" variant="primary">
               Contact
             </EditorialButton>
-            <EditorialButton href="/contact" variant="secondary">
+            <EditorialButton href="/contact#representation" variant="secondary">
               Representation
             </EditorialButton>
           </div>

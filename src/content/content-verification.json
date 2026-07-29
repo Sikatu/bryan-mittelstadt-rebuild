@@ -470,6 +470,17 @@
         "client-approval"
       ],
       "ownerAction": "Choose the provider and supply the approved signup URL or embed."
+    },
+    {
+      "id": "integration.contact-form",
+      "area": "Contact",
+      "label": "Production contact-form provider and delivery endpoint",
+      "status": "pending",
+      "publication": "withheld",
+      "sourceIds": [
+        "client-approval"
+      ],
+      "ownerAction": "Decide whether to retain direct-email delivery or approve a production form provider, privacy policy, spam controls, and monitored endpoint."
     }
   ]
 }
