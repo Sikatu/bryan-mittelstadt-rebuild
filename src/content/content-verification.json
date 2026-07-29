@@ -1,0 +1,475 @@
+{
+  "version": 1,
+  "updatedOn": "2026-07-29",
+  "statusDefinitions": {
+    "verified-primary": "Supported by an authoritative or first-party primary source.",
+    "confirmed-public": "Published on Bryan's official website or another identified public profile.",
+    "client-review-required": "Traceable to public or legacy material but should be reconfirmed before launch.",
+    "client-approved": "Explicitly approved by Bryan or an authorized representative.",
+    "pending": "Required input or asset has not been supplied.",
+    "intentionally-omitted": "Deliberately withheld from public display."
+  },
+  "sources": [
+    {
+      "id": "official-home",
+      "label": "Bryan Mittelstadt official website \u2014 Home",
+      "kind": "first-party-public",
+      "url": "https://www.bryanmittelstadt.com/",
+      "accessedOn": "2026-07-29"
+    },
+    {
+      "id": "official-bio",
+      "label": "Bryan Mittelstadt official website \u2014 Bio",
+      "kind": "first-party-public",
+      "url": "https://www.bryanmittelstadt.com/bio",
+      "accessedOn": "2026-07-29"
+    },
+    {
+      "id": "official-contact",
+      "label": "Bryan Mittelstadt official website \u2014 Contact",
+      "kind": "first-party-public",
+      "url": "https://www.bryanmittelstadt.com/contact",
+      "accessedOn": "2026-07-29"
+    },
+    {
+      "id": "imdb-profile",
+      "label": "Bryan Mittelstadt IMDb profile",
+      "kind": "industry-profile",
+      "url": "https://www.imdb.com/name/nm9804418/",
+      "accessedOn": "2026-07-29"
+    },
+    {
+      "id": "durango-2026-awards",
+      "label": "Durango Independent Film Festival \u2014 2026 Jury Award Winners",
+      "kind": "authoritative-award-source",
+      "url": "https://www.durangofilm.org/2026-awards",
+      "accessedOn": "2026-07-29"
+    },
+    {
+      "id": "quiet-after-supper-release",
+      "label": "Quiet After Supper award announcement",
+      "kind": "production-announcement",
+      "url": "https://www.prnewswire.com/news-releases/bryan-mittelstadt-wins-best-actor-for-quiet-after-supper-at-the-2026-durango-independent-film-festival-302709535.html",
+      "accessedOn": "2026-07-29"
+    },
+    {
+      "id": "quiet-after-supper-production",
+      "label": "Nectar Inc. \u2014 Quiet After Supper production listing",
+      "kind": "production-source",
+      "url": "https://www.nectarinc.com/portfolio/quiet-after-supper-feature-film/",
+      "accessedOn": "2026-07-29"
+    },
+    {
+      "id": "legacy-content-inventory",
+      "label": "Captured content inventory from the legacy website",
+      "kind": "internal-capture",
+      "path": "docs/CONTENT-INVENTORY.md",
+      "capturedOn": "2026-07-22"
+    },
+    {
+      "id": "client-approval",
+      "label": "Bryan or authorized representative approval",
+      "kind": "client-approval",
+      "status": "pending"
+    }
+  ],
+  "records": [
+    {
+      "id": "identity.name-and-titles",
+      "area": "Global identity",
+      "label": "Name and professional titles",
+      "status": "confirmed-public",
+      "publication": "published",
+      "sourceIds": [
+        "official-home"
+      ]
+    },
+    {
+      "id": "identity.location",
+      "area": "Global identity",
+      "label": "Los Angeles location",
+      "status": "confirmed-public",
+      "publication": "published",
+      "sourceIds": [
+        "official-bio"
+      ]
+    },
+    {
+      "id": "contact.direct-email",
+      "area": "Contact",
+      "label": "Direct inquiry email",
+      "status": "confirmed-public",
+      "publication": "published",
+      "sourceIds": [
+        "official-contact"
+      ]
+    },
+    {
+      "id": "social.imdb",
+      "area": "Social profiles",
+      "label": "IMDb profile URL",
+      "status": "confirmed-public",
+      "publication": "published",
+      "sourceIds": [
+        "imdb-profile"
+      ]
+    },
+    {
+      "id": "social.instagram",
+      "area": "Social profiles",
+      "label": "Instagram profile URL",
+      "status": "pending",
+      "publication": "withheld",
+      "sourceIds": [
+        "client-approval"
+      ],
+      "ownerAction": "Provide and approve the canonical Instagram profile URL."
+    },
+    {
+      "id": "social.youtube",
+      "area": "Social profiles",
+      "label": "YouTube channel URL",
+      "status": "pending",
+      "publication": "withheld",
+      "sourceIds": [
+        "client-approval"
+      ],
+      "ownerAction": "Provide and approve the canonical YouTube channel URL."
+    },
+    {
+      "id": "bio.short",
+      "area": "Biography",
+      "label": "Homepage short biography",
+      "status": "client-review-required",
+      "publication": "published",
+      "sourceIds": [
+        "official-bio",
+        "durango-2026-awards"
+      ],
+      "ownerAction": "Approve the current-tense wording and festival list before launch."
+    },
+    {
+      "id": "bio.long",
+      "area": "Biography",
+      "label": "Full biography",
+      "status": "client-review-required",
+      "publication": "published",
+      "sourceIds": [
+        "official-bio"
+      ],
+      "ownerAction": "Approve time-sensitive project wording and final editorial cleanup."
+    },
+    {
+      "id": "seo.global",
+      "area": "SEO",
+      "label": "Global title and description",
+      "status": "client-review-required",
+      "publication": "published",
+      "sourceIds": [
+        "official-home",
+        "official-bio"
+      ],
+      "ownerAction": "Approve final positioning language."
+    },
+    {
+      "id": "casting.physical",
+      "area": "Casting details",
+      "label": "Height, weight, hair, eyes, and voice",
+      "status": "client-review-required",
+      "publication": "published",
+      "sourceIds": [
+        "legacy-content-inventory"
+      ],
+      "ownerAction": "Confirm all current casting statistics."
+    },
+    {
+      "id": "unions.affiliations",
+      "area": "R\u00e9sum\u00e9",
+      "label": "SAG-AFTRA and Actors' Equity affiliations",
+      "status": "client-review-required",
+      "publication": "published",
+      "sourceIds": [
+        "legacy-content-inventory"
+      ],
+      "ownerAction": "Confirm current union status and preferred public formatting."
+    },
+    {
+      "id": "representation.commercial",
+      "area": "Representation",
+      "label": "CESD Talent Agency \u2014 Commercial",
+      "status": "confirmed-public",
+      "publication": "published",
+      "sourceIds": [
+        "official-contact"
+      ]
+    },
+    {
+      "id": "representation.voiceover",
+      "area": "Representation",
+      "label": "Eris Talent Agency \u2014 Voice-Over",
+      "status": "confirmed-public",
+      "publication": "published",
+      "sourceIds": [
+        "official-contact"
+      ]
+    },
+    {
+      "id": "representation.contact-details",
+      "area": "Representation",
+      "label": "Agent names and direct representation contacts",
+      "status": "pending",
+      "publication": "withheld",
+      "sourceIds": [
+        "client-approval"
+      ],
+      "ownerAction": "Confirm which agent names, emails, phone numbers, and websites may be public."
+    },
+    {
+      "id": "award.quiet-after-supper-durango",
+      "area": "Awards",
+      "label": "2026 Durango jury award for Quiet After Supper",
+      "status": "verified-primary",
+      "publication": "published",
+      "sourceIds": [
+        "durango-2026-awards",
+        "quiet-after-supper-release"
+      ]
+    },
+    {
+      "id": "project.the-overview-effect",
+      "area": "Projects",
+      "label": "The Overview Effect",
+      "status": "client-review-required",
+      "publication": "published",
+      "sourceIds": [
+        "official-bio"
+      ],
+      "ownerAction": "Confirm current project status, format, collaborators, venue wording, and public dates."
+    },
+    {
+      "id": "project.quiet-after-supper",
+      "area": "Projects",
+      "label": "Quiet After Supper",
+      "status": "verified-primary",
+      "publication": "published",
+      "sourceIds": [
+        "official-bio",
+        "durango-2026-awards",
+        "quiet-after-supper-release",
+        "quiet-after-supper-production"
+      ]
+    },
+    {
+      "id": "project.darling",
+      "area": "Projects",
+      "label": "Darling",
+      "status": "client-review-required",
+      "publication": "published",
+      "sourceIds": [
+        "legacy-content-inventory",
+        "official-bio"
+      ],
+      "ownerAction": "Confirm album title, release year/date, artwork, description, and release links."
+    },
+    {
+      "id": "project.julius",
+      "area": "Projects",
+      "label": "Julius",
+      "status": "confirmed-public",
+      "publication": "published",
+      "sourceIds": [
+        "official-bio",
+        "imdb-profile"
+      ]
+    },
+    {
+      "id": "project.blood-and-sex-over-ambition",
+      "area": "Projects",
+      "label": "Blood and Sex Over Ambition",
+      "status": "client-review-required",
+      "publication": "published",
+      "sourceIds": [
+        "legacy-content-inventory"
+      ],
+      "ownerAction": "Confirm exact title, role, director, festival claims, and relationship to Arabesque."
+    },
+    {
+      "id": "project.goldilocks-and-the-two-bears",
+      "area": "Projects",
+      "label": "Goldilocks and the Two Bears",
+      "status": "confirmed-public",
+      "publication": "published",
+      "sourceIds": [
+        "official-bio"
+      ]
+    },
+    {
+      "id": "project.give",
+      "area": "Projects",
+      "label": "Give",
+      "status": "client-review-required",
+      "publication": "published",
+      "sourceIds": [
+        "legacy-content-inventory"
+      ],
+      "ownerAction": "Confirm role, director, festival selections, and approved public link."
+    },
+    {
+      "id": "project.last-five-years",
+      "area": "Projects",
+      "label": "The Last Five Years",
+      "status": "client-review-required",
+      "publication": "published",
+      "sourceIds": [
+        "legacy-content-inventory"
+      ],
+      "ownerAction": "Confirm venue, director, role, and approved production credit."
+    },
+    {
+      "id": "project.arabesque",
+      "area": "Projects",
+      "label": "Arabesque",
+      "status": "client-review-required",
+      "publication": "published",
+      "sourceIds": [
+        "official-bio",
+        "legacy-content-inventory"
+      ],
+      "ownerAction": "Confirm exact title, role, status, director, and relationship to Blood and Sex Over Ambition."
+    },
+    {
+      "id": "disciplines.editorial-copy",
+      "area": "Homepage disciplines",
+      "label": "Discipline descriptions",
+      "status": "client-review-required",
+      "publication": "published",
+      "sourceIds": [
+        "official-home",
+        "official-bio",
+        "legacy-content-inventory"
+      ],
+      "ownerAction": "Approve the editorial positioning for Acting, Voice-Over, Music, and Writing & Filmmaking."
+    },
+    {
+      "id": "resume.selected-credits",
+      "area": "R\u00e9sum\u00e9",
+      "label": "Selected film, television, and theatre credits",
+      "status": "client-review-required",
+      "publication": "published",
+      "sourceIds": [
+        "legacy-content-inventory"
+      ],
+      "ownerAction": "Reconcile every item against the final approved r\u00e9sum\u00e9 PDF."
+    },
+    {
+      "id": "resume.training",
+      "area": "R\u00e9sum\u00e9",
+      "label": "Training and education",
+      "status": "client-review-required",
+      "publication": "published",
+      "sourceIds": [
+        "legacy-content-inventory"
+      ],
+      "ownerAction": "Confirm institutions, degrees, teachers, and preferred abbreviations."
+    },
+    {
+      "id": "resume.skills",
+      "area": "R\u00e9sum\u00e9",
+      "label": "Special skills",
+      "status": "client-review-required",
+      "publication": "published",
+      "sourceIds": [
+        "legacy-content-inventory"
+      ],
+      "ownerAction": "Confirm current skills and remove anything no longer casting-relevant."
+    },
+    {
+      "id": "media.acting-reel",
+      "area": "Acting media",
+      "label": "Primary acting reel URL",
+      "status": "pending",
+      "publication": "withheld",
+      "sourceIds": [
+        "client-approval"
+      ],
+      "ownerAction": "Provide the approved YouTube or Vimeo URL."
+    },
+    {
+      "id": "media.voiceover-reels",
+      "area": "Voice-Over media",
+      "label": "Commercial and radio-drama reel titles",
+      "status": "client-review-required",
+      "publication": "published",
+      "sourceIds": [
+        "legacy-content-inventory"
+      ],
+      "ownerAction": "Confirm reel names and provide approved audio or hosting URLs."
+    },
+    {
+      "id": "media.writing-projects",
+      "area": "Writing & Filmmaking",
+      "label": "Writing, directing, and producing project list",
+      "status": "pending",
+      "publication": "withheld",
+      "sourceIds": [
+        "client-approval"
+      ],
+      "ownerAction": "Provide approved project titles, roles, loglines, statuses, visuals, and links."
+    },
+    {
+      "id": "asset.hero-and-portfolio-images",
+      "area": "Images",
+      "label": "Hero, portrait, project, discipline, and album imagery",
+      "status": "pending",
+      "publication": "placeholder",
+      "sourceIds": [
+        "client-approval"
+      ],
+      "ownerAction": "Supply approved high-resolution images and usage confirmation."
+    },
+    {
+      "id": "asset.headshots",
+      "area": "Headshots",
+      "label": "Approved theatrical and commercial headshots",
+      "status": "pending",
+      "publication": "withheld",
+      "sourceIds": [
+        "client-approval"
+      ],
+      "ownerAction": "Supply display files, downloadable originals, labels, and preferred order."
+    },
+    {
+      "id": "asset.resume-pdf",
+      "area": "R\u00e9sum\u00e9",
+      "label": "Downloadable r\u00e9sum\u00e9 PDF",
+      "status": "pending",
+      "publication": "withheld",
+      "sourceIds": [
+        "client-approval"
+      ],
+      "ownerAction": "Supply the final approved PDF."
+    },
+    {
+      "id": "asset.open-graph",
+      "area": "SEO",
+      "label": "1200 \u00d7 630 social-sharing image",
+      "status": "pending",
+      "publication": "withheld",
+      "sourceIds": [
+        "client-approval"
+      ],
+      "ownerAction": "Supply or approve a source image for the final social card."
+    },
+    {
+      "id": "integration.mailing-list",
+      "area": "Music",
+      "label": "Mailing-list provider and signup destination",
+      "status": "pending",
+      "publication": "withheld",
+      "sourceIds": [
+        "client-approval"
+      ],
+      "ownerAction": "Choose the provider and supply the approved signup URL or embed."
+    }
+  ]
+}

@@ -6,13 +6,14 @@ Last updated: July 29, 2026
 
 The rebuild has a complete Next.js architecture and all planned routes. The remaining work is concentrated in verified content, real media, functional integrations, final interaction design, and launch QA.
 
-**Estimated readiness after Phase 1:**
+**Estimated readiness after Phase 2 technical completion:**
 
 - Architecture and route coverage: 100%
 - Code-quality foundation: 100%
 - Core page implementation: approximately 65%
-- Verified content and real media: approximately 20%
-- Launch readiness: approximately 60%
+- Verified content architecture: 100%
+- Client-approved content and real media: approximately 25%
+- Launch readiness: approximately 64%
 
 ## Phase 1 — Stabilization and Interaction Integrity
 
@@ -49,34 +50,44 @@ The rebuild has a complete Next.js architecture and all planned routes. The rema
 
 ## Phase 2 — Content Architecture and Verification
 
-**Status: Technical architecture completed; client verification pending**
+**Status: Technical implementation completed; client approval queue remains open**
 
 ### Goals
 
 - Centralize every editable piece of public content.
 - Separate confirmed facts from provisional copy.
 - Create a complete content intake package for Bryan.
+- Make every public claim traceable to a source or explicit client approval.
 
-### Tasks
+### Delivered
 
-- ✅ Move page-local résumé entries into typed content files.
-- ✅ Create typed configurations for voice-over reels, music links, writing projects, headshots, and download integrations.
-- ✅ Centralize hero, portrait, and reel-poster asset paths.
-- ✅ Remove broken Open Graph output until the final image is supplied.
-- ✅ Correct reel structured data so it does not fabricate an upload date.
-- Reconcile the rebuild against Bryan's approved résumé and current website.
-- Verify names, titles, production companies, festivals, awards, dates, representation, and biography claims.
-- Resolve inconsistencies such as `Arabesque` versus `Blood and Sex Over Ambition` and confirm how each credit should be represented.
-- Finalize page titles, descriptions, calls to action, and navigation labels.
-- Mark every field as confirmed, pending, or intentionally omitted.
+- ✅ Moved page-local résumé entries into typed content files.
+- ✅ Created typed configurations for voice-over reels, music links, writing projects, headshots, and download integrations.
+- ✅ Centralized hero, portrait, and reel-poster asset paths.
+- ✅ Removed broken Open Graph output until the final image is supplied.
+- ✅ Corrected reel structured data so it does not fabricate an upload date.
+- ✅ Added `src/content/content-verification.json` as the canonical evidence and approval ledger.
+- ✅ Registered first-party, authoritative award, industry-profile, production, internal capture, and client-approval sources.
+- ✅ Linked typed content objects to verification record IDs.
+- ✅ Added `npm run audit:content` and included it in the project validation gate.
+- ✅ Created an exact client approval queue with owner actions.
+- ✅ Connected the identified IMDb profile.
+- ✅ Corrected the Durango award wording to the festival's published category.
+- ✅ Marked every material field as published, withheld, or placeholder and as verified, review-required, approved, pending, or omitted.
+
+### Remaining Client Decisions
+
+- Approve biography, casting details, résumé content, project statuses, and editorial positioning.
+- Resolve `Arabesque` versus `Blood and Sex Over Ambition`.
+- Supply representation details, social URLs, media, photography, résumé PDF, and integrations.
 
 ### Dependency
 
-Bryan's approved résumé, biography, credits, representation details, and public links.
+Bryan's approved résumé, biography, credits, representation details, public links, and launch media.
 
 ### Exit Gate
 
-Every public statement has an identified source or explicit client approval.
+The technical exit gate is complete. The content exit gate closes when every `client-review-required` item is either client-approved, revised, or intentionally omitted.
 
 ---
 

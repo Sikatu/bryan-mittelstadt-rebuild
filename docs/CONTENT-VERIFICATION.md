@@ -1,33 +1,85 @@
-# Content Verification Matrix
+# Content Verification System
 
-This document tracks the verification status of all content integrated into Phase 1. 
-The application configuration relies on typed data objects; unverified data is currently hidden from public display or uses placeholders.
+Last updated: July 29, 2026
 
-## ✅ Confirmed Information
-*All items below have been confirmed from the existing live website.*
+Phase 2 replaces informal TODO comments with a machine-readable evidence and approval ledger.
 
-- **Identity:** Bryan Mittelstadt, Actor | Writer | Singer | Producer, Los Angeles
-- **Bio Text:** The ~130 word short bio and the full extended bio.
-- **Contact:** bryanmittelstadt@gmail.com
-- **Representation:** CESD Talent Agency (Commercial), Eris Talent Agency (VO)
-- **Unions:** SAG-AFTRA, AEA
-- **Key Projects:** The Overview Effect, Quiet After Supper, Darling (Music), Julius, Blood and Sex Over Ambition, Give.
-- **Accolades:** Best Actor (Durango FF), Torino FF, Slamdance, Sundance-nominated director.
-- **Physical Traits:** 5'11", 160lbs, Red Hair, Blue Eyes, Tenor.
+## Source of Truth
 
-## 🟡 Information Inferred from Public Material
-*Assumptions made that may need adjustment.*
+The canonical verification manifest is:
 
-- **Acting Reel Title:** Referred to as "2026 Reel" based on the project brief, though the current site just says "Dramatic Reel".
-- **Discipline Page Breakdowns:** Descriptions for Acting, VO, Music, and Writing were written editorially based on the provided brief and resume data.
-- **Writing & Filmmaking Page:** Inferred as a consolidated page for his scripts, thesis, and production work.
+```text
+src/content/content-verification.json
+```
 
-## 🔴 Information Requiring Bryan's Approval / Input
-*These items are marked as TODO in the codebase and currently render as fallbacks or empty states.*
+It contains:
 
-- **Acting Reel YouTube URL:** The Wix iframe obscures the direct YouTube ID. Bryan must provide the direct link.
-- **Social Media Profile URLs:** Instagram, YouTube, and IMDb icons are visible on the old site, but their href targets are missing.
-- **Representation Details:** Need specific agent names, phone numbers, or emails for CESD and Eris, if they are to be public.
-- **Theatrical Agent:** None listed on the old site; confirm if this is intentional.
-- **Resume PDF:** Needs the actual PDF file to host locally.
-- **Original Photography:** See `ASSET-REQUIREMENTS.md`. All photos currently use placeholder SVGs.
+- A source registry with public URLs, internal captures, and the pending client-approval source.
+- One record for each material public claim, integration, or launch asset.
+- A verification status.
+- A publication state.
+- The source IDs supporting the item.
+- A concrete owner action whenever review or delivery is still required.
+
+Typed access helpers are available in:
+
+```text
+src/content/verification.ts
+```
+
+## Status Definitions
+
+| Status | Meaning |
+|---|---|
+| `verified-primary` | Supported by an authoritative or first-party primary source. |
+| `confirmed-public` | Published on Bryan's official website or another identified public profile. |
+| `client-review-required` | Traceable to public or legacy material but should be reconfirmed before launch. |
+| `client-approved` | Explicitly approved by Bryan or an authorized representative. |
+| `pending` | Required input or asset has not been supplied. |
+| `intentionally-omitted` | Deliberately withheld from public display. |
+
+## Publication States
+
+| State | Meaning |
+|---|---|
+| `published` | Visible in the current rebuild. |
+| `withheld` | Not displayed until approved or supplied. |
+| `placeholder` | A temporary visual substitute is still present. |
+
+## Validation
+
+Run:
+
+```bash
+npm run audit:content
+```
+
+The audit validates:
+
+- Unique source and record IDs.
+- Valid statuses and publication states.
+- Existing local source paths.
+- Valid source references.
+- Owner actions for pending and review-required items.
+- No pending or intentionally omitted record marked as published.
+- Traceability from public typed content configuration to the manifest.
+- A summarized client approval queue and launch-blocker count.
+
+The full project gate is:
+
+```bash
+npm run check
+```
+
+## Current Evidence Corrections
+
+Phase 2 also makes two factual improvements:
+
+- The public IMDb profile is now connected using its identified canonical URL.
+- The Durango recognition uses the festival's published award category: Jury Award — Best Performance Actor, Narrative Feature.
+
+## Approval Policy
+
+Public copy can remain visible when it is traceable to Bryan's existing public material, but all `client-review-required` items must be approved or revised before the release candidate is frozen.
+
+No record should be promoted to `client-approved` without explicit written approval from Bryan or an authorized representative.

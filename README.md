@@ -17,21 +17,24 @@ Open `http://localhost:3000`.
 npm run lint
 npm run typecheck
 npm run audit:readiness
+npm run audit:content
 npm run check
 npm run build
 npm run validate
 ```
 
-`npm run check` runs lint, strict TypeScript validation, and the content/readiness audit. `npm run validate` also creates a production build.
+`npm run check` runs lint, strict TypeScript validation, the readiness audit, and the Phase 2 source/approval audit. `npm run validate` also creates a production build.
 
 ## Documentation
 
 - `docs/REBUILD-ROADMAP.md` — phased execution plan and current delivery status.
 - `docs/CLIENT-CONTENT-CHECKLIST.md` — complete client content and media request.
+- `docs/CLIENT-APPROVAL-QUEUE.md` — exact decisions and deliveries still required from Bryan.
 - `docs/ASSET-REQUIREMENTS.md` — image and document specifications.
 - `docs/DESIGN-SYSTEM.md` — current light editorial design system.
 - `docs/CONTENT-INVENTORY.md` — source content inventory.
-- `docs/CONTENT-VERIFICATION.md` — confirmed versus unverified information.
+- `docs/CONTENT-VERIFICATION.md` — evidence-ledger architecture and approval policy.
+- `src/content/content-verification.json` — machine-readable source and approval ledger.
 
 ## Architecture
 

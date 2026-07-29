@@ -1,7 +1,6 @@
 // ============================================================
 // Bryan Mittelstadt — Social Links
-// Icons visible on the current site but URLs were not captured.
-// Only verified links should have verified: true.
+// Only links with an identified public source may be displayed.
 // ============================================================
 
 import type { SocialLink } from '@/types';
@@ -10,23 +9,23 @@ export const socialLinks: SocialLink[] = [
   {
     platform: 'IMDb',
     label: 'Bryan Mittelstadt on IMDb',
-    // TODO: Bryan to provide his IMDb profile URL
-    url: '',
-    verified: false,
+    url: 'https://www.imdb.com/name/nm9804418/',
+    verified: true,
+    verificationId: 'social.imdb',
   },
   {
     platform: 'Instagram',
-    label: '@bryanmittelstadt on Instagram',
-    // TODO: Bryan to provide his Instagram URL
+    label: 'Bryan Mittelstadt on Instagram',
     url: '',
     verified: false,
+    verificationId: 'social.instagram',
   },
   {
     platform: 'YouTube',
     label: 'Bryan Mittelstadt on YouTube',
-    // TODO: Bryan to provide his YouTube channel URL
     url: '',
     verified: false,
+    verificationId: 'social.youtube',
   },
 ];
 

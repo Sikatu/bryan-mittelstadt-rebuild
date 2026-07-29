@@ -8,14 +8,17 @@ export const voiceOverReels: AudioReel[] = [
   {
     title: 'Commercial Reel',
     type: 'Standard & Energetic Reads',
+    verificationId: 'media.voiceover-reels',
   },
   {
     title: 'Radio Drama — Dramatic',
     type: 'Character Narration',
+    verificationId: 'media.voiceover-reels',
   },
   {
     title: 'Radio Drama — Villain',
     type: 'Character Acting',
+    verificationId: 'media.voiceover-reels',
   },
 ];
 

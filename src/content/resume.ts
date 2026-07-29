@@ -2,11 +2,13 @@ import type { ResumeSection } from '@/types';
 
 /**
  * Selected résumé content currently represented in the HTML page.
- * Reconcile every entry against Bryan's final approved PDF before launch.
+ * Every section remains in the client approval queue until it is reconciled
+ * against Bryan's final approved résumé PDF.
  */
 export const resumeSections: ResumeSection[] = [
   {
     title: 'Selected Film',
+    verificationId: 'resume.selected-credits',
     items: [
       { title: 'Quiet After Supper', role: 'Lead', detail: 'Lonely Rider Prod.' },
       { title: 'Blood and Sex Over Ambition', role: 'Lead (Van Gogh)', detail: 'Dir. Greg Kasunich' },
@@ -21,6 +23,7 @@ export const resumeSections: ResumeSection[] = [
   },
   {
     title: 'Selected Television',
+    verificationId: 'resume.selected-credits',
     items: [
       { title: 'Wild West Chronicles', role: 'Guest Star', detail: 'INSP' },
       { title: 'Food That Built America', role: 'Co-Star', detail: 'History Channel' },
@@ -30,6 +33,7 @@ export const resumeSections: ResumeSection[] = [
   },
   {
     title: 'Selected Theatre',
+    verificationId: 'resume.selected-credits',
     items: [
       { title: 'The Last Five Years', role: 'Jamie', detail: 'Sierra Madre Playhouse' },
       { title: 'The Mystery of Edwin Drood', role: 'John Jasper', detail: 'Regional' },
@@ -42,6 +46,12 @@ export const resumeSections: ResumeSection[] = [
 ];
 
 export const unionAffiliations = ['SAG-AFTRA', 'AEA'];
+
+export const resumeVerificationIds = {
+  unions: 'unions.affiliations',
+  training: 'resume.training',
+  skills: 'resume.skills',
+} as const;
 
 export const trainingAndEducation = [
   {
