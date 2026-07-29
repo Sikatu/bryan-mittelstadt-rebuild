@@ -3,7 +3,9 @@
 // Generates Person, WebSite, and VideoObject schemas.
 // ============================================================
 
+import { actingReels } from '@/content/media';
 import { siteConfig } from '@/content/site';
+import { resolveVideoUrl } from '@/lib/media';
 
 /** Person JSON-LD for Bryan Mittelstadt. */
 export function getPersonJsonLd() {
@@ -48,18 +50,24 @@ export function getWebSiteJsonLd() {
   };
 }
 
-/** VideoObject JSON-LD for the acting reel. */
+/** VideoObject JSON-LD for the first approved acting reel. */
 export function getReelVideoJsonLd() {
-  if (!siteConfig.reelUrl) return null;
+  const reel = actingReels.find(
+    (item) => item.availability === 'available' && Boolean(item.url),
+  );
+  const resolved = resolveVideoUrl(reel?.url);
+
+  if (!reel || !resolved?.embedUrl) return null;
 
   return {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
-    name: `${siteConfig.name} — ${siteConfig.reelYear ?? ''} Acting Reel`,
-    description: `Acting reel for ${siteConfig.name}, featuring selected work across film, television, and stage.`,
-    contentUrl: `https://www.youtube.com/watch?v=${siteConfig.reelUrl}`,
-    embedUrl: `https://www.youtube.com/embed/${siteConfig.reelUrl}`,
-    ...(siteConfig.seo.ogImage && { thumbnailUrl: siteConfig.seo.ogImage }),
-    ...(siteConfig.reelUploadDate && { uploadDate: siteConfig.reelUploadDate }),
+    name: `${siteConfig.name} — ${reel.title}`,
+    description:
+      reel.description ??
+      `Acting reel for ${siteConfig.name}, featuring selected performance work.`,
+    contentUrl: resolved.watchUrl,
+    embedUrl: resolved.embedUrl,
+    ...(reel.posterImage && { thumbnailUrl: reel.posterImage }),
   };
 }

@@ -54,10 +54,6 @@ export const siteConfig: SiteConfig = {
     voice: 'Tenor',
   },
 
-  // Bryan must provide the approved YouTube or Vimeo URL.
-  reelUrl: undefined,
-  reelYear: '2026',
-
   // Host the approved résumé PDF locally in /public.
   resumeUrl: undefined,
 

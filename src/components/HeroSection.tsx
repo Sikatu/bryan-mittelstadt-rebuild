@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Container from './Container';
 import EditorialButton from './EditorialButton';
 import { siteAssets } from '@/content/assets';
+import { hasAvailableActingReel } from '@/content/media';
 import { siteConfig } from '@/content/site';
 
 export default function HeroSection() {
@@ -45,7 +46,7 @@ export default function HeroSection() {
               href="/#reel"
               variant="primary"
             >
-              {siteConfig.reelUrl ? `Watch ${siteConfig.reelYear ?? ''} Reel` : 'Acting Reel'}
+              {hasAvailableActingReel ? 'Watch Acting Reel' : 'Explore Acting Reels'}
             </EditorialButton>
 
             <EditorialButton

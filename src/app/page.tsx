@@ -19,6 +19,8 @@ export const metadata = createPageMetadata({
 });
 
 export default function Home() {
+  const reelJsonLd = getReelVideoJsonLd();
+
   return (
     <>
       <HeroSection />
@@ -115,11 +117,11 @@ export default function Home() {
       <ContactCTA />
 
       {/* Reel Structured Data */}
-      {siteConfig.reelUrl && (
+      {reelJsonLd && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(getReelVideoJsonLd()),
+            __html: JSON.stringify(reelJsonLd),
           }}
         />
       )}

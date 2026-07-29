@@ -156,11 +156,40 @@ export interface SiteAssets {
 }
 
 /** A voice-over reel or externally hosted audio sample. */
-export interface AudioReel {
+export type MediaAvailability = 'available' | 'pending' | 'withheld';
+
+/** A categorized acting reel or externally hosted video sample. */
+export interface VideoReel {
+  id: string;
   title: string;
-  type: string;
-  audioUrl?: string;
+  category: string;
+  description?: string;
+  url?: string;
+  posterImage?: string;
+  year?: string;
+  availability: MediaAvailability;
   verificationId?: string;
+}
+
+/** A voice-over reel, direct audio file, or externally hosted audio sample. */
+export interface AudioReel {
+  id: string;
+  title: string;
+  category: string;
+  description?: string;
+  audioUrl?: string;
+  sourceType?: 'direct' | 'external';
+  durationLabel?: string;
+  availability: MediaAvailability;
+  verificationId?: string;
+}
+
+/** A verified writing, directing, or producing project. */
+export interface CreativeProject extends Project {
+  contribution: string[];
+  logline?: string;
+  projectType?: 'Screenplay' | 'Short Film' | 'Feature Film' | 'Series' | 'Stage' | 'Music Film' | 'Other';
+  availability: MediaAvailability;
 }
 
 /** A supplied headshot and optional downloadable original. */
@@ -215,9 +244,6 @@ export interface SiteConfig {
     eyes: string;
     voice: string;
   };
-  reelUrl?: string;
-  reelYear?: string;
-  reelUploadDate?: string;
   resumeUrl?: string;
   headshotsZipUrl?: string;
   mailingListUrl?: string;

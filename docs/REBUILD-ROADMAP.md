@@ -6,14 +6,14 @@ Last updated: July 29, 2026
 
 The rebuild has a complete Next.js architecture and all planned routes. The remaining work is concentrated in verified content, real media, functional integrations, final interaction design, and launch QA.
 
-**Estimated readiness after Phase 2 technical completion:**
+**Estimated readiness after Phase 3 technical completion:**
 
 - Architecture and route coverage: 100%
 - Code-quality foundation: 100%
-- Core page implementation: approximately 65%
+- Core page implementation: approximately 76%
 - Verified content architecture: 100%
 - Client-approved content and real media: approximately 25%
-- Launch readiness: approximately 64%
+- Launch readiness: approximately 70%
 
 ## Phase 1 — Stabilization and Interaction Integrity
 
@@ -93,38 +93,34 @@ The technical exit gate is complete. The content exit gate closes when every `cl
 
 ## Phase 3 — Acting, Voice-Over, Music, and Filmmaking Completion
 
-**Status: Not started**
+**Status: Technical media architecture completed; approved media delivery remains open**
 
-### Acting
+### Delivered
 
-- Add approved dramatic, comedic, commercial, LGBTQ+, musical, and stage reels where available.
-- Add reel categories and responsive video player states.
-- Complete project metadata and project detail links.
-- Replace every acting placeholder with approved stills or posters.
+- ✅ Added six acting reel categories with responsive selector and video states.
+- ✅ Added YouTube and Vimeo embed resolution plus external-provider fallback.
+- ✅ Rebuilt the homepage reel feature on the centralized media configuration.
+- ✅ Added four voice-over categories.
+- ✅ Added accessible direct-audio controls with play, pause, seek, timing, and errors.
+- ✅ Added hosted-audio fallback actions.
+- ✅ Added voice-over representation and inquiry handling without exposing unapproved agent details.
+- ✅ Added a music release hub for mailing list, streaming, pre-save, purchase, press, performance links, and samples.
+- ✅ Added a typed writing and filmmaking portfolio model for contributions, project types, loglines, statuses, visuals, and public links.
+- ✅ Added meaningful inquiry actions to all four discipline pages.
+- ✅ Added a media readiness audit to the project validation gate.
+- ✅ Removed the legacy single-reel configuration and updated reel structured data.
 
-### Voice-Over
+### Remaining Client Deliveries
 
-- Connect approved audio files, SoundCloud links, or another hosting provider.
-- Build accessible audio controls with duration, play/pause, and loading states where direct audio is available.
-- Add commercial, narration, character, and radio-drama categories.
-- Add a voice-over inquiry path and verified representation details.
-
-### Music
-
-- Add final *Darling* artwork, approved release copy, and release date.
-- Connect mailing-list signup.
-- Add streaming, pre-save, purchase, press, and performance links as applicable.
-- Add music samples or embedded media after approval.
-
-### Writing & Filmmaking
-
-- Add verified writing, directing, and producing credits.
-- Add project types, loglines, roles, status, visuals, and public links.
-- Support scripts, excerpts, screening links, or press materials only when authorized.
+- Approved acting reel URLs and optional reel posters.
+- Approved voice-over audio files or hosting links.
+- Final *Darling* artwork, release date, links, and authorized samples.
+- Approved writing, directing, and producing project records.
+- Approved imagery and project links.
 
 ### Exit Gate
 
-Every discipline page contains real, approved media and at least one meaningful working action.
+The technical gate is complete. The media-content gate closes when every discipline page contains real, approved media and at least one approved portfolio action beyond direct inquiry.
 
 ---
 
@@ -250,9 +246,8 @@ The site has a documented owner workflow and no unresolved launch-critical issue
 
 ## Immediate Execution Order
 
-1. Complete Phase 2 content extraction and verification architecture.
-2. Request and organize the client asset/content package.
-3. Complete the four discipline pages while assets are being gathered.
-4. Complete résumé, headshots, and contact workflows.
-5. Integrate real media and perform the final visual pass.
-6. Run QA, obtain approval, and deploy.
+1. Collect and approve the open Phase 2 and Phase 3 client media package.
+2. Complete résumé, headshots, about, and contact workflows in Phase 4.
+3. Integrate real photography and approved media in Phase 5.
+4. Run SEO, accessibility, performance, and browser QA.
+5. Obtain final approval and deploy.

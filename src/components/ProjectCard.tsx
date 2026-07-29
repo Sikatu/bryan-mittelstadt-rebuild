@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import EditorialButton from './EditorialButton';
 import type { Project } from '@/types';
 
 interface ProjectCardProps {
@@ -49,6 +50,16 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </>
         )}
       </div>
+      {project.link && (
+        <EditorialButton
+          href={project.link}
+          external
+          variant="text"
+          className="mt-4"
+        >
+          View Project
+        </EditorialButton>
+      )}
     </article>
   );
 }
