@@ -156,22 +156,32 @@ The technical workflow gate is complete. The conversion-content gate closes when
 
 ## Phase 5 — Real Asset Integration and Visual Refinement
 
-**Status: Blocked by asset delivery**
+**Status: Technical asset architecture completed; client photography and final PDF delivery remain open**
 
-### Tasks
+### Delivered
 
-- Add homepage hero photography.
-- Add reel poster, project stills, discipline imagery, album artwork, portrait, and headshots.
-- Standardize image crops and focal positions across breakpoints.
-- Convert oversized media to WebP or AVIF where appropriate.
-- Add responsive sizes and meaningful alternative text.
-- Remove all `/images/placeholders/` references from public-facing source.
-- Refine spacing, typography, hover behavior, and section rhythm after real media is visible.
-- Validate the premium white editorial design on all pages.
+- ✅ Removed all public source references to `/images/placeholders/`.
+- ✅ Removed legacy placeholder image files from `public/images/placeholders/`.
+- ✅ Added centralized typed asset records for hero, portrait, reel poster, project, album, and discipline imagery.
+- ✅ Added asset availability, meaningful alternative text, tone, and focal-position controls.
+- ✅ Added an honest editorial fallback that never impersonates client photography.
+- ✅ Migrated homepage, project cards, discipline cards, About, Music, creative-project, and reel-poster presentation to the centralized system.
+- ✅ Added generated 1200 × 630 Open Graph and Twitter artwork.
+- ✅ Separated missing technical assets from pending client launch files.
+- ✅ Added `npm run audit:assets` to the validation gate.
+- ✅ Refined hero hierarchy, image overlays, hover states, and visual rhythm.
+
+### Remaining Client Deliveries
+
+- Approved hero, portrait, reel-poster, project, album, and discipline imagery.
+- Approved headshots, downloadable originals, and casting ZIP.
+- Final approved résumé PDF.
+- Approval or replacement of the generated social card.
+- Final crop and focal-position review across breakpoints.
 
 ### Exit Gate
 
-`npm run audit:readiness` reports zero placeholder references and all required launch assets are present.
+The technical asset gate is complete. The client-content gate closes when every required image is approved and configured, the résumé PDF exists, and responsive crop review is complete.
 
 ---
 
@@ -238,8 +248,8 @@ The site has a documented owner workflow and no unresolved launch-critical issue
 
 ## Immediate Execution Order
 
-1. Collect and approve the open Phase 2 and Phase 3 client media package.
-2. Complete résumé, headshots, about, and contact workflows in Phase 4.
-3. Integrate real photography and approved media in Phase 5.
-4. Run SEO, accessibility, performance, and browser QA.
-5. Obtain final approval and deploy.
+1. Collect and approve the open client content, media, photography, headshot, and résumé package.
+2. Activate approved assets through the Phase 5 registry and verify focal positions.
+3. Run SEO, accessibility, performance, and browser QA in Phase 6.
+4. Obtain final client approval and prepare the release candidate.
+5. Deploy, validate redirects and integrations, and begin post-launch monitoring.

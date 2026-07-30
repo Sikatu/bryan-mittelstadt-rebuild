@@ -33,35 +33,54 @@ for (const file of sourceFiles) {
   }
 }
 
-const requiredAssets = [
-  'public/images/og-default.jpg',
-  'public/bryan-mittelstadt-resume.pdf',
+const requiredTechnicalAssets = [
+  'src/app/opengraph-image.tsx',
+  'src/app/twitter-image.tsx',
+  'src/components/EditorialImage.tsx',
 ];
-const missingAssets = requiredAssets.filter((asset) => !existsSync(join(root, asset)));
+const missingTechnicalAssets = requiredTechnicalAssets.filter(
+  (asset) => !existsSync(join(root, asset)),
+);
+
+const clientLaunchFiles = ['public/bryan-mittelstadt-resume.pdf'];
+const missingClientFiles = clientLaunchFiles.filter(
+  (asset) => !existsSync(join(root, asset)),
+);
 
 console.log('\nBryan Mittelstadt rebuild readiness audit');
 console.log('=========================================');
 console.log(`Source files scanned: ${sourceFiles.length}`);
-console.log(`Placeholder references: ${placeholderReferences.length}`);
+console.log(`Legacy placeholder references: ${placeholderReferences.length}`);
 console.log(`Dead hash-link files: ${deadHashLinks.length}`);
 console.log(`Unsafe any files: ${unsafeAny.length}`);
-console.log(`Missing required launch assets: ${missingAssets.length}`);
+console.log(`Missing technical launch assets: ${missingTechnicalAssets.length}`);
+console.log(`Missing client launch files: ${missingClientFiles.length}`);
 
 if (placeholderReferences.length > 0) {
-  console.log('\nPlaceholder references still to replace:');
+  console.log('\nLegacy placeholder references still to remove:');
   for (const item of placeholderReferences) {
     console.log(`- ${item.file}: ${item.value}`);
   }
 }
 
-if (missingAssets.length > 0) {
-  console.log('\nRequired launch assets not supplied:');
-  for (const asset of missingAssets) console.log(`- ${asset}`);
+if (missingTechnicalAssets.length > 0) {
+  console.log('\nRequired technical launch assets are missing:');
+  for (const asset of missingTechnicalAssets) console.log(`- ${asset}`);
 }
 
-if (deadHashLinks.length > 0 || unsafeAny.length > 0) {
-  console.error('\nIntegrity failures detected.');
+if (missingClientFiles.length > 0) {
+  console.log('\nClient files still required before final launch:');
+  for (const asset of missingClientFiles) console.log(`- ${asset}`);
+}
+
+if (
+  deadHashLinks.length > 0 ||
+  unsafeAny.length > 0 ||
+  placeholderReferences.length > 0 ||
+  missingTechnicalAssets.length > 0
+) {
+  console.error('\nReadiness integrity failures detected.');
   process.exitCode = 1;
 } else {
-  console.log('\nInteraction integrity checks passed.');
+  console.log('\nInteraction and technical asset integrity checks passed.');
 }

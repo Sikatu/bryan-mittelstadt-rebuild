@@ -1,8 +1,8 @@
 'use client';
 
 import { useMemo, useState } from 'react';
-import Image from 'next/image';
 import EditorialButton from './EditorialButton';
+import EditorialImage from './EditorialImage';
 import MediaFrame from './MediaFrame';
 import MediaStatusBadge from './MediaStatusBadge';
 import { siteAssets } from '@/content/assets';
@@ -47,12 +47,12 @@ export default function VideoReelGallery({
             />
           ) : (
             <div className="absolute inset-0 flex items-center justify-center overflow-hidden bg-contrast-dark">
-              <Image
-                src={selected.posterImage ?? siteAssets.reelPosterImage}
-                alt=""
-                fill
-                className="object-cover opacity-65"
+              <EditorialImage
+                asset={selected.posterImage ?? siteAssets.reelPosterImage}
                 sizes="(max-width: 1024px) 100vw, 1024px"
+                decorative
+                imageClassName="opacity-65"
+                fallbackLabel="Reel poster pending"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-contrast-dark/80 via-contrast-dark/20 to-contrast-dark/20" />
               <div className="relative z-10 flex max-w-xl flex-col items-center px-6 text-center">

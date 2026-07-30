@@ -1,59 +1,65 @@
 # Asset Requirements
 
-Because the previous website was hosted on Wix, all existing images are locked in the Wix CDN. Attempting to extract and hotlink them violates the project guidelines and risks broken images if the Wix account is closed.
+The Phase 5 codebase does not hotlink media from the legacy Wix site and does not publish stock or fabricated substitutes. All client photography remains pending until Bryan supplies the original files and confirms publication rights.
 
-Therefore, **original source photography must be provided by the client.**
+The current UI uses an explicit non-photographic editorial state for missing images. Central configuration lives in `src/content/assets.ts`; implementation instructions live in `docs/ASSET-INTEGRATION-GUIDE.md`.
 
-Currently, the Next.js application uses tasteful, neutral SVG placeholders in `public/images/placeholders/`. 
+## Required Client Deliverables
 
-## Required Image List
+### 1. Homepage Hero Photography
 
-When replacing images, save them to the designated path inside the `public/images/` directory. Update the path strings in `src/content/site.ts` or `projects.ts` if the filenames differ.
-
-### 1. Hero Photography
-- **Purpose:** Primary visual on the homepage.
-- **Specs:** 1920x1080 (16:9), WebP or high-quality JPG. Needs to look cinematic. 
-- **Target Path:** `/images/bryan/hero/[filename]`
-- **Configuration:** Not explicitly in config, hardcoded placeholder in `HeroSection.tsx` for now.
+- Purpose: primary homepage visual
+- Preferred source: at least 2400 × 1600
+- Format: WebP, AVIF, or high-quality JPEG
+- Target directory: `public/images/bryan/hero/`
+- Approval needed: crop, focal point, retouching, attribution, and publication permission
 
 ### 2. Acting Reel Poster
-- **Purpose:** Cover image for the YouTube video player before it plays.
-- **Specs:** 1920x1080 (16:9), WebP or JPG.
-- **Target Path:** `/images/bryan/projects/[filename]`
-- **Configuration:** Hardcoded in `ReelPlayer.tsx`.
 
-### 3. Current Work Stills (Featured Projects)
-- **Purpose:** Large editorial features on the homepage.
-- **Specs:** 1200x900 (4:3), WebP or JPG.
-- **Target Paths:** `/images/bryan/projects/[filename]`
-- **Configuration:** Update `featuredProjects` array in `src/content/projects.ts`.
-- **Needed For:**
-  1. The Overview Effect
-  2. Quiet After Supper
-  3. Darling (Album Art - Square or 4:3)
+- Purpose: poster before reel playback
+- Preferred source: 1920 × 1080
+- Target directory: `public/images/bryan/reels/`
+- Approval needed: title treatment and any award or production marks
 
-### 4. Selected Work Stills (Project Grid)
-- **Purpose:** Smaller grid items in the portfolio section.
-- **Specs:** 900x1200 (3:4 portrait), WebP or JPG.
-- **Target Paths:** `/images/bryan/projects/[filename]`
-- **Configuration:** Update `selectedProjects` array in `src/content/projects.ts`.
-- **Needed For:** Julius, Blood and Sex Over Ambition, Goldilocks..., Give, The Last Five Years, Arabesque.
+### 3. Current Work Images
 
-### 5. Discipline Introduction Images
-- **Purpose:** Cards linking to internal pages.
-- **Specs:** 900x1200 (3:4) or 1200x900 (4:3) depending on size variant.
-- **Target Paths:** `/images/bryan/headshots/` or `/projects/`
-- **Configuration:** Update `disciplines` array in `src/content/projects.ts`.
-- **Needed For:** Acting, Voice-Over, Music, Writing & Filmmaking.
+- Purpose: large homepage editorial features
+- Preferred source: at least 1600 × 1200
+- Target directory: `public/images/bryan/projects/`
+- Required for: The Overview Effect, Quiet After Supper, and Darling
 
-### 6. SEO OpenGraph Image
-- **Purpose:** The image shown when sharing the website on iMessage, Twitter, Facebook, etc.
-- **Specs:** 1200x630, JPG or PNG.
-- **Target Path:** `/images/og-default.jpg`
-- **Configuration:** Update `ogImage` in `src/content/site.ts`.
+### 4. Selected Work Images
 
-### 7. Resume PDF
-- **Purpose:** The downloadable resume linked across the site.
-- **Specs:** PDF document.
-- **Target Path:** `/bryan-mittelstadt-resume.pdf` (root of public folder)
-- **Configuration:** Update `resumeUrl` in `src/content/site.ts`.
+- Purpose: homepage portfolio grid
+- Preferred source: at least 1200 × 1600
+- Target directory: `public/images/bryan/projects/`
+- Required for: Julius, Blood and Sex Over Ambition, Goldilocks and the Two Bears, Give, The Last Five Years, and Arabesque
+
+### 5. Discipline Images
+
+- Purpose: Acting, Voice-Over, Music, and Writing & Filmmaking navigation cards
+- Preferred source: at least 1200 × 1600 or 1600 × 1200
+- Target directory: `public/images/bryan/disciplines/`
+
+### 6. About Portrait
+
+- Purpose: About page portrait
+- Preferred source: at least 1800 × 2400
+- Target directory: `public/images/bryan/portraits/`
+
+### 7. Headshots and Casting Package
+
+- Display versions: optimized WebP
+- Download originals: high-resolution JPEG
+- Optional ZIP: `public/downloads/`
+- Required metadata: label, category, preferred order, meaningful alt text, and download permission
+
+### 8. Résumé PDF
+
+- Purpose: casting download
+- Target path: `public/bryan-mittelstadt-resume.pdf`
+- Must be reconciled with the HTML résumé before activation
+
+### 9. Social-Sharing Artwork
+
+A generated branded card is already available at `/opengraph-image` and `/twitter-image`. Bryan may approve it for launch or supply approved photography for a replacement.

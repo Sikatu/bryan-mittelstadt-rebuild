@@ -108,7 +108,7 @@ export interface Project {
   description?: string;
   /** Festival selections, awards, or other recognition. */
   accolades?: string[];
-  image?: string;
+  image?: ImageAsset;
   link?: string;
   /** If true, display as a featured/current project. */
   featured?: boolean;
@@ -129,7 +129,19 @@ export interface DisciplineInfo {
   title: string;
   slug: string;
   description: string;
-  image?: string;
+  image?: ImageAsset;
+  verificationId?: string;
+}
+
+/** Availability and art-direction data for a public image. */
+export interface ImageAsset {
+  id: string;
+  label: string;
+  alt: string;
+  src?: string;
+  availability: MediaAvailability;
+  objectPosition?: string;
+  tone?: 'warm' | 'dark' | 'neutral' | 'accent';
   verificationId?: string;
 }
 
@@ -149,9 +161,9 @@ export interface ResumeSection {
 
 /** Centralized public-facing image paths. */
 export interface SiteAssets {
-  heroImage: string;
-  reelPosterImage: string;
-  portraitImage: string;
+  heroImage: ImageAsset;
+  reelPosterImage: ImageAsset;
+  portraitImage: ImageAsset;
   verificationId?: string;
 }
 
@@ -165,7 +177,7 @@ export interface VideoReel {
   category: string;
   description?: string;
   url?: string;
-  posterImage?: string;
+  posterImage?: ImageAsset;
   year?: string;
   availability: MediaAvailability;
   verificationId?: string;
@@ -240,6 +252,7 @@ export interface SiteVerificationMap {
   headshots: string;
   mailingList: string;
   email: string;
+  openGraph: string;
 }
 
 /** Global site configuration. */

@@ -12,21 +12,21 @@
   "sources": [
     {
       "id": "official-home",
-      "label": "Bryan Mittelstadt official website \u2014 Home",
+      "label": "Bryan Mittelstadt official website — Home",
       "kind": "first-party-public",
       "url": "https://www.bryanmittelstadt.com/",
       "accessedOn": "2026-07-29"
     },
     {
       "id": "official-bio",
-      "label": "Bryan Mittelstadt official website \u2014 Bio",
+      "label": "Bryan Mittelstadt official website — Bio",
       "kind": "first-party-public",
       "url": "https://www.bryanmittelstadt.com/bio",
       "accessedOn": "2026-07-29"
     },
     {
       "id": "official-contact",
-      "label": "Bryan Mittelstadt official website \u2014 Contact",
+      "label": "Bryan Mittelstadt official website — Contact",
       "kind": "first-party-public",
       "url": "https://www.bryanmittelstadt.com/contact",
       "accessedOn": "2026-07-29"
@@ -40,7 +40,7 @@
     },
     {
       "id": "durango-2026-awards",
-      "label": "Durango Independent Film Festival \u2014 2026 Jury Award Winners",
+      "label": "Durango Independent Film Festival — 2026 Jury Award Winners",
       "kind": "authoritative-award-source",
       "url": "https://www.durangofilm.org/2026-awards",
       "accessedOn": "2026-07-29"
@@ -54,7 +54,7 @@
     },
     {
       "id": "quiet-after-supper-production",
-      "label": "Nectar Inc. \u2014 Quiet After Supper production listing",
+      "label": "Nectar Inc. — Quiet After Supper production listing",
       "kind": "production-source",
       "url": "https://www.nectarinc.com/portfolio/quiet-after-supper-feature-film/",
       "accessedOn": "2026-07-29"
@@ -71,6 +71,13 @@
       "label": "Bryan or authorized representative approval",
       "kind": "client-approval",
       "status": "pending"
+    },
+    {
+      "id": "phase-5-generated-social-card",
+      "label": "Phase 5 generated social-sharing card",
+      "kind": "project-artifact",
+      "path": "src/app/opengraph-image.tsx",
+      "capturedOn": "2026-07-29"
     }
   ],
   "records": [
@@ -184,7 +191,7 @@
     },
     {
       "id": "unions.affiliations",
-      "area": "R\u00e9sum\u00e9",
+      "area": "Résumé",
       "label": "SAG-AFTRA and Actors' Equity affiliations",
       "status": "client-review-required",
       "publication": "published",
@@ -196,7 +203,7 @@
     {
       "id": "representation.commercial",
       "area": "Representation",
-      "label": "CESD Talent Agency \u2014 Commercial",
+      "label": "CESD Talent Agency — Commercial",
       "status": "confirmed-public",
       "publication": "published",
       "sourceIds": [
@@ -206,7 +213,7 @@
     {
       "id": "representation.voiceover",
       "area": "Representation",
-      "label": "Eris Talent Agency \u2014 Voice-Over",
+      "label": "Eris Talent Agency — Voice-Over",
       "status": "confirmed-public",
       "publication": "published",
       "sourceIds": [
@@ -352,18 +359,18 @@
     },
     {
       "id": "resume.selected-credits",
-      "area": "R\u00e9sum\u00e9",
+      "area": "Résumé",
       "label": "Selected film, television, and theatre credits",
       "status": "client-review-required",
       "publication": "published",
       "sourceIds": [
         "legacy-content-inventory"
       ],
-      "ownerAction": "Reconcile every item against the final approved r\u00e9sum\u00e9 PDF."
+      "ownerAction": "Reconcile every item against the final approved résumé PDF."
     },
     {
       "id": "resume.training",
-      "area": "R\u00e9sum\u00e9",
+      "area": "Résumé",
       "label": "Training and education",
       "status": "client-review-required",
       "publication": "published",
@@ -374,7 +381,7 @@
     },
     {
       "id": "resume.skills",
-      "area": "R\u00e9sum\u00e9",
+      "area": "Résumé",
       "label": "Special skills",
       "status": "client-review-required",
       "publication": "published",
@@ -421,11 +428,11 @@
       "area": "Images",
       "label": "Hero, portrait, project, discipline, and album imagery",
       "status": "pending",
-      "publication": "placeholder",
+      "publication": "withheld",
       "sourceIds": [
         "client-approval"
       ],
-      "ownerAction": "Supply approved high-resolution images and usage confirmation."
+      "ownerAction": "Supply approved high-resolution images, usage confirmation, crop preferences, and focal positions."
     },
     {
       "id": "asset.headshots",
@@ -440,8 +447,8 @@
     },
     {
       "id": "asset.resume-pdf",
-      "area": "R\u00e9sum\u00e9",
-      "label": "Downloadable r\u00e9sum\u00e9 PDF",
+      "area": "Résumé",
+      "label": "Downloadable résumé PDF",
       "status": "pending",
       "publication": "withheld",
       "sourceIds": [
@@ -452,13 +459,13 @@
     {
       "id": "asset.open-graph",
       "area": "SEO",
-      "label": "1200 \u00d7 630 social-sharing image",
-      "status": "pending",
-      "publication": "withheld",
+      "label": "1200 × 630 social-sharing image",
+      "status": "client-review-required",
+      "publication": "published",
       "sourceIds": [
-        "client-approval"
+        "phase-5-generated-social-card"
       ],
-      "ownerAction": "Supply or approve a source image for the final social card."
+      "ownerAction": "Approve the generated launch card or supply approved photography for a replacement."
     },
     {
       "id": "integration.mailing-list",

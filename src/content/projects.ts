@@ -3,6 +3,7 @@
 // Public claims are traceable through src/content/content-verification.json.
 // ============================================================
 
+import { disciplineImageAssets, projectImageAssets } from '@/content/assets';
 import type { DisciplineInfo, Project } from '@/types';
 
 // ---- CURRENT / FEATURED PROJECTS ----
@@ -18,7 +19,7 @@ export const featuredProjects: Project[] = [
       "A new musical alongside Sasheer Zamata (SNL, Agatha All Along), planned as a filmed series and a stage production at Disney Hall's REDCAT.",
     director: 'Neil Zumwalde',
     featured: true,
-    image: '/images/placeholders/project-1.svg',
+    image: projectImageAssets.overviewEffect,
     verificationId: 'project.the-overview-effect',
   },
   {
@@ -34,7 +35,7 @@ export const featuredProjects: Project[] = [
       '2026 Durango Jury Award — Best Performance Actor, Narrative Feature',
     ],
     featured: true,
-    image: '/images/placeholders/project-2.svg',
+    image: projectImageAssets.quietAfterSupper,
     verificationId: 'project.quiet-after-supper',
   },
   {
@@ -45,7 +46,7 @@ export const featuredProjects: Project[] = [
     year: 2026,
     description: "Bryan's debut folk album, currently planned for release in 2026.",
     featured: true,
-    image: '/images/placeholders/project-3.svg',
+    image: projectImageAssets.darling,
     verificationId: 'project.darling',
   },
 ];
@@ -60,7 +61,7 @@ export const selectedProjects: Project[] = [
     format: 'Feature Film',
     productionCompany: 'Sunhour Films',
     accolades: ['Torino Film Festival'],
-    image: '/images/placeholders/project-4.svg',
+    image: projectImageAssets.julius,
     verificationId: 'project.julius',
   },
   {
@@ -70,7 +71,7 @@ export const selectedProjects: Project[] = [
     format: 'Feature Film',
     director: 'Greg Kasunich',
     accolades: ['Slamdance', 'Cannes'],
-    image: '/images/placeholders/project-5.svg',
+    image: projectImageAssets.bloodAndSexOverAmbition,
     verificationId: 'project.blood-and-sex-over-ambition',
   },
   {
@@ -80,7 +81,7 @@ export const selectedProjects: Project[] = [
     format: 'Feature Film',
     director: 'Jeff Lipsky',
     accolades: ['Sundance-nominated director'],
-    image: '/images/placeholders/project-6.svg',
+    image: projectImageAssets.goldilocks,
     verificationId: 'project.goldilocks-and-the-two-bears',
   },
   {
@@ -90,7 +91,7 @@ export const selectedProjects: Project[] = [
     format: 'Short Film',
     director: 'Kenya Gillespie',
     accolades: ['Catalina', 'Aesthetica', 'deadCenter', 'Cannes'],
-    image: '/images/placeholders/project-7.svg',
+    image: projectImageAssets.give,
     verificationId: 'project.give',
   },
   {
@@ -100,7 +101,7 @@ export const selectedProjects: Project[] = [
     format: 'Stage',
     director: 'Josh Shaw',
     productionCompany: 'Sierra Madre Playhouse',
-    image: '/images/placeholders/project-8.svg',
+    image: projectImageAssets.lastFiveYears,
     verificationId: 'project.last-five-years',
   },
   {
@@ -109,7 +110,7 @@ export const selectedProjects: Project[] = [
     discipline: 'Acting',
     format: 'Feature Film',
     director: 'Pan Luo',
-    image: '/images/placeholders/project-9.svg',
+    image: projectImageAssets.arabesque,
     verificationId: 'project.arabesque',
   },
 ];
@@ -122,7 +123,7 @@ export const disciplines: DisciplineInfo[] = [
     slug: '/acting',
     description:
       'Film, television, and stage work spanning independent features, network television, and regional theatre.',
-    image: '/images/placeholders/discipline-acting.svg',
+    image: disciplineImageAssets.acting,
     verificationId: 'disciplines.editorial-copy',
   },
   {
@@ -130,7 +131,7 @@ export const disciplines: DisciplineInfo[] = [
     slug: '/voice-over',
     description:
       'Commercial, dramatic narration, and radio drama. Voice-over representation by Eris Talent Agency.',
-    image: '/images/placeholders/discipline-vo.svg',
+    image: disciplineImageAssets.voiceOver,
     verificationId: 'disciplines.editorial-copy',
   },
   {
@@ -138,7 +139,7 @@ export const disciplines: DisciplineInfo[] = [
     slug: '/music',
     description:
       'Tenor vocalist, songwriter, and multi-instrumentalist preparing his debut folk album, Darling.',
-    image: '/images/placeholders/discipline-music.svg',
+    image: disciplineImageAssets.music,
     verificationId: 'disciplines.editorial-copy',
   },
   {
@@ -146,7 +147,7 @@ export const disciplines: DisciplineInfo[] = [
     slug: '/writing-filmmaking',
     description:
       'Screenwriting, directing, and producing work to be added after Bryan approves the public project list.',
-    image: '/images/placeholders/discipline-writing.svg',
+    image: disciplineImageAssets.writing,
     verificationId: 'disciplines.editorial-copy',
   },
 ];

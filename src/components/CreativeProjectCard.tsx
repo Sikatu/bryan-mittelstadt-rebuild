@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import EditorialButton from './EditorialButton';
+import EditorialImage from './EditorialImage';
 import MediaStatusBadge from './MediaStatusBadge';
 import type { CreativeProject } from '@/types';
 
@@ -8,12 +8,10 @@ export default function CreativeProjectCard({ project }: { project: CreativeProj
     <article className="overflow-hidden border border-border-subtle bg-bg-secondary">
       {project.image && (
         <div className="relative aspect-[16/10] bg-bg-light">
-          <Image
-            src={project.image}
-            alt={`${project.title} project artwork`}
-            fill
-            className="object-cover"
+          <EditorialImage
+            asset={project.image}
             sizes="(max-width: 768px) 100vw, 50vw"
+            fallbackLabel="Project artwork pending"
           />
         </div>
       )}

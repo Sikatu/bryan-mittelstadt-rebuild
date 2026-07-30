@@ -1,48 +1,41 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import EditorialImage from './EditorialImage';
 import type { DisciplineInfo } from '@/types';
 
 interface DisciplineLinkProps {
   discipline: DisciplineInfo;
-  /** Visual size variant — alternate between large and small for rhythm. */
   size?: 'large' | 'small';
 }
 
-/** Editorial discipline introduction card with image and link. */
-export default function DisciplineLink({
-  discipline,
-  size = 'large',
-}: DisciplineLinkProps) {
+/** Editorial discipline introduction card with approved imagery or honest art direction. */
+export default function DisciplineLink({ discipline, size = 'large' }: DisciplineLinkProps) {
   return (
     <Link
       href={discipline.slug}
-      className={`group relative block overflow-hidden bg-bg-light border border-border-subtle shadow-sm hover:shadow-md transition-shadow duration-500 rounded-sm ${
+      className={`group relative block overflow-hidden rounded-sm border border-border-subtle bg-bg-light shadow-sm transition-shadow duration-500 hover:shadow-md ${
         size === 'large' ? 'aspect-[4/3]' : 'aspect-[3/4]'
       }`}
     >
-      {/* Background Image */}
       {discipline.image && (
-        <Image
-          src={discipline.image}
-          alt=""
-          fill
-          className="object-cover transition-transform duration-700 group-hover:scale-105"
+        <EditorialImage
+          asset={discipline.image}
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+          decorative
+          imageClassName="transition-transform duration-700 group-hover:scale-105"
+          fallbackLabel="Discipline photography pending"
         />
       )}
 
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-bg-secondary/90 via-bg-secondary/40 to-bg-secondary/0 group-hover:from-bg-secondary/95 transition-all duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-t from-bg-secondary/95 via-bg-secondary/45 to-transparent transition-all duration-500 group-hover:from-bg-secondary" />
 
-      {/* Content */}
       <div className="absolute inset-0 flex flex-col justify-end p-5 sm:p-6">
-        <h3 className="font-serif text-xl sm:text-2xl text-text-primary group-hover:text-accent transition-colors duration-300 mb-2">
+        <h3 className="mb-2 font-serif text-xl text-text-primary transition-colors duration-300 group-hover:text-accent sm:text-2xl">
           {discipline.title}
         </h3>
-        <p className="text-sm text-text-secondary line-clamp-2 leading-relaxed">
+        <p className="line-clamp-3 text-sm leading-relaxed text-text-secondary">
           {discipline.description}
         </p>
-        <span className="mt-3 text-xs uppercase tracking-widest text-accent/70 group-hover:text-accent transition-colors duration-300">
+        <span className="mt-3 text-xs uppercase tracking-widest text-accent/70 transition-colors duration-300 group-hover:text-accent">
           Explore →
         </span>
       </div>

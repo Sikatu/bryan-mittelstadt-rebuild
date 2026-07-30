@@ -8,6 +8,8 @@ src/content/media.ts
 
 Do not add a public URL or file until Bryan approves it.
 
+Image records use `approvedAsset` from `src/content/assets.ts`; see `docs/ASSET-INTEGRATION-GUIDE.md`.
+
 ## Acting Reels
 
 Find the appropriate item in `actingReels` and change:
@@ -33,7 +35,13 @@ Other valid URLs open in a new tab instead of being embedded.
 Optional fields:
 
 ```ts
-posterImage: '/images/bryan/reels/dramatic-poster.webp',
+posterImage: approvedAsset(
+  'reel-dramatic-poster',
+  'Dramatic reel poster',
+  'Bryan Mittelstadt dramatic acting reel poster',
+  '/images/bryan/reels/dramatic-poster.webp',
+  'dark',
+),
 year: '2026',
 ```
 
@@ -96,7 +104,12 @@ Add only approved entries to `writingAndFilmmakingProjects`:
   projectType: 'Short Film',
   logline: 'Approved public logline.',
   status: 'Completed',
-  image: '/images/bryan/writing/project.webp',
+  image: approvedAsset(
+    'writing-approved-project',
+    'Approved Project Title',
+    'Approved artwork for Approved Project Title',
+    '/images/bryan/projects/approved-project.webp',
+  ),
   link: 'https://approved-public-link.example',
   availability: 'available',
   verificationId: 'media.writing-projects',

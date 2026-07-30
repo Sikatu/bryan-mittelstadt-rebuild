@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import Container from './Container';
 import EditorialButton from './EditorialButton';
+import EditorialImage from './EditorialImage';
 import { siteAssets } from '@/content/assets';
 import { hasAvailableActingReel } from '@/content/media';
 import { siteConfig } from '@/content/site';
@@ -9,43 +9,40 @@ export default function HeroSection() {
   return (
     <section
       aria-label="Introduction"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative flex min-h-screen items-center justify-center overflow-hidden"
     >
-      {/* Background Image */}
       <div className="absolute inset-0">
-        <Image
-          src={siteAssets.heroImage}
-          alt=""
-          fill
-          priority
-          className="object-cover"
+        <EditorialImage
+          asset={siteAssets.heroImage}
           sizes="100vw"
+          priority
+          decorative
+          imageClassName="scale-[1.01]"
+          fallbackLabel="Primary photography pending"
         />
-        {/* Gradient overlays for text readability and transition to light theme */}
-        <div className="absolute inset-0 bg-gradient-to-b from-contrast-dark/80 via-contrast-dark/30 to-bg-primary" />
-        <div className="absolute inset-0 bg-gradient-to-r from-contrast-dark/50 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-contrast-dark/80 via-contrast-dark/35 to-bg-primary" />
+        <div className="absolute inset-0 bg-gradient-to-r from-contrast-dark/60 via-contrast-dark/20 to-transparent" />
       </div>
 
-      {/* Content */}
       <Container className="relative z-10 pt-20">
         <div className="max-w-3xl">
-          <h1 className="heading-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-contrast-light mb-5">
+          <p className="mb-5 text-[10px] font-medium uppercase tracking-[0.28em] text-contrast-light/65">
+            Official Portfolio
+          </p>
+          <h1 className="heading-display mb-5 text-4xl text-contrast-light sm:text-5xl md:text-6xl lg:text-7xl">
             {siteConfig.name}
           </h1>
 
-          <p className="text-base sm:text-lg text-contrast-light/90 tracking-wider font-sans mb-3">
+          <p className="mb-3 font-sans text-base tracking-wider text-contrast-light/90 sm:text-lg">
             {siteConfig.titles.join(' \u2022 ')}
           </p>
 
-          <p className="text-sm text-contrast-light/70 tracking-widest uppercase font-sans mb-10">
+          <p className="mb-10 font-sans text-sm uppercase tracking-widest text-contrast-light/70">
             {siteConfig.location}
           </p>
 
-          <div className="flex flex-wrap gap-4 items-center">
-            <EditorialButton
-              href="/#reel"
-              variant="primary"
-            >
+          <div className="flex flex-wrap items-center gap-4">
+            <EditorialButton href="/#reel" variant="primary">
               {hasAvailableActingReel ? 'Watch Acting Reel' : 'Explore Acting Reels'}
             </EditorialButton>
 
@@ -63,8 +60,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Scroll Cue */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 motion-safe:animate-bounce">
+        <div className="absolute bottom-8 left-1/2 flex -translate-x-1/2 flex-col items-center gap-2 motion-safe:animate-bounce">
           <span className="text-[10px] uppercase tracking-[0.25em] text-text-muted">
             Explore
           </span>
@@ -74,7 +70,7 @@ export default function HeroSection() {
             viewBox="0 0 24 24"
             strokeWidth={1}
             stroke="currentColor"
-            className="w-5 h-5 text-text-muted"
+            className="h-5 w-5 text-text-muted"
             aria-hidden="true"
           >
             <path

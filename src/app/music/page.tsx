@@ -1,7 +1,7 @@
-import Image from 'next/image';
 import AudioReelPlayer from '@/components/AudioReelPlayer';
 import Container from '@/components/Container';
 import EditorialButton from '@/components/EditorialButton';
+import EditorialImage from '@/components/EditorialImage';
 import SectionHeading from '@/components/SectionHeading';
 import { musicLinks, musicSamples } from '@/content/media';
 import { featuredProjects } from '@/content/projects';
@@ -25,12 +25,10 @@ export default function MusicPage() {
         <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-2 lg:gap-20">
           <div className="relative mx-auto aspect-square w-full max-w-md bg-bg-light shadow-2xl shadow-contrast-dark/5 lg:max-w-none">
             {albumProject?.image && (
-              <Image
-                src={albumProject.image}
-                alt="Darling album artwork placeholder"
-                fill
-                className="object-cover"
+              <EditorialImage
+                asset={albumProject.image}
                 sizes="(max-width: 1024px) 100vw, 50vw"
+                fallbackLabel="Album artwork pending"
               />
             )}
             <div className="absolute inset-0 border border-border-subtle/30" />

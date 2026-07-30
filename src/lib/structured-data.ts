@@ -9,6 +9,10 @@ import { resolveVideoUrl } from '@/lib/media';
 
 /** Person JSON-LD for Bryan Mittelstadt. */
 export function getPersonJsonLd() {
+  const image = siteConfig.seo.ogImage
+    ? new URL(siteConfig.seo.ogImage, siteConfig.seo.siteUrl).toString()
+    : undefined;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'Person',
@@ -21,7 +25,7 @@ export function getPersonJsonLd() {
       addressRegion: 'CA',
       addressCountry: 'US',
     },
-    ...(siteConfig.seo.ogImage && { image: siteConfig.seo.ogImage }),
+    ...(image && { image }),
     description: siteConfig.seo.siteDescription,
     knowsAbout: [
       'Acting',
@@ -68,6 +72,11 @@ export function getReelVideoJsonLd() {
       `Acting reel for ${siteConfig.name}, featuring selected performance work.`,
     contentUrl: resolved.watchUrl,
     embedUrl: resolved.embedUrl,
-    ...(reel.posterImage && { thumbnailUrl: reel.posterImage }),
+    ...(reel.posterImage?.src && {
+      thumbnailUrl: new URL(
+        reel.posterImage.src,
+        siteConfig.seo.siteUrl,
+      ).toString(),
+    }),
   };
 }

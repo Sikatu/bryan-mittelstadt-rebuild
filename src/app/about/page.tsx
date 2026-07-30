@@ -1,6 +1,6 @@
-import Image from 'next/image';
 import Container from '@/components/Container';
 import EditorialButton from '@/components/EditorialButton';
+import EditorialImage from '@/components/EditorialImage';
 import SectionHeading from '@/components/SectionHeading';
 import { siteAssets } from '@/content/assets';
 import { getVerifiedCredentials } from '@/content/credentials';
@@ -26,12 +26,10 @@ export default function AboutPage() {
           <aside className="order-2 lg:order-1 lg:col-span-5" aria-label="Portrait and casting details">
             <div className="sticky top-28">
               <div className="relative mb-8 aspect-[3/4] w-full overflow-hidden bg-bg-light">
-                <Image
-                  src={siteAssets.portraitImage}
-                  alt={`Portrait of ${siteConfig.name}`}
-                  fill
-                  className="object-cover"
+                <EditorialImage
+                  asset={siteAssets.portraitImage}
                   sizes="(max-width: 1024px) 100vw, 40vw"
+                  fallbackLabel="Portrait photography pending"
                 />
               </div>
 
