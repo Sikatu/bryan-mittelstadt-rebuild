@@ -68,7 +68,7 @@ export default function AboutPage() {
             </div>
           </aside>
 
-          <main className="order-1 lg:order-2 lg:col-span-7">
+          <div className="order-1 lg:order-2 lg:col-span-7">
             <SectionHeading as="h1" eyebrow="Biography">
               About Bryan
             </SectionHeading>
@@ -111,7 +111,7 @@ export default function AboutPage() {
                 Get in Touch
               </EditorialButton>
             </div>
-          </main>
+          </div>
         </div>
       </Container>
     </div>

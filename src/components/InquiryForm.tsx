@@ -163,6 +163,7 @@ export default function InquiryForm({ recipientEmail, config }: InquiryFormProps
           required
           value={fields.category}
           onChange={(event) => updateField('category', event.target.value)}
+          aria-describedby="category-description"
           className="min-h-12 w-full rounded-sm border border-border-subtle bg-bg-primary px-4 py-3 text-base text-text-primary"
         >
           {config.categories.map((category) => (
@@ -172,7 +173,7 @@ export default function InquiryForm({ recipientEmail, config }: InquiryFormProps
           ))}
         </select>
         {selectedCategory.description && (
-          <p className="mt-2 text-sm text-text-muted">{selectedCategory.description}</p>
+          <p id="category-description" className="mt-2 text-sm text-text-muted">{selectedCategory.description}</p>
         )}
       </div>
 
@@ -202,10 +203,11 @@ export default function InquiryForm({ recipientEmail, config }: InquiryFormProps
           minLength={config.minimumMessageLength}
           rows={7}
           value={fields.message}
+          aria-describedby="message-requirements"
           onChange={(event) => updateField('message', event.target.value)}
           className="w-full resize-y rounded-sm border border-border-subtle bg-bg-primary px-4 py-3 text-base leading-relaxed text-text-primary"
         />
-        <p className="mt-2 text-sm text-text-muted">
+        <p id="message-requirements" className="mt-2 text-sm text-text-muted">
           Minimum {config.minimumMessageLength} characters. Include relevant dates, production details, and the best way to follow up.
         </p>
       </div>

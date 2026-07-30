@@ -16,6 +16,7 @@ import { getReelVideoJsonLd } from '@/lib/structured-data';
 export const metadata = createPageMetadata({
   title: siteConfig.seo.siteTitle,
   description: siteConfig.seo.siteDescription,
+  absoluteTitle: true,
 });
 
 export default function Home() {
@@ -99,7 +100,7 @@ export default function Home() {
       <section aria-label="About Bryan" className="py-20 lg:py-28 border-t border-border-subtle">
         <Container narrow>
           <div className="text-center">
-            <SectionHeading eyebrow="About" align="center" as="h3">
+            <SectionHeading eyebrow="About" align="center" as="h2">
               Bryan Mittelstadt
             </SectionHeading>
             <div className="mt-8 text-text-secondary leading-relaxed space-y-6">

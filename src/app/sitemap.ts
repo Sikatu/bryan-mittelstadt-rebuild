@@ -3,6 +3,7 @@ import { siteConfig } from '@/content/site';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = siteConfig.seo.siteUrl;
+  const lastModified = new Date(`${siteConfig.seo.lastUpdated}T00:00:00.000Z`);
   
   // Base routes to include in the sitemap
   const routes = [
@@ -19,7 +20,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return routes.map((route) => ({
     url: `${baseUrl}${route}`,
-    lastModified: new Date(),
+    lastModified,
     changeFrequency: 'monthly',
     priority: route === '' ? 1 : 0.8,
   }));

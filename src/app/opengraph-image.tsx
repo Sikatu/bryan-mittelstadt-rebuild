@@ -56,7 +56,7 @@ export default function OpenGraphImage() {
           }}
         />
 
-        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', zIndex: 2 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
           <div
             style={{
               display: 'flex',

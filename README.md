@@ -21,12 +21,15 @@ npm run audit:content
 npm run audit:media
 npm run audit:workflows
 npm run audit:assets
+npm run audit:dependencies
+npm run audit:quality
 npm run check
 npm run build
-npm run validate
+npm run qa:smoke
+npm run qa
 ```
 
-`npm run check` runs lint, strict TypeScript validation, the readiness audit, the Phase 2 source/approval audit, the Phase 3 media architecture audit, the Phase 4 portfolio workflow audit, and the Phase 5 asset-system audit. `npm run validate` also creates a production build.
+`npm run check` runs lint, strict TypeScript validation, all Phase 1–6 source audits, dependency-integrity checks, and quality hardening checks. `npm run qa` also creates a production build and starts the production server for live route, metadata, security-header, social-image, sitemap, robots, and 404 smoke testing.
 
 ## Documentation
 
@@ -43,6 +46,9 @@ npm run validate
 - `docs/PHASE-3-CHANGELOG.md` — delivered media architecture and remaining client dependencies.
 - `docs/PHASE-4-CHANGELOG.md` — delivered portfolio workflows and remaining production dependencies.
 - `docs/PHASE-5-CHANGELOG.md` — delivered asset architecture and remaining client media dependencies.
+- `docs/PHASE-6-CHANGELOG.md` — delivered quality, SEO, accessibility, and security hardening.
+- `docs/QUALITY-ASSURANCE-GUIDE.md` — automated and manual production QA matrix.
+- `docs/SECURITY-DEPENDENCY-REVIEW.md` — security headers, dependency policy, and controlled-upgrade procedure.
 - `src/content/content-verification.json` — machine-readable source and approval ledger.
 
 ## Architecture
@@ -58,3 +64,8 @@ npm run validate
 ## Content Integrity Rule
 
 Do not invent credits, links, representation details, media, or availability. Use typed pending values, `EditorialImage`, and the `ContentPending` pattern until Bryan provides or approves the material.
+
+
+## Dependency Safety
+
+Use exact, reviewed dependency updates. Never run `npm audit fix --force`; the dependency-integrity audit intentionally rejects accidental framework downgrades and lockfile drift.

@@ -10,11 +10,16 @@
     "typecheck": "tsc --noEmit",
     "audit:readiness": "node scripts/audit-readiness.mjs",
     "audit:content": "node scripts/audit-content-verification.mjs",
-    "check": "npm run lint && npm run typecheck && npm run audit:readiness && npm run audit:content && npm run audit:media && npm run audit:workflows && npm run audit:assets",
-    "validate": "npm run check && npm run build",
+    "check": "npm run lint && npm run typecheck && npm run audit:readiness && npm run audit:content && npm run audit:media && npm run audit:workflows && npm run audit:assets && npm run audit:dependencies && npm run audit:quality",
+    "validate": "npm run qa",
     "audit:media": "node scripts/audit-media-readiness.mjs",
     "audit:workflows": "node scripts/audit-portfolio-workflows.mjs",
-    "audit:assets": "node scripts/audit-asset-readiness.mjs"
+    "audit:assets": "node scripts/audit-asset-readiness.mjs",
+    "audit:dependencies": "node scripts/audit-dependency-integrity.mjs",
+    "audit:quality": "node scripts/audit-quality-readiness.mjs",
+    "audit:security": "npm audit --omit=dev",
+    "qa:smoke": "node scripts/smoke-production.mjs",
+    "qa": "npm run check && npm run build && npm run qa:smoke"
   },
   "dependencies": {
     "next": "16.2.11",
@@ -30,5 +35,8 @@
     "eslint-config-next": "16.2.11",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20.9.0"
   }
 }

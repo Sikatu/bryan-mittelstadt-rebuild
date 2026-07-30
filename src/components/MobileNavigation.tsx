@@ -73,6 +73,7 @@ export default function MobileNavigation({
       role="dialog"
       aria-modal="true"
       aria-label="Navigation menu"
+      aria-hidden={!isOpen}
       className={`fixed inset-0 z-[60] lg:hidden transition-all duration-500 ${
         isOpen
           ? 'visible opacity-100'

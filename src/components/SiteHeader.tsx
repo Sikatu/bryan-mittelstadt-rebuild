@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useRef, useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { mainNavItems, utilityActions } from '@/content/navigation';
@@ -10,6 +10,7 @@ import MobileNavigation from './MobileNavigation';
 
 export default function SiteHeader() {
   const [scrolled, setScrolled] = useState(false);
+  const mobileMenuButtonRef = useRef<HTMLButtonElement>(null);
   const pathname = usePathname();
   const [mobileMenuState, setMobileMenuState] = useState({
     open: false,
@@ -27,8 +28,10 @@ export default function SiteHeader() {
 
   const openMobileMenu = () =>
     setMobileMenuState({ open: true, pathname });
-  const closeMobileMenu = () =>
+  const closeMobileMenu = () => {
     setMobileMenuState({ open: false, pathname });
+    window.requestAnimationFrame(() => mobileMenuButtonRef.current?.focus());
+  };
 
   const isHome = pathname === '/';
   const useLightText = isHome && !scrolled;
@@ -105,6 +108,7 @@ export default function SiteHeader() {
 
             {/* Mobile Menu Button */}
             <button
+              ref={mobileMenuButtonRef}
               type="button"
               className={`lg:hidden p-2 transition-colors ${
                 useLightText ? 'text-contrast-light/80 hover:text-contrast-light' : 'text-text-secondary hover:text-text-primary'

@@ -12,6 +12,7 @@ interface PageMetadataOptions {
   path?: string;
   ogImage?: string;
   noIndex?: boolean;
+  absoluteTitle?: boolean;
 }
 
 export function createPageMetadata({
@@ -20,13 +21,14 @@ export function createPageMetadata({
   path = '',
   ogImage,
   noIndex = false,
+  absoluteTitle = false,
 }: PageMetadataOptions): Metadata {
   const { seo } = siteConfig;
   const url = `${seo.siteUrl}${path}`;
   const image = ogImage ?? seo.ogImage;
 
   return {
-    title,
+    title: absoluteTitle ? { absolute: title } : title,
     description,
     ...(noIndex && { robots: { index: false, follow: false } }),
     alternates: {

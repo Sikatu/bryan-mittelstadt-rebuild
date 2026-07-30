@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Playfair_Display, Inter } from 'next/font/google';
 import SkipLink from '@/components/SkipLink';
 import SiteHeader from '@/components/SiteHeader';
@@ -20,6 +20,12 @@ const inter = Inter({
   display: 'swap',
   weight: ['300', '400', '500', '600', '700'],
 });
+
+
+export const viewport: Viewport = {
+  colorScheme: 'light',
+  themeColor: '#f8f7f3',
+};
 
 export const metadata: Metadata = {
   title: {
@@ -56,7 +62,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-bg-primary text-text-primary font-sans">
         <SkipLink />
         <SiteHeader />
-        <main id="main-content" className="flex-1">
+        <main id="main-content" tabIndex={-1} className="flex-1 outline-none">
           {children}
         </main>
         <SiteFooter />

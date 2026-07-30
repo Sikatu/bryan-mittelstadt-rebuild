@@ -267,6 +267,7 @@ export interface SiteConfig {
     siteDescription: string;
     siteUrl: string;
     ogImage?: string;
+    lastUpdated: string;
   };
   physical?: {
     height: string;

@@ -6,14 +6,15 @@ Last updated: July 29, 2026
 
 The rebuild has a complete Next.js architecture and all planned routes. The remaining work is concentrated in verified content, real media, functional integrations, final interaction design, and launch QA.
 
-**Estimated readiness after Phase 3 technical completion:**
+**Estimated readiness after Phase 6 technical hardening:**
 
 - Architecture and route coverage: 100%
 - Code-quality foundation: 100%
-- Core page implementation: approximately 76%
+- Core page implementation: approximately 90%
 - Verified content architecture: 100%
 - Client-approved content and real media: approximately 25%
-- Launch readiness: approximately 70%
+- Technical launch readiness: approximately 90%
+- Full launch readiness with client-approved content and media: approximately 60%
 
 ## Phase 1 — Stabilization and Interaction Integrity
 
@@ -187,23 +188,31 @@ The technical asset gate is complete. The client-content gate closes when every 
 
 ## Phase 6 — SEO, Accessibility, Performance, and Browser QA
 
-**Status: Not started**
+**Status: Technical hardening and automated QA completed; manual browser and Lighthouse review remain open**
 
-### Tasks
+### Delivered
 
-- Add the final 1200 × 630 Open Graph image.
-- Validate page metadata, canonicals, sitemap, robots directives, and JSON-LD.
-- Add project-specific metadata where useful.
-- Run automated and manual accessibility testing.
-- Verify heading hierarchy, landmark structure, labels, contrast, focus order, reduced motion, and screen-reader output.
-- Run Lighthouse on mobile and desktop.
-- Optimize JavaScript, images, fonts, and loading behavior.
-- Test Chrome, Edge, Firefox, Safari, iOS, Android, tablets, and common desktop widths.
-- Verify every route, link, download, email action, embedded player, and form state.
+- ✅ Removed unsupported Open Graph `z-index` styling.
+- ✅ Corrected homepage title composition and added a web manifest.
+- ✅ Added stable sitemap modification dates and a noindex custom 404.
+- ✅ Added production security headers and removed framework disclosure.
+- ✅ Corrected nested landmarks and heading hierarchy.
+- ✅ Improved skip-link, mobile-menu focus restoration, closed-dialog exposure, form descriptions, and forced-colors behavior.
+- ✅ Added dependency integrity protection and a Node.js runtime requirement.
+- ✅ Added source-level SEO, accessibility, and security auditing.
+- ✅ Added live production smoke testing for routes, metadata, headers, social images, sitemap, robots, and 404 behavior.
+- ✅ Added a manual responsive, keyboard, assistive-technology, browser, and Lighthouse QA matrix.
+
+### Remaining Manual QA
+
+- Run the authoritative Windows `npm run qa` gate from the installer.
+- Test current Chrome, Edge, Firefox, Safari, iOS Safari, and Android Chrome.
+- Record Lighthouse mobile and desktop results after approved production imagery and media are installed.
+- Review the clean production npm audit report without forced remediation.
 
 ### Exit Gate
 
-No critical accessibility or functional issues, no broken links, and agreed performance thresholds are met.
+The automated gate closes when Windows lint, TypeScript, all audits, production build, and production smoke testing pass. The final manual gate closes when browser, mobile, keyboard, assistive-technology, and Lighthouse checks are recorded with no launch-critical issues.
 
 ---
 
@@ -250,6 +259,6 @@ The site has a documented owner workflow and no unresolved launch-critical issue
 
 1. Collect and approve the open client content, media, photography, headshot, and résumé package.
 2. Activate approved assets through the Phase 5 registry and verify focal positions.
-3. Run SEO, accessibility, performance, and browser QA in Phase 6.
+3. Complete the remaining manual browser, device, assistive-technology, and Lighthouse checks from Phase 6.
 4. Obtain final client approval and prepare the release candidate.
 5. Deploy, validate redirects and integrations, and begin post-launch monitoring.
