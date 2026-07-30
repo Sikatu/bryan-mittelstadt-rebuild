@@ -1,7 +1,17 @@
 import { MetadataRoute } from 'next';
 import { siteConfig } from '@/content/site';
+import { isSearchIndexingAllowed } from '@/lib/deployment';
 
 export default function robots(): MetadataRoute.Robots {
+  if (!isSearchIndexingAllowed) {
+    return {
+      rules: {
+        userAgent: '*',
+        disallow: '/',
+      },
+    };
+  }
+
   return {
     rules: {
       userAgent: '*',

@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "project": "Bryan Mittelstadt Portfolio",
+  "provider": "unselected",
+  "allowedProviders": [
+    "unselected",
+    "vercel",
+    "node",
+    "other"
+  ],
+  "productionOrigin": "https://www.bryanmittelstadt.com",
+  "stagingOrigin": "",
+  "environments": {
+    "development": {
+      "indexable": false
+    },
+    "staging": {
+      "indexable": false
+    },
+    "production": {
+      "indexable": true
+    }
+  },
+  "release": {
+    "tagPrefix": "release/bryan-site-",
+    "retainReleaseCount": 5,
+    "requireCleanWorkingTree": true
+  },
+  "rollback": {
+    "strategy": "create-rollback-branch-and-redeploy",
+    "requireCleanWorkingTree": true
+  }
+}

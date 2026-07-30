@@ -1,19 +1,19 @@
 # Bryan Mittelstadt Website Rebuild — Execution Roadmap
 
-Last updated: July 29, 2026
+Last updated: July 30, 2026
 
 ## Current Position
 
 The rebuild has a complete Next.js architecture and all planned routes. The remaining work is concentrated in verified content, real media, functional integrations, final interaction design, and launch QA.
 
-**Estimated readiness after Phase 6 technical hardening:**
+**Estimated readiness after Phase 7 deployment preparation:**
 
 - Architecture and route coverage: 100%
 - Code-quality foundation: 100%
 - Core page implementation: approximately 90%
 - Verified content architecture: 100%
 - Client-approved content and real media: approximately 25%
-- Technical launch readiness: approximately 90%
+- Technical launch readiness: approximately 97%
 - Full launch readiness with client-approved content and media: approximately 60%
 
 ## Phase 1 — Stabilization and Interaction Integrity
@@ -218,24 +218,33 @@ The automated gate closes when Windows lint, TypeScript, all audits, production 
 
 ## Phase 7 — Client Review, Deployment, and Domain Cutover
 
-**Status: Not started**
+**Status: Technical deployment preparation completed; hosting selection, client approval, and public cutover remain open**
 
-### Tasks
+### Delivered
 
-- Prepare a protected review deployment.
-- Complete Bryan and team review rounds.
-- Log requested changes by severity and scope.
-- Freeze approved content and create a release candidate.
-- Configure production environment variables and integrations.
-- Back up the existing website and DNS configuration.
-- Deploy production build.
-- Configure redirects from legacy URLs.
-- Validate SSL, canonical domain, analytics, forms, downloads, and social previews.
-- Perform post-deployment smoke testing.
+- ✅ Added provider-neutral staging and production environment configuration.
+- ✅ Added canonical URL, contact endpoint, and indexing-policy controls.
+- ✅ Made staging non-indexable through metadata and robots behavior.
+- ✅ Added machine-readable and Markdown launch-blocker reports.
+- ✅ Added strict staging and production release-preparation commands.
+- ✅ Added remote deployed-site smoke testing.
+- ✅ Added safe PowerShell workflows for release preparation, remote QA, release tagging, and rollback branches.
+- ✅ Added client-review, deployment, DNS cutover, and rollback runbooks.
+- ✅ Added Phase 7 deployment architecture auditing to the validation gate.
+
+### Remaining Deployment Decisions
+
+- Select and configure the hosting provider.
+- Supply a protected staging HTTPS origin.
+- Complete Bryan's review and approval queue.
+- Install approved photography, headshots, reels, audio, résumé PDF, and integrations.
+- Prepare and verify a staging release candidate.
+- Back up the existing website and DNS records.
+- Complete production cutover and remote QA.
 
 ### Exit Gate
 
-Bryan approves the release candidate and all launch checks pass on the production domain.
+The technical gate is complete. The release gate closes when Bryan approves the exact release commit, strict production readiness reports zero blockers, and all remote production checks pass on the canonical domain.
 
 ---
 
@@ -260,5 +269,7 @@ The site has a documented owner workflow and no unresolved launch-critical issue
 1. Collect and approve the open client content, media, photography, headshot, and résumé package.
 2. Activate approved assets through the Phase 5 registry and verify focal positions.
 3. Complete the remaining manual browser, device, assistive-technology, and Lighthouse checks from Phase 6.
-4. Obtain final client approval and prepare the release candidate.
-5. Deploy, validate redirects and integrations, and begin post-launch monitoring.
+4. Select the hosting provider and configure a protected staging origin.
+5. Run the Phase 7 staging release workflow and complete client review.
+6. Obtain final client approval and prepare the production release candidate.
+7. Deploy, validate DNS, redirects, integrations, and begin post-launch monitoring.

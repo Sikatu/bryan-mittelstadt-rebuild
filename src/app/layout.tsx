@@ -4,6 +4,7 @@ import SkipLink from '@/components/SkipLink';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
 import { siteConfig } from '@/content/site';
+import { isSearchIndexingAllowed } from '@/lib/deployment';
 import { getPersonJsonLd, getWebSiteJsonLd } from '@/lib/structured-data';
 import './globals.css';
 
@@ -43,8 +44,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
   },
   robots: {
-    index: true,
-    follow: true,
+    index: isSearchIndexingAllowed,
+    follow: isSearchIndexingAllowed,
   },
 };
 

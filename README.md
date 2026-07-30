@@ -23,13 +23,26 @@ npm run audit:workflows
 npm run audit:assets
 npm run audit:dependencies
 npm run audit:quality
+npm run audit:deployment
+npm run launch:report
 npm run check
 npm run build
 npm run qa:smoke
 npm run qa
 ```
 
-`npm run check` runs lint, strict TypeScript validation, all Phase 1–6 source audits, dependency-integrity checks, and quality hardening checks. `npm run qa` also creates a production build and starts the production server for live route, metadata, security-header, social-image, sitemap, robots, and 404 smoke testing.
+`npm run check` runs lint, strict TypeScript validation, all Phase 1–7 source audits, dependency-integrity checks, quality hardening checks, and deployment architecture checks. `npm run qa` also creates a production build and starts the production server for live route, metadata, security-header, social-image, sitemap, robots, and 404 smoke testing.
+
+## Release Preparation
+
+```bash
+npm run launch:report
+npm run release:staging
+npm run release:production
+npm run qa:remote -- --environment=staging --url=https://staging.example.com
+```
+
+Release preparation validates and packages a specific commit but does not deploy to a hosting provider. Configure `deployment.config.json` and the variables documented in `.env.example`, then follow `docs/DEPLOYMENT-RUNBOOK.md`. Production preparation intentionally fails while client approvals, media, assets, or launch files remain unresolved.
 
 ## Documentation
 
@@ -49,6 +62,11 @@ npm run qa
 - `docs/PHASE-6-CHANGELOG.md` — delivered quality, SEO, accessibility, and security hardening.
 - `docs/QUALITY-ASSURANCE-GUIDE.md` — automated and manual production QA matrix.
 - `docs/SECURITY-DEPENDENCY-REVIEW.md` — security headers, dependency policy, and controlled-upgrade procedure.
+- `docs/DEPLOYMENT-RUNBOOK.md` — staging, production, release, and remote-QA workflow.
+- `docs/CLIENT-REVIEW-CHECKLIST.md` — final client approval matrix.
+- `docs/DNS-CUTOVER-CHECKLIST.md` — protected production-domain cutover steps.
+- `docs/ROLLBACK-RUNBOOK.md` — non-destructive rollback and redeployment process.
+- `docs/PHASE-7-CHANGELOG.md` — deployment-readiness implementation and remaining launch dependencies.
 - `src/content/content-verification.json` — machine-readable source and approval ledger.
 
 ## Architecture
@@ -58,7 +76,8 @@ npm run qa
 - `src/content/` — typed content configuration acting as a lightweight CMS.
 - `src/lib/` — metadata and structured-data utilities.
 - `src/types/` — shared TypeScript contracts.
-- `scripts/` — project audits and validation helpers.
+- `scripts/` — project audits, launch reports, release preparation, and smoke tests.
+- `ops/` — safe PowerShell wrappers for staging, production, remote QA, tagging, and rollback.
 - `public/` — approved static media and downloadable documents.
 
 ## Content Integrity Rule

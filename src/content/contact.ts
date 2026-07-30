@@ -1,3 +1,4 @@
+import { deploymentEnvironment } from '@/lib/deployment';
 import type { ContactFormConfig, InquiryCategory } from '@/types';
 
 export const inquiryCategories: InquiryCategory[] = [
@@ -44,7 +45,7 @@ export const inquiryCategories: InquiryCategory[] = [
  * only after the production form provider, spam policy, and delivery path are approved.
  */
 export const contactFormConfig: ContactFormConfig = {
-  endpoint: undefined,
+  endpoint: deploymentEnvironment.contactFormEndpoint,
   categories: inquiryCategories,
   minimumMessageLength: 20,
   privacyNote:

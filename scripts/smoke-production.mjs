@@ -5,6 +5,10 @@ import { fileURLToPath } from 'node:url';
 const host = '127.0.0.1';
 const port = Number(process.env.SMOKE_PORT ?? 4311);
 const baseUrl = `http://${host}:${port}`;
+const siteEnvironment = process.env.NEXT_PUBLIC_SITE_ENV ?? 'production';
+const canonicalOrigin = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://www.bryanmittelstadt.com'
+).replace(/\/$/, '');
 const nextBin = fileURLToPath(new URL('../node_modules/next/dist/bin/next', import.meta.url));
 
 const htmlRoutes = [
@@ -83,6 +87,10 @@ try {
     const descriptionCount = countMatches(html, /<meta[^>]+name="description"/gi);
     const canonicalCount = countMatches(html, /<link[^>]+rel="canonical"/gi);
     const h1Count = countMatches(html, /<h1(?:\s|>)/gi);
+    const hasNoIndex = /<meta[^>]+name="robots"[^>]+noindex/i.test(html);
+    const expectedCanonical = route === '/' ? canonicalOrigin : `${canonicalOrigin}${route}`;
+    const acceptedCanonicals =
+      route === '/' ? [expectedCanonical, `${expectedCanonical}/`] : [expectedCanonical];
 
     if (response.status !== 200) failures.push(`${route} returned ${response.status}, expected 200.`);
     if (!response.headers.get('content-type')?.includes('text/html')) failures.push(`${route} did not return HTML.`);
@@ -90,6 +98,11 @@ try {
     if (descriptionCount !== 1) failures.push(`${route} has ${descriptionCount} meta descriptions.`);
     if (canonicalCount !== 1) failures.push(`${route} has ${canonicalCount} canonical links.`);
     if (h1Count !== 1) failures.push(`${route} has ${h1Count} h1 elements.`);
+    if (!acceptedCanonicals.some((canonical) => html.includes(`href="${canonical}"`))) {
+      failures.push(`${route} canonical is not ${expectedCanonical}.`);
+    }
+    if (siteEnvironment === 'staging' && !hasNoIndex) failures.push(`${route} staging page is missing noindex.`);
+    if (siteEnvironment === 'production' && hasNoIndex) failures.push(`${route} production page unexpectedly has noindex.`);
 
     for (const [header, expectedFragment] of Object.entries(requiredHeaders)) {
       const value = response.headers.get(header) ?? '';
@@ -115,13 +128,16 @@ try {
 
   const sitemap = await (await fetch(`${baseUrl}/sitemap.xml`)).text();
   for (const route of htmlRoutes) {
-    const canonical = route === '/' ? 'https://www.bryanmittelstadt.com' : `https://www.bryanmittelstadt.com${route}`;
+    const canonical = route === '/' ? canonicalOrigin : `${canonicalOrigin}${route}`;
     if (!sitemap.includes(`<loc>${canonical}</loc>`)) failures.push(`Sitemap is missing ${canonical}.`);
   }
 
   const robots = await (await fetch(`${baseUrl}/robots.txt`)).text();
-  if (!robots.includes('Sitemap: https://www.bryanmittelstadt.com/sitemap.xml')) {
-    failures.push('robots.txt does not publish the canonical sitemap URL.');
+  if (siteEnvironment === 'staging') {
+    if (!/Disallow:\s*\//i.test(robots)) failures.push('Staging robots.txt must disallow crawling.');
+    if (/Sitemap:/i.test(robots)) failures.push('Staging robots.txt must not publish a sitemap.');
+  } else if (!robots.includes(`Sitemap: ${canonicalOrigin}/sitemap.xml`)) {
+    failures.push('Production robots.txt does not publish the canonical sitemap URL.');
   }
 } finally {
   server.kill('SIGTERM');
@@ -133,6 +149,8 @@ try {
 
 console.log('\nBryan Mittelstadt production smoke test');
 console.log('========================================');
+console.log(`Site environment: ${siteEnvironment}`);
+console.log(`Canonical origin: ${canonicalOrigin}`);
 console.log(`HTML routes tested: ${htmlRoutes.length}`);
 console.log(`Metadata/system routes tested: ${assetRoutes.length}`);
 console.log('Security headers tested: 6');
@@ -145,4 +163,4 @@ if (failures.length > 0) {
   process.exit(1);
 }
 
-console.log('\nRoutes, metadata, headers, social images, sitemap, robots, and 404 checks passed.');
+console.log('\nRoutes, metadata, indexing policy, headers, social images, sitemap, robots, and 404 checks passed.');

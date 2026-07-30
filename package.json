@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit",
     "audit:readiness": "node scripts/audit-readiness.mjs",
     "audit:content": "node scripts/audit-content-verification.mjs",
-    "check": "npm run lint && npm run typecheck && npm run audit:readiness && npm run audit:content && npm run audit:media && npm run audit:workflows && npm run audit:assets && npm run audit:dependencies && npm run audit:quality",
+    "check": "npm run lint && npm run typecheck && npm run audit:readiness && npm run audit:content && npm run audit:media && npm run audit:workflows && npm run audit:assets && npm run audit:dependencies && npm run audit:quality && npm run audit:deployment",
     "validate": "npm run qa",
     "audit:media": "node scripts/audit-media-readiness.mjs",
     "audit:workflows": "node scripts/audit-portfolio-workflows.mjs",
@@ -19,7 +19,12 @@
     "audit:quality": "node scripts/audit-quality-readiness.mjs",
     "audit:security": "npm audit --omit=dev",
     "qa:smoke": "node scripts/smoke-production.mjs",
-    "qa": "npm run check && npm run build && npm run qa:smoke"
+    "qa": "npm run check && npm run build && npm run qa:smoke",
+    "audit:deployment": "node scripts/audit-deployment-readiness.mjs",
+    "launch:report": "node scripts/report-launch-readiness.mjs",
+    "release:staging": "node scripts/prepare-release.mjs --environment=staging",
+    "release:production": "node scripts/prepare-release.mjs --environment=production",
+    "qa:remote": "node scripts/smoke-remote.mjs"
   },
   "dependencies": {
     "next": "16.2.11",
