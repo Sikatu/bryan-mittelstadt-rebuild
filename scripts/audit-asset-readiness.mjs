@@ -46,19 +46,15 @@ if (existsSync(legacyPlaceholderDirectory)) {
 const assetsPath = join(root, 'src/content/assets.ts');
 const assetsSource = existsSync(assetsPath) ? readFileSync(assetsPath, 'utf8') : '';
 const pendingSlots = Math.max(0, (assetsSource.match(/pendingAsset\(/g) ?? []).length - 1);
-const approvedSources = [
+const approvedSlots = Math.max(0, (assetsSource.match(/approvedAsset\(/g) ?? []).length - 1);
+const configuredLocalPaths = [
   ...assetsSource.matchAll(/['"](\/images\/bryan\/[^'"]+)['"]/g),
 ].map((match) => match[1]);
 
-for (const source of approvedSources) {
-  if (!source.startsWith('/images/bryan/')) {
-    errors.push(`Approved image path must live under /images/bryan/: ${source}`);
-    continue;
-  }
-
+for (const source of configuredLocalPaths) {
   const publicPath = join(root, 'public', source.replace(/^\//, ''));
   if (!existsSync(publicPath)) {
-    errors.push(`Configured approved image does not exist: ${source}`);
+    errors.push(`Configured image directory or file does not exist: ${source}`);
   }
 }
 
@@ -92,8 +88,8 @@ if (!existsSync(resumePdf)) pendingClientFiles.push('public/bryan-mittelstadt-re
 
 console.log('\nBryan Mittelstadt Phase 5 asset readiness audit');
 console.log('================================================');
-console.log(`Central image slots: ${pendingSlots + approvedSources.length}`);
-console.log(`Approved local images configured: ${approvedSources.length}`);
+console.log(`Central image slots: ${pendingSlots + approvedSlots}`);
+console.log(`Approved local images configured: ${approvedSlots}`);
 console.log(`Client image slots pending: ${pendingSlots}`);
 console.log(`Legacy placeholder references: ${legacyReferences.length}`);
 console.log('Generated Open Graph card: configured');

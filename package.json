@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit",
     "audit:readiness": "node scripts/audit-readiness.mjs",
     "audit:content": "node scripts/audit-content-verification.mjs",
-    "check": "npm run lint && npm run typecheck && npm run audit:readiness && npm run audit:content && npm run audit:media && npm run audit:workflows && npm run audit:assets && npm run audit:dependencies && npm run audit:quality && npm run audit:deployment",
+    "check": "npm run lint && npm run typecheck && npm run audit:readiness && npm run audit:content && npm run audit:media && npm run audit:workflows && npm run audit:assets && npm run audit:dependencies && npm run audit:quality && npm run audit:deployment && npm run audit:current-site-media",
     "validate": "npm run qa",
     "audit:media": "node scripts/audit-media-readiness.mjs",
     "audit:workflows": "node scripts/audit-portfolio-workflows.mjs",
@@ -24,7 +24,10 @@
     "launch:report": "node scripts/report-launch-readiness.mjs",
     "release:staging": "node scripts/prepare-release.mjs --environment=staging",
     "release:production": "node scripts/prepare-release.mjs --environment=production",
-    "qa:remote": "node scripts/smoke-remote.mjs"
+    "qa:remote": "node scripts/smoke-remote.mjs",
+    "media:recover": "node scripts/download-current-site-media.mjs",
+    "media:verify": "node scripts/download-current-site-media.mjs --verify-only",
+    "audit:current-site-media": "node scripts/audit-current-site-media.mjs"
   },
   "dependencies": {
     "next": "16.2.11",

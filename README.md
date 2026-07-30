@@ -11,6 +11,18 @@ npm run dev
 
 Open `http://localhost:3000`.
 
+## Current-Site Media Recovery
+
+Phase 8 can recover media already displayed on Bryan's current public website without deploying the rebuild:
+
+```powershell
+npm.cmd run media:recover
+powershell -ExecutionPolicy Bypass -File .\ops\Build-RecoveredHeadshotZip.ps1
+npm.cmd run media:verify
+```
+
+The source ledger is `src/content/current-site-media.json`. Recovered files remain subject to final crop, credit, and download-rights approval.
+
 ## Validation
 
 ```bash

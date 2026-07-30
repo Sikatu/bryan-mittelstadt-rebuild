@@ -5,57 +5,74 @@ import type {
   ResourceLink,
   VideoReel,
 } from '@/types';
+import { siteAssets } from './assets';
 
-/**
- * Acting reel slots requested during the content inventory.
- * Add only Bryan-approved URLs. Pending slots remain visible as honest states.
- */
+/** Public reel links recovered from Bryan's current official website and channel. */
 export const actingReels: VideoReel[] = [
   {
     id: 'dramatic',
-    title: 'Dramatic Reel',
+    title: 'Acting Reel 2026',
     category: 'Film & Television',
-    description: 'Dramatic scenes selected for casting and representation review.',
-    availability: 'pending',
+    description: 'Current public acting reel selected from Bryan’s official YouTube channel.',
+    url: 'https://www.youtube.com/watch?v=jcB9oISlmPg',
+    posterImage: siteAssets.reelPosterImage,
+    year: '2026',
+    availability: 'available',
     verificationId: 'media.acting-reel',
   },
   {
     id: 'comedic',
     title: 'Comedic Reel',
     category: 'Comedy',
-    description: 'Comedic performance material across screen and stage work.',
+    description: 'The current website lists a comedic reel, but a stable public URL was not exposed.',
     availability: 'pending',
     verificationId: 'media.acting-reel',
   },
   {
     id: 'commercial',
-    title: 'Commercial Reel',
+    title: 'Commercial Film Reel',
     category: 'Commercial',
-    description: 'Commercial performance samples approved for public use.',
-    availability: 'pending',
+    description: 'Current commercial performance reel from Bryan’s public YouTube channel.',
+    url: 'https://www.youtube.com/watch?v=BCZGDyQI-LI',
+    posterImage: siteAssets.reelPosterImage,
+    availability: 'available',
     verificationId: 'media.acting-reel',
   },
   {
     id: 'lgbtq',
-    title: 'LGBTQ+ Reel',
+    title: 'LGBTQ Reel',
     category: 'Identity-Led Work',
-    description: 'Selected identity-led performances when Bryan approves the final reel.',
-    availability: 'pending',
+    description: 'Public reel embedded on Bryan’s current Acting page.',
+    url: 'https://www.youtube.com/watch?v=bbqwvz7dBpA',
+    posterImage: siteAssets.reelPosterImage,
+    availability: 'available',
     verificationId: 'media.acting-reel',
   },
   {
     id: 'musical',
-    title: 'Vocal & Guitar Reel',
+    title: 'Vocal Reel / Guitar',
     category: 'Musical Performance',
-    description: 'Singing, guitar, and musical-performance material.',
-    availability: 'pending',
+    description: 'Public vocal and guitar performance reel from Bryan’s current website.',
+    url: 'https://www.youtube.com/watch?v=8pURXDYgnqE',
+    posterImage: siteAssets.reelPosterImage,
+    availability: 'available',
+    verificationId: 'media.acting-reel',
+  },
+  {
+    id: 'classical-voice',
+    title: 'Classical Voice',
+    category: 'Classical Voice',
+    description: 'Public classical voice performance reel from Bryan’s current website.',
+    url: 'https://www.youtube.com/watch?v=bQ4o8ZrE7a0',
+    posterImage: siteAssets.reelPosterImage,
+    availability: 'available',
     verificationId: 'media.acting-reel',
   },
   {
     id: 'stage',
     title: 'Stage Reel',
     category: 'Theatre',
-    description: 'Stage performance excerpts approved for online presentation.',
+    description: 'The current site lists sword, accent, and dance material, but no stable public URL was exposed.',
     availability: 'pending',
     verificationId: 'media.acting-reel',
   },
@@ -65,7 +82,7 @@ export const hasAvailableActingReel = actingReels.some(
   (reel) => reel.availability === 'available' && Boolean(reel.url),
 );
 
-/** Voice-over categories stay configured even before final audio is delivered. */
+/** Voice-over categories remain pending because the current Wix audio URLs were not recoverable. */
 export const voiceOverReels: AudioReel[] = [
   {
     id: 'commercial',
@@ -101,14 +118,85 @@ export const voiceOverReels: AudioReel[] = [
   },
 ];
 
-/** Add verified headshot files here after the original images are supplied. */
-export const headshots: Headshot[] = [];
+const printRoot = '/images/bryan/current-site/print';
+const featuredRoot = '/images/bryan/current-site/featured';
 
-/** Add only Bryan-approved writing, directing, and producing projects. */
+/** Selected current-site portraits. Final order and download rights still need client approval. */
+export const headshots: Headshot[] = [
+  {
+    id: 'current-headshot-01',
+    src: `${featuredRoot}/home-dsc-1685.jpeg`,
+    downloadUrl: `${featuredRoot}/home-dsc-1685.jpeg`,
+    alt: 'Bryan Mittelstadt in a dark blue shirt against a dark studio background',
+    label: 'Current Headshot 01',
+    category: 'Theatrical',
+    verificationId: 'asset.headshots',
+  },
+  {
+    id: 'current-headshot-02',
+    src: `${printRoot}/print-01-dsc-1960.jpeg`,
+    downloadUrl: `${printRoot}/print-01-dsc-1960.jpeg`,
+    alt: 'Bryan Mittelstadt smiling in an olive jacket against a warm brown background',
+    label: 'Current Headshot 02',
+    category: 'Commercial',
+    verificationId: 'asset.headshots',
+  },
+  {
+    id: 'current-headshot-03',
+    src: `${printRoot}/print-02.jpeg`,
+    downloadUrl: `${printRoot}/print-02.jpeg`,
+    alt: 'Bryan Mittelstadt professional portrait from his current print gallery',
+    label: 'Current Headshot 03',
+    category: 'Theatrical',
+    verificationId: 'asset.headshots',
+  },
+  {
+    id: 'current-headshot-04',
+    src: `${printRoot}/print-03.jpeg`,
+    downloadUrl: `${printRoot}/print-03.jpeg`,
+    alt: 'Bryan Mittelstadt professional portrait from his current print gallery',
+    label: 'Current Headshot 04',
+    category: 'Commercial',
+    verificationId: 'asset.headshots',
+  },
+  {
+    id: 'current-headshot-05',
+    src: `${printRoot}/print-04.jpeg`,
+    downloadUrl: `${printRoot}/print-04.jpeg`,
+    alt: 'Bryan Mittelstadt professional portrait from his current print gallery',
+    label: 'Current Headshot 05',
+    category: 'Theatrical',
+    verificationId: 'asset.headshots',
+  },
+  {
+    id: 'current-headshot-06',
+    src: `${printRoot}/print-05.jpeg`,
+    downloadUrl: `${printRoot}/print-05.jpeg`,
+    alt: 'Bryan Mittelstadt editorial portrait from his current print gallery',
+    label: 'Current Headshot 06',
+    category: 'Editorial',
+    verificationId: 'asset.headshots',
+  },
+  {
+    id: 'current-headshot-07',
+    src: `${printRoot}/print-06.jpeg`,
+    downloadUrl: `${printRoot}/print-06.jpeg`,
+    alt: 'Bryan Mittelstadt professional portrait from his current print gallery',
+    label: 'Current Headshot 07',
+    category: 'Theatrical',
+    verificationId: 'asset.headshots',
+  },
+  {
+    id: 'current-headshot-08',
+    src: `${printRoot}/print-07.jpeg`,
+    downloadUrl: `${printRoot}/print-07.jpeg`,
+    alt: 'Bryan Mittelstadt professional portrait from his current print gallery',
+    label: 'Current Headshot 08',
+    category: 'Commercial',
+    verificationId: 'asset.headshots',
+  },
+];
+
 export const writingAndFilmmakingProjects: CreativeProject[] = [];
-
-/** Add approved streaming, pre-save, purchase, performance, or press links. */
 export const musicLinks: ResourceLink[] = [];
-
-/** Add direct audio files or approved hosted samples for Darling. */
 export const musicSamples: AudioReel[] = [];

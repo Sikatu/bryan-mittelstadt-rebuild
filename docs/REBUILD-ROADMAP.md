@@ -273,3 +273,32 @@ The site has a documented owner workflow and no unresolved launch-critical issue
 5. Run the Phase 7 staging release workflow and complete client review.
 6. Obtain final client approval and prepare the production release candidate.
 7. Deploy, validate DNS, redirects, integrations, and begin post-launch monitoring.
+
+---
+
+## Phase 8 — Current-Site Media Recovery
+
+**Status: Recovery system completed; Windows download and client review pending**
+
+### Delivered
+
+- ✅ Mapped 39 deduplicated images currently displayed on Bryan's public Wix website.
+- ✅ Selected 17 recovered images for immediate hero, portrait, artwork, discipline, and headshot use.
+- ✅ Recovered five public acting/performance reel links.
+- ✅ Recovered public Instagram and YouTube profile URLs.
+- ✅ Added a repeatable downloader with image-format validation, retries, checksums, and atomic writes.
+- ✅ Added a repeatable casting-headshot ZIP builder.
+- ✅ Added current-site media evidence and approval tracking.
+- ✅ Added a Phase 8 media-recovery audit to the standard validation gate.
+
+### Remaining Media
+
+- Voice-over audio files or stable direct URLs.
+- Final downloadable résumé PDF.
+- Project-specific production stills not publicly displayed on the current website.
+- Photographer credits and explicit original-download permission.
+- Bryan's approval of final crops, labels, gallery order, and reel selection.
+
+### Exit Gate
+
+The technical gate closes when the Windows updater downloads and validates every selected image, builds the casting ZIP, and passes the complete production QA suite. The client-review gate closes after Bryan approves final media use and rights details.

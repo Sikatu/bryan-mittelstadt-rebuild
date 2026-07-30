@@ -1,0 +1,503 @@
+{
+  "version": 1,
+  "capturedOn": "2026-07-30",
+  "authorization": "The project owner authorized migration of media currently displayed on Bryan Mittelstadt's public website into this rebuild. Bryan or an authorized representative should still approve final crops, captions, credits, and download rights before launch.",
+  "sourceSite": "https://www.bryanmittelstadt.com/",
+  "assets": [
+    {
+      "id": "print-01",
+      "label": "Current website print gallery image 01",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_fb8d7cedf38945be8f3a108eab18e35d~mv2.jpeg",
+      "destination": "public/images/bryan/current-site/print/print-01-dsc-1960.jpeg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-02",
+      "label": "Current website print gallery image 02",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_8ad09417f34840bcbbcb515db4bdd93f~mv2.jpeg",
+      "destination": "public/images/bryan/current-site/print/print-02.jpeg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-03",
+      "label": "Current website print gallery image 03",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_8770bb00e8954553ba30f3b9d500be06~mv2.jpeg",
+      "destination": "public/images/bryan/current-site/print/print-03.jpeg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-04",
+      "label": "Current website print gallery image 04",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_d7ad4eb86ba648488d472eb13730132b~mv2.jpeg",
+      "destination": "public/images/bryan/current-site/print/print-04.jpeg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-05",
+      "label": "Current website print gallery image 05",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_e0460d96032749e09c342eb4d41cc89c~mv2.jpeg",
+      "destination": "public/images/bryan/current-site/print/print-05.jpeg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-06",
+      "label": "Current website print gallery image 06",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_5dfc422bf8bb46359d0a5593db8d9bc5~mv2.jpeg",
+      "destination": "public/images/bryan/current-site/print/print-06.jpeg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-07",
+      "label": "Current website print gallery image 07",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_22cb2f78f98b48e7a30678fd3d19a435~mv2.jpeg",
+      "destination": "public/images/bryan/current-site/print/print-07.jpeg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-08",
+      "label": "Current website print gallery image 08",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_92c8784e6dd740018d7589dc110e9acf~mv2.jpeg",
+      "destination": "public/images/bryan/current-site/print/print-08.jpeg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-09",
+      "label": "Current website print gallery image 09",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_f3379433115e47299b030992cc6480e9~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-09.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-10",
+      "label": "Current website print gallery image 10",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_313e3505d9d948d68f9073c5b1b4897f~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-10.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-11",
+      "label": "Current website print gallery image 11",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_4fcc4c48bcab4beebd7d95bc10ede671~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-11.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-12",
+      "label": "Current website print gallery image 12",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_29c19cf8cce34614b6112946dbd66595~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-12.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-13",
+      "label": "Current website print gallery image 13",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_3238706ab0034602aebf00c1026d69a2~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-13.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-14",
+      "label": "Current website print gallery image 14",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_6cc73cfc286c486b908c8ac190789710~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-14.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-15",
+      "label": "Current website print gallery image 15",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_41680643d8ad4688a4c54bce70f4c1c2~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-15.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-16",
+      "label": "Current website print gallery image 16",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_ce16040aaf0745ce8b9499adc8853f29~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-16-staircase.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-17",
+      "label": "Current website print gallery image 17",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_2cc141652fef4005b14a0857fcadcea4~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-17.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-18",
+      "label": "Current website print gallery image 18",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_f058df9397cd41f88c9076eb6a2e1f32~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-18-couch.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-19",
+      "label": "Current website print gallery image 19",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_06de74c47afa4e97a1e5d4a6857c582e~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-19.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-20",
+      "label": "Current website print gallery image 20",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_fa0f7b1474db4e208cf877e9421bda5b~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-20.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-21",
+      "label": "Current website print gallery image 21",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_6b5082e99400465bbebccafcea62c970~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-21.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-22",
+      "label": "Current website print gallery image 22",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_aedbd1ac8593463da19e5436d5ccd438~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-22.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-23",
+      "label": "Current website print gallery image 23",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_e9ccbc6bbc844dcc84fd115d567517ee~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-23.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-24",
+      "label": "Current website print gallery image 24",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_f7e9391c60e146c8a809b826b528f52d~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-24.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-25",
+      "label": "Current website print gallery image 25",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_d81c460bd8534cbfb5104554523f7faf~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-25.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-26",
+      "label": "Current website print gallery image 26",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_c7e4f5189e5f4015bb6c0cabfbb4c2c1~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-26.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-27",
+      "label": "Current website print gallery image 27",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_17416a88c7e048a2995b249e764037ea~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-27.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-28",
+      "label": "Current website print gallery image 28",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_b1bd6cf5b0634301b6a87d42f085a1ae~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-28.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-29",
+      "label": "Current website print gallery image 29",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_7a9286f8af9c4ed29d8c2a30a61bcf54~mv2_d_2301_1536_s_2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-29-landscape.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-30",
+      "label": "Current website print gallery image 30",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_d4a7202b4f024ebd81f1d1643e032259~mv2_d_1536_2301_s_2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-30-portrait.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "print-31",
+      "label": "Current website print gallery image 31",
+      "sourcePage": "https://www.bryanmittelstadt.com/portfolio-1",
+      "sourceId": "official-print-gallery",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_4f7a7be03ade43758865af3f5958c82d~mv2.jpg",
+      "destination": "public/images/bryan/current-site/print/print-31.jpg",
+      "kind": "print-gallery",
+      "selectedForPublicUse": false,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "home-dsc-1685",
+      "label": "Homepage headshot",
+      "sourcePage": "https://www.bryanmittelstadt.com/",
+      "sourceId": "official-home",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_fa302246bc124f46baa571c6e3df9916~mv2.jpeg",
+      "destination": "public/images/bryan/current-site/featured/home-dsc-1685.jpeg",
+      "kind": "featured",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "bio-lifestyle",
+      "label": "Bio lifestyle portrait",
+      "sourcePage": "https://www.bryanmittelstadt.com/bio",
+      "sourceId": "official-bio",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_de74eea6d27b458494b99ec9635fe62b~mv2.jpg",
+      "destination": "public/images/bryan/current-site/featured/bio-lifestyle.jpg",
+      "kind": "featured",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "darling-artwork",
+      "label": "Darling artwork",
+      "sourcePage": "https://www.bryanmittelstadt.com/coming-soon-02",
+      "sourceId": "official-music-page",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_7b17f89a2e18453eabd0b3b7405f077e~mv2.jpg",
+      "destination": "public/images/bryan/current-site/featured/darling-artwork.jpg",
+      "kind": "featured",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "resume-image",
+      "label": "R\u00e9sum\u00e9 page image",
+      "sourcePage": "https://www.bryanmittelstadt.com/resume",
+      "sourceId": "official-resume",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_8e888aa678ef4702ba822a64013c2a08~mv2.png",
+      "destination": "public/images/bryan/current-site/featured/resume-image.png",
+      "kind": "featured",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "contact-portrait",
+      "label": "Contact portrait",
+      "sourcePage": "https://www.bryanmittelstadt.com/contact",
+      "sourceId": "official-contact",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_76840bacff70433b9d7d7436d27273a2~mv2.jpg",
+      "destination": "public/images/bryan/current-site/featured/contact-portrait.jpg",
+      "kind": "featured",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "acting-reel-poster",
+      "label": "Cinematic acting still",
+      "sourcePage": "https://www.bryanmittelstadt.com/",
+      "sourceId": "official-home",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_942ad178f0cf49c4a8b41b9fc77b6a0d~mv2.jpg",
+      "destination": "public/images/bryan/current-site/featured/acting-reel-poster.jpg",
+      "kind": "featured",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "hero-primary",
+      "label": "Warm cinematic hero still",
+      "sourcePage": "https://www.bryanmittelstadt.com/",
+      "sourceId": "official-home",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_453c16e3acce4d17895f9de342d29f10~mv2.jpg",
+      "destination": "public/images/bryan/current-site/featured/hero-primary.jpg",
+      "kind": "featured",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    },
+    {
+      "id": "discipline-acting",
+      "label": "Acting production still",
+      "sourcePage": "https://www.bryanmittelstadt.com/",
+      "sourceId": "official-home",
+      "sourceUrl": "https://static.wixstatic.com/media/be0af6_bea83a5c43334596ba887b619cdd8c57~mv2.png",
+      "destination": "public/images/bryan/current-site/featured/discipline-acting.png",
+      "kind": "featured",
+      "selectedForPublicUse": true,
+      "rightsStatus": "publicly-displayed-client-review-required"
+    }
+  ],
+  "actingReels": [
+    {
+      "id": "dramatic",
+      "title": "Acting Reel 2026",
+      "category": "Film & Television",
+      "url": "https://www.youtube.com/watch?v=jcB9oISlmPg",
+      "source": "Bryan Mittelstadt public YouTube channel",
+      "availability": "available"
+    },
+    {
+      "id": "comedic",
+      "title": "Comedic Reel",
+      "category": "Comedy",
+      "availability": "pending",
+      "note": "A public URL was not exposed reliably by the current website."
+    },
+    {
+      "id": "commercial",
+      "title": "Commercial Film Reel",
+      "category": "Commercial",
+      "url": "https://www.youtube.com/watch?v=BCZGDyQI-LI",
+      "source": "Bryan Mittelstadt public YouTube channel",
+      "availability": "available"
+    },
+    {
+      "id": "lgbtq",
+      "title": "LGBTQ Reel",
+      "category": "Identity-Led Work",
+      "url": "https://www.youtube.com/watch?v=bbqwvz7dBpA",
+      "source": "Embedded on Bryan Mittelstadt's current Acting page",
+      "availability": "available"
+    },
+    {
+      "id": "musical",
+      "title": "Vocal Reel / Guitar",
+      "category": "Musical Performance",
+      "url": "https://www.youtube.com/watch?v=8pURXDYgnqE",
+      "source": "Embedded on Bryan Mittelstadt's current Acting page",
+      "availability": "available"
+    },
+    {
+      "id": "classical-voice",
+      "title": "Classical Voice",
+      "category": "Classical Voice",
+      "url": "https://www.youtube.com/watch?v=bQ4o8ZrE7a0",
+      "source": "Embedded on Bryan Mittelstadt's current Acting page",
+      "availability": "available"
+    },
+    {
+      "id": "stage",
+      "title": "Stage Reel",
+      "category": "Theatre",
+      "availability": "pending",
+      "note": "The current site lists the category but no public URL was exposed."
+    }
+  ],
+  "social": {
+    "instagram": "https://www.instagram.com/bryanpatrickm/",
+    "youtube": "https://www.youtube.com/channel/UCuxBCsAa0XQcO8rOk2Zjqjg"
+  },
+  "unrecovered": [
+    "Voice-over audio files or direct audio URLs",
+    "Final downloadable r\u00e9sum\u00e9 PDF",
+    "Project-specific production stills not displayed publicly",
+    "Photographer credits and explicit original-download permissions"
+  ]
+}

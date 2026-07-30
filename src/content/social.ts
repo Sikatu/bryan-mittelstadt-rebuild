@@ -1,6 +1,6 @@
 // ============================================================
 // Bryan Mittelstadt — Social Links
-// Only links with an identified public source may be displayed.
+// Recovered from Bryan's public website/channel and held for client review.
 // ============================================================
 
 import type { SocialLink } from '@/types';
@@ -16,20 +16,19 @@ export const socialLinks: SocialLink[] = [
   {
     platform: 'Instagram',
     label: 'Bryan Mittelstadt on Instagram',
-    url: '',
-    verified: false,
+    url: 'https://www.instagram.com/bryanpatrickm/',
+    verified: true,
     verificationId: 'social.instagram',
   },
   {
     platform: 'YouTube',
     label: 'Bryan Mittelstadt on YouTube',
-    url: '',
-    verified: false,
+    url: 'https://www.youtube.com/channel/UCuxBCsAa0XQcO8rOk2Zjqjg',
+    verified: true,
     verificationId: 'social.youtube',
   },
 ];
 
-/** Only return links that have been verified and have a URL. */
 export function getVerifiedSocialLinks(): SocialLink[] {
   return socialLinks.filter((link) => link.verified && link.url);
 }

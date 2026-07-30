@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedOn": "2026-07-29",
+  "updatedOn": "2026-07-30",
   "statusDefinitions": {
     "verified-primary": "Supported by an authoritative or first-party primary source.",
     "confirmed-public": "Published on Bryan's official website or another identified public profile.",
@@ -12,21 +12,21 @@
   "sources": [
     {
       "id": "official-home",
-      "label": "Bryan Mittelstadt official website — Home",
+      "label": "Bryan Mittelstadt official website \u2014 Home",
       "kind": "first-party-public",
       "url": "https://www.bryanmittelstadt.com/",
       "accessedOn": "2026-07-29"
     },
     {
       "id": "official-bio",
-      "label": "Bryan Mittelstadt official website — Bio",
+      "label": "Bryan Mittelstadt official website \u2014 Bio",
       "kind": "first-party-public",
       "url": "https://www.bryanmittelstadt.com/bio",
       "accessedOn": "2026-07-29"
     },
     {
       "id": "official-contact",
-      "label": "Bryan Mittelstadt official website — Contact",
+      "label": "Bryan Mittelstadt official website \u2014 Contact",
       "kind": "first-party-public",
       "url": "https://www.bryanmittelstadt.com/contact",
       "accessedOn": "2026-07-29"
@@ -40,7 +40,7 @@
     },
     {
       "id": "durango-2026-awards",
-      "label": "Durango Independent Film Festival — 2026 Jury Award Winners",
+      "label": "Durango Independent Film Festival \u2014 2026 Jury Award Winners",
       "kind": "authoritative-award-source",
       "url": "https://www.durangofilm.org/2026-awards",
       "accessedOn": "2026-07-29"
@@ -54,7 +54,7 @@
     },
     {
       "id": "quiet-after-supper-production",
-      "label": "Nectar Inc. — Quiet After Supper production listing",
+      "label": "Nectar Inc. \u2014 Quiet After Supper production listing",
       "kind": "production-source",
       "url": "https://www.nectarinc.com/portfolio/quiet-after-supper-feature-film/",
       "accessedOn": "2026-07-29"
@@ -78,6 +78,48 @@
       "kind": "project-artifact",
       "path": "src/app/opengraph-image.tsx",
       "capturedOn": "2026-07-29"
+    },
+    {
+      "id": "official-print-gallery",
+      "label": "Bryan Mittelstadt official website \u2014 Print gallery",
+      "kind": "first-party-public",
+      "url": "https://www.bryanmittelstadt.com/portfolio-1",
+      "accessedOn": "2026-07-30"
+    },
+    {
+      "id": "official-acting-media",
+      "label": "Bryan Mittelstadt official website \u2014 Acting media",
+      "kind": "first-party-public",
+      "url": "https://www.bryanmittelstadt.com/media",
+      "accessedOn": "2026-07-30"
+    },
+    {
+      "id": "official-music-page",
+      "label": "Bryan Mittelstadt official website \u2014 Music",
+      "kind": "first-party-public",
+      "url": "https://www.bryanmittelstadt.com/coming-soon-02",
+      "accessedOn": "2026-07-30"
+    },
+    {
+      "id": "official-resume",
+      "label": "Bryan Mittelstadt official website \u2014 Resume",
+      "kind": "first-party-public",
+      "url": "https://www.bryanmittelstadt.com/resume",
+      "accessedOn": "2026-07-30"
+    },
+    {
+      "id": "official-youtube-channel",
+      "label": "Bryan Mittelstadt public YouTube channel",
+      "kind": "first-party-public",
+      "url": "https://www.youtube.com/channel/UCuxBCsAa0XQcO8rOk2Zjqjg",
+      "accessedOn": "2026-07-30"
+    },
+    {
+      "id": "current-site-media-manifest",
+      "label": "Phase 8 current-site media recovery manifest",
+      "kind": "project-artifact",
+      "path": "src/content/current-site-media.json",
+      "capturedOn": "2026-07-30"
     }
   ],
   "records": [
@@ -125,23 +167,24 @@
       "id": "social.instagram",
       "area": "Social profiles",
       "label": "Instagram profile URL",
-      "status": "pending",
-      "publication": "withheld",
+      "status": "client-review-required",
+      "publication": "published",
       "sourceIds": [
-        "client-approval"
+        "official-home"
       ],
-      "ownerAction": "Provide and approve the canonical Instagram profile URL."
+      "ownerAction": "Approve the recovered public Instagram profile URL."
     },
     {
       "id": "social.youtube",
       "area": "Social profiles",
       "label": "YouTube channel URL",
-      "status": "pending",
-      "publication": "withheld",
+      "status": "client-review-required",
+      "publication": "published",
       "sourceIds": [
-        "client-approval"
+        "official-acting-media",
+        "official-youtube-channel"
       ],
-      "ownerAction": "Provide and approve the canonical YouTube channel URL."
+      "ownerAction": "Approve the recovered public YouTube channel and displayed reel selection."
     },
     {
       "id": "bio.short",
@@ -191,7 +234,7 @@
     },
     {
       "id": "unions.affiliations",
-      "area": "Résumé",
+      "area": "R\u00e9sum\u00e9",
       "label": "SAG-AFTRA and Actors' Equity affiliations",
       "status": "client-review-required",
       "publication": "published",
@@ -203,7 +246,7 @@
     {
       "id": "representation.commercial",
       "area": "Representation",
-      "label": "CESD Talent Agency — Commercial",
+      "label": "CESD Talent Agency \u2014 Commercial",
       "status": "confirmed-public",
       "publication": "published",
       "sourceIds": [
@@ -213,7 +256,7 @@
     {
       "id": "representation.voiceover",
       "area": "Representation",
-      "label": "Eris Talent Agency — Voice-Over",
+      "label": "Eris Talent Agency \u2014 Voice-Over",
       "status": "confirmed-public",
       "publication": "published",
       "sourceIds": [
@@ -273,10 +316,12 @@
       "status": "client-review-required",
       "publication": "published",
       "sourceIds": [
+        "current-site-media-manifest",
         "legacy-content-inventory",
-        "official-bio"
+        "official-bio",
+        "official-music-page"
       ],
-      "ownerAction": "Confirm album title, release year/date, artwork, description, and release links."
+      "ownerAction": "Approve the recovered Darling artwork and confirm the album title, release date, description, and release links."
     },
     {
       "id": "project.julius",
@@ -359,18 +404,18 @@
     },
     {
       "id": "resume.selected-credits",
-      "area": "Résumé",
+      "area": "R\u00e9sum\u00e9",
       "label": "Selected film, television, and theatre credits",
       "status": "client-review-required",
       "publication": "published",
       "sourceIds": [
         "legacy-content-inventory"
       ],
-      "ownerAction": "Reconcile every item against the final approved résumé PDF."
+      "ownerAction": "Reconcile every item against the final approved r\u00e9sum\u00e9 PDF."
     },
     {
       "id": "resume.training",
-      "area": "Résumé",
+      "area": "R\u00e9sum\u00e9",
       "label": "Training and education",
       "status": "client-review-required",
       "publication": "published",
@@ -381,7 +426,7 @@
     },
     {
       "id": "resume.skills",
-      "area": "Résumé",
+      "area": "R\u00e9sum\u00e9",
       "label": "Special skills",
       "status": "client-review-required",
       "publication": "published",
@@ -394,12 +439,14 @@
       "id": "media.acting-reel",
       "area": "Acting media",
       "label": "Primary acting reel URL",
-      "status": "pending",
-      "publication": "withheld",
+      "status": "client-review-required",
+      "publication": "published",
       "sourceIds": [
-        "client-approval"
+        "official-acting-media",
+        "official-youtube-channel",
+        "current-site-media-manifest"
       ],
-      "ownerAction": "Provide the approved YouTube or Vimeo URL."
+      "ownerAction": "Approve the five recovered public reels and provide or omit the comedic and stage categories."
     },
     {
       "id": "media.voiceover-reels",
@@ -427,28 +474,34 @@
       "id": "asset.hero-and-portfolio-images",
       "area": "Images",
       "label": "Hero, portrait, project, discipline, and album imagery",
-      "status": "pending",
-      "publication": "withheld",
+      "status": "client-review-required",
+      "publication": "published",
       "sourceIds": [
-        "client-approval"
+        "official-home",
+        "official-bio",
+        "official-print-gallery",
+        "official-music-page",
+        "current-site-media-manifest"
       ],
-      "ownerAction": "Supply approved high-resolution images, usage confirmation, crop preferences, and focal positions."
+      "ownerAction": "Approve the recovered current-site images, final crops, credits, and any project-specific replacements."
     },
     {
       "id": "asset.headshots",
       "area": "Headshots",
       "label": "Approved theatrical and commercial headshots",
-      "status": "pending",
-      "publication": "withheld",
+      "status": "client-review-required",
+      "publication": "published",
       "sourceIds": [
-        "client-approval"
+        "official-home",
+        "official-print-gallery",
+        "current-site-media-manifest"
       ],
-      "ownerAction": "Supply display files, downloadable originals, labels, and preferred order."
+      "ownerAction": "Approve the selected current-site headshots, gallery order, labels, photographer credits, and download rights."
     },
     {
       "id": "asset.resume-pdf",
-      "area": "Résumé",
-      "label": "Downloadable résumé PDF",
+      "area": "R\u00e9sum\u00e9",
+      "label": "Downloadable r\u00e9sum\u00e9 PDF",
       "status": "pending",
       "publication": "withheld",
       "sourceIds": [
@@ -459,7 +512,7 @@
     {
       "id": "asset.open-graph",
       "area": "SEO",
-      "label": "1200 × 630 social-sharing image",
+      "label": "1200 \u00d7 630 social-sharing image",
       "status": "client-review-required",
       "publication": "published",
       "sourceIds": [

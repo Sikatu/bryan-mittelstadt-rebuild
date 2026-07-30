@@ -59,6 +59,9 @@ export const siteConfig: SiteConfig = {
   // Host the approved résumé PDF locally in /public.
   resumeUrl: undefined,
 
+  // Recovered current-site images; download permission still requires Bryan's approval.
+  headshotsZipUrl: '/downloads/bryan-mittelstadt-current-site-headshots.zip',
+
   email: 'bryanmittelstadt@gmail.com',
 
   verificationIds: {
