@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit",
     "audit:readiness": "node scripts/audit-readiness.mjs",
     "audit:content": "node scripts/audit-content-verification.mjs",
-    "check": "npm run lint && npm run typecheck && npm run audit:readiness && npm run audit:content && npm run audit:media && npm run audit:workflows && npm run audit:assets && npm run audit:dependencies && npm run audit:quality && npm run audit:deployment && npm run audit:current-site-media",
+    "check": "npm run lint && npm run typecheck && npm run audit:readiness && npm run audit:content && npm run audit:media && npm run audit:workflows && npm run audit:assets && npm run audit:dependencies && npm run audit:quality && npm run audit:deployment && npm run audit:current-site-media && npm run audit:lmntl && npm run audit:brand-marks",
     "validate": "npm run qa",
     "audit:media": "node scripts/audit-media-readiness.mjs",
     "audit:workflows": "node scripts/audit-portfolio-workflows.mjs",
@@ -27,7 +27,9 @@
     "qa:remote": "node scripts/smoke-remote.mjs",
     "media:recover": "node scripts/download-current-site-media.mjs",
     "media:verify": "node scripts/download-current-site-media.mjs --verify-only",
-    "audit:current-site-media": "node scripts/audit-current-site-media.mjs"
+    "audit:current-site-media": "node scripts/audit-current-site-media.mjs",
+    "audit:lmntl": "node scripts/audit-lmntl-studios.mjs",
+    "audit:brand-marks": "node scripts/audit-professional-brand-marks.mjs"
   },
   "dependencies": {
     "next": "16.2.11",

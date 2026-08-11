@@ -1,5 +1,5 @@
 import { existsSync, readFileSync, statSync } from 'node:fs';
-import { extname, join } from 'node:path';
+import { join } from 'node:path';
 
 const root = process.cwd();
 const errors = [];

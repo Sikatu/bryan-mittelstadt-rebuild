@@ -22,7 +22,7 @@ const mediaPath = join(root, 'src/content/media.ts');
 const mediaSource = existsSync(mediaPath) ? readFileSync(mediaPath, 'utf8') : '';
 
 const requiredActingIds = ['dramatic', 'comedic', 'commercial', 'lgbtq', 'musical', 'stage'];
-const requiredVoiceIds = ['commercial', 'narration', 'character', 'radio-drama'];
+const requiredVoiceIds = ['commercial', 'radio-drama-dramatic', 'radio-drama-villain'];
 
 function extractArray(name) {
   const match = mediaSource.match(new RegExp(`export const ${name}[^=]*=\\s*\\[([\\s\\S]*?)\\n\\];`));
@@ -75,6 +75,33 @@ function auditMediaArray(name, requiredIds, urlField) {
 
 const acting = auditMediaArray('actingReels', requiredActingIds, 'url');
 const voice = auditMediaArray('voiceOverReels', requiredVoiceIds, 'audioUrl');
+
+const voiceSource = extractArray('voiceOverReels');
+for (const block of objectBlocks(voiceSource)) {
+  const id = quotedField(block, 'id') ?? 'unknown';
+  const availability = quotedField(block, 'availability');
+  const audioUrl = quotedField(block, 'audioUrl');
+  const sourceType = quotedField(block, 'sourceType');
+
+  if (availability === 'available') {
+    if (sourceType !== 'external') {
+      errors.push(
+        `voiceOverReels.${id} must use the external hosted-audio workflow.`,
+      );
+    }
+
+    if (
+      !audioUrl?.startsWith(
+        'https://soundcloud.com/bryan-mittelstadt/',
+      )
+    ) {
+      errors.push(
+        `voiceOverReels.${id} must use Bryan’s supplied SoundCloud URL.`,
+      );
+    }
+  }
+}
+
 
 const pageRequirements = [
   ['src/app/acting/page.tsx', ['VideoReelGallery', 'Acting Inquiries']],

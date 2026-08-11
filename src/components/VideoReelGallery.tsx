@@ -12,9 +12,11 @@ import type { VideoReel } from '@/types';
 export default function VideoReelGallery({
   reels,
   showSelector = true,
+  posterPreload = false,
 }: {
   reels: VideoReel[];
   showSelector?: boolean;
+  posterPreload?: boolean;
 }) {
   const initialId = reels.find((reel) => reel.availability === 'available')?.id ?? reels[0]?.id;
   const [selectedId, setSelectedId] = useState(initialId);
@@ -50,6 +52,7 @@ export default function VideoReelGallery({
               <EditorialImage
                 asset={selected.posterImage ?? siteAssets.reelPosterImage}
                 sizes="(max-width: 1024px) 100vw, 1024px"
+                preload={posterPreload}
                 decorative
                 imageClassName="opacity-65"
                 fallbackLabel="Reel poster pending"

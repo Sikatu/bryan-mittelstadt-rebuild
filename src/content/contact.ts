@@ -27,6 +27,12 @@ export const inquiryCategories: InquiryCategory[] = [
     description: 'Writing, directing, producing, and independent-film collaborations.',
   },
   {
+    id: 'lmntl-studios',
+    label: 'LMNTL Studios',
+    subjectPrefix: 'LMNTL Studios inquiry',
+    description: 'Artist development, creative direction, story, and multidisciplinary studio inquiries.',
+  },
+  {
     id: 'press',
     label: 'Press & Media',
     subjectPrefix: 'Press inquiry',

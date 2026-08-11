@@ -10,7 +10,7 @@ import { createPageMetadata } from '@/lib/metadata';
 
 export const metadata = createPageMetadata({
   title: 'Voice-Over',
-  description: 'Commercial, narration, character, and radio-drama voice-over reels by Bryan Mittelstadt.',
+  description: 'Commercial and radio-drama voice-over reels by Bryan Mittelstadt.',
   path: '/voice-over',
 });
 
@@ -28,7 +28,7 @@ export default function VoiceOverPage() {
 
         <div className="mb-12 mt-8 max-w-2xl">
           <p className="body-text text-text-secondary">
-            Commercial, narration, character, and radio-drama categories with accessible direct-audio playback and safe hosted-media fallbacks.
+            Commercial and radio-drama voice-over samples hosted on Bryan’s official SoundCloud.
           </p>
         </div>
 

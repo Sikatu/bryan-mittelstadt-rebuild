@@ -31,7 +31,7 @@ export default function ActingPage() {
               A category-ready reel library for dramatic, comedic, commercial, identity-led, musical, and stage performance work. Reel playback activates only after Bryan supplies approved media.
             </p>
           </div>
-          <VideoReelGallery reels={actingReels} />
+          <VideoReelGallery reels={actingReels} posterPreload />
         </Container>
       </section>
 

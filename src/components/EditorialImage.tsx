@@ -5,6 +5,7 @@ interface EditorialImageProps {
   asset: ImageAsset;
   sizes: string;
   priority?: boolean;
+  preload?: boolean;
   decorative?: boolean;
   className?: string;
   imageClassName?: string;
@@ -27,6 +28,7 @@ export default function EditorialImage({
   asset,
   sizes,
   priority = false,
+  preload = false,
   decorative = false,
   className = '',
   imageClassName = '',
@@ -41,6 +43,7 @@ export default function EditorialImage({
         alt={decorative ? '' : asset.alt}
         fill
         priority={priority}
+        preload={preload}
         className={`object-cover ${imageClassName}`}
         sizes={sizes}
         style={{ objectPosition: asset.objectPosition ?? '50% 50%' }}

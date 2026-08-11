@@ -82,38 +82,36 @@ export const hasAvailableActingReel = actingReels.some(
   (reel) => reel.availability === 'available' && Boolean(reel.url),
 );
 
-/** Voice-over categories remain pending because the current Wix audio URLs were not recoverable. */
+/** Client-supplied Voice-Over reels hosted on Bryan's official SoundCloud. */
 export const voiceOverReels: AudioReel[] = [
   {
     id: 'commercial',
-    title: 'Commercial Reel',
+    title: 'Commercial VO',
     category: 'Commercial',
-    description: 'Standard, conversational, and energetic reads.',
-    availability: 'pending',
+    description: 'Commercial voice-over sample hosted on Bryan’s official SoundCloud.',
+    audioUrl: 'https://soundcloud.com/bryan-mittelstadt/bryanmittelstadt-commercialvo?in=bryan-mittelstadt/sets/bryanmittelstadt_vo-clips&si=d526db148f9743fa878c42d4d8a72362&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing',
+    sourceType: 'external',
+    availability: 'available',
     verificationId: 'media.voiceover-reels',
   },
   {
-    id: 'narration',
-    title: 'Narration Reel',
-    category: 'Narration',
-    description: 'Long-form, documentary, and dramatic narration.',
-    availability: 'pending',
-    verificationId: 'media.voiceover-reels',
-  },
-  {
-    id: 'character',
-    title: 'Character Reel',
-    category: 'Character',
-    description: 'Character acting for animation, games, and scripted audio.',
-    availability: 'pending',
-    verificationId: 'media.voiceover-reels',
-  },
-  {
-    id: 'radio-drama',
-    title: 'Radio Drama Reel',
+    id: 'radio-drama-dramatic',
+    title: 'Radio Drama — Dramatic/Emotional',
     category: 'Radio Drama',
-    description: 'Dramatic and villain performance selections for audio fiction.',
-    availability: 'pending',
+    description: 'Dramatic and emotional radio-drama performance hosted on Bryan’s official SoundCloud.',
+    audioUrl: 'https://soundcloud.com/bryan-mittelstadt/bryanmittelstadt-dramatic?si=19586040fd104666a1517a23003800a2&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing',
+    sourceType: 'external',
+    availability: 'available',
+    verificationId: 'media.voiceover-reels',
+  },
+  {
+    id: 'radio-drama-villain',
+    title: 'Radio Drama — Villain',
+    category: 'Radio Drama',
+    description: 'Villain radio-drama performance hosted on Bryan’s official SoundCloud.',
+    audioUrl: 'https://soundcloud.com/bryan-mittelstadt/radiodrama_villain_onthenightt?si=3464d411dfca4862bc84d4f5f8dd48ee&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing',
+    sourceType: 'external',
+    availability: 'available',
     verificationId: 'media.voiceover-reels',
   },
 ];

@@ -3,6 +3,7 @@ import { Playfair_Display, Inter } from 'next/font/google';
 import SkipLink from '@/components/SkipLink';
 import SiteHeader from '@/components/SiteHeader';
 import SiteFooter from '@/components/SiteFooter';
+import ProfessionalLogoNetwork from '@/components/ProfessionalLogoNetwork';
 import { siteConfig } from '@/content/site';
 import { isSearchIndexingAllowed } from '@/lib/deployment';
 import { getPersonJsonLd, getWebSiteJsonLd } from '@/lib/structured-data';
@@ -66,8 +67,8 @@ export default function RootLayout({
         <main id="main-content" tabIndex={-1} className="flex-1 outline-none">
           {children}
         </main>
+        <ProfessionalLogoNetwork />
         <SiteFooter />
-
         {/* Structured Data */}
         <script
           type="application/ld+json"

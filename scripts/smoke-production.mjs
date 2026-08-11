@@ -17,6 +17,7 @@ const htmlRoutes = [
   '/acting',
   '/contact',
   '/headshots',
+  '/lmntl-studios',
   '/music',
   '/resume',
   '/voice-over',

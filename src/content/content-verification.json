@@ -120,6 +120,27 @@
       "kind": "project-artifact",
       "path": "src/content/current-site-media.json",
       "capturedOn": "2026-07-30"
+    },
+    {
+      "id": "official-soundcloud-commercial-vo",
+      "label": "Bryan Mittelstadt SoundCloud \u2014 Commercial VO",
+      "kind": "first-party-public",
+      "url": "https://soundcloud.com/bryan-mittelstadt/bryanmittelstadt-commercialvo?in=bryan-mittelstadt/sets/bryanmittelstadt_vo-clips&si=d526db148f9743fa878c42d4d8a72362&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+      "accessedOn": "2026-07-30"
+    },
+    {
+      "id": "official-soundcloud-radio-drama-dramatic",
+      "label": "Bryan Mittelstadt SoundCloud \u2014 Radio Drama Dramatic/Emotional",
+      "kind": "first-party-public",
+      "url": "https://soundcloud.com/bryan-mittelstadt/bryanmittelstadt-dramatic?si=19586040fd104666a1517a23003800a2&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+      "accessedOn": "2026-07-30"
+    },
+    {
+      "id": "official-soundcloud-radio-drama-villain",
+      "label": "Bryan Mittelstadt SoundCloud \u2014 Radio Drama Villain",
+      "kind": "first-party-public",
+      "url": "https://soundcloud.com/bryan-mittelstadt/radiodrama_villain_onthenightt?si=3464d411dfca4862bc84d4f5f8dd48ee&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+      "accessedOn": "2026-07-30"
     }
   ],
   "records": [
@@ -451,13 +472,14 @@
     {
       "id": "media.voiceover-reels",
       "area": "Voice-Over media",
-      "label": "Commercial and radio-drama reel titles",
-      "status": "client-review-required",
+      "label": "Commercial and radio-drama SoundCloud reels",
+      "status": "confirmed-public",
       "publication": "published",
       "sourceIds": [
-        "legacy-content-inventory"
-      ],
-      "ownerAction": "Confirm reel names and provide approved audio or hosting URLs."
+        "official-soundcloud-commercial-vo",
+        "official-soundcloud-radio-drama-dramatic",
+        "official-soundcloud-radio-drama-villain"
+      ]
     },
     {
       "id": "media.writing-projects",

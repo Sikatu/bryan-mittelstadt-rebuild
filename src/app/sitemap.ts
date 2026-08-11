@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/voice-over',
     '/music',
     '/writing-filmmaking',
+    '/lmntl-studios',
     '/about',
     '/resume',
     '/headshots',

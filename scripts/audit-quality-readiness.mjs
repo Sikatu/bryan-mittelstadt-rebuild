@@ -10,6 +10,7 @@ const expectedPageFiles = [
   'src/app/contact/page.tsx',
   'src/app/headshots/page.tsx',
   'src/app/music/page.tsx',
+  'src/app/lmntl-studios/page.tsx',
   'src/app/resume/page.tsx',
   'src/app/voice-over/page.tsx',
   'src/app/writing-filmmaking/page.tsx',

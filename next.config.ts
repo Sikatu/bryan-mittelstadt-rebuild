@@ -62,6 +62,9 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
+  images: {
+    qualities: [75, 88],
+  },
   turbopack: {
     root: process.cwd(),
   },

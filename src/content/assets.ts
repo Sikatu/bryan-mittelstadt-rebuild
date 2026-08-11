@@ -55,7 +55,7 @@ export const siteAssets: SiteAssets = {
     'Bryan Mittelstadt seated in a warmly lit interior scene',
     `${featured}/hero-primary.jpg`,
     'dark',
-    '64% 48%',
+    '65% 43%',
   ),
   reelPosterImage: approvedAsset(
     'reel-poster-primary',
