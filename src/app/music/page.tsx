@@ -11,7 +11,7 @@ import { createPageMetadata } from '@/lib/metadata';
 
 export const metadata = createPageMetadata({
   title: 'Music',
-  description: 'Original folk music, vocal performance, and the upcoming album Darling by Bryan Mittelstadt.',
+  description: 'Original music and upcoming single releases by Bryan Mittelstadt.',
   path: '/music',
 });
 
@@ -28,40 +28,37 @@ export default function MusicPage() {
               <EditorialImage
                 asset={albumProject.image}
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                fallbackLabel="Album artwork pending"
+                fallbackLabel="Music artwork pending"
               />
             )}
             <div className="absolute inset-0 border border-border-subtle/30" />
           </div>
 
           <div>
-            <SectionHeading as="h1" eyebrow="Upcoming Release">
-              {albumProject?.title || 'Darling'}
+            <SectionHeading as="h1" eyebrow="Music">
+              {albumProject?.title || 'Upcoming Releases'}
             </SectionHeading>
 
             <div className="mt-8 space-y-6 font-sans text-lg leading-relaxed text-text-secondary">
-              <p>{albumProject?.description || "Bryan's debut folk album, currently planned for release in 2026."}</p>
               <p>
-                Final release copy, artwork, date, streaming destinations, and audio samples remain subject to Bryan’s approval.
+                Bryan is preparing upcoming single releases. Final
+                release dates and streaming destinations will be
+                announced when confirmed.
+              </p>
+              <p>
+                The mailing list is intentionally deferred until
+                there is a stronger subscriber offering around future
+                releases, classes, or other programs.
               </p>
             </div>
 
             <div className="mt-10 flex flex-wrap gap-4">
-              <EditorialButton
-                href={siteConfig.mailingListUrl}
-                external
-                variant="primary"
-                disabled={!siteConfig.mailingListUrl}
-                title={!siteConfig.mailingListUrl ? 'Mailing-list destination has not been supplied yet' : undefined}
-              >
-                {siteConfig.mailingListUrl ? 'Join Mailing List' : 'Mailing List Coming Soon'}
-              </EditorialButton>
               <EditorialButton href={inquiryHref} disabled={!inquiryHref} variant="secondary">
                 Music Inquiries
               </EditorialButton>
             </div>
 
-            {musicLinks.length > 0 ? (
+            {musicLinks.length > 0 && (
               <div className="mt-8 flex flex-wrap gap-4" aria-label="Music release links">
                 {musicLinks.map((link) => (
                   <EditorialButton key={link.href} href={link.href} external={link.external} variant="text">
@@ -69,33 +66,22 @@ export default function MusicPage() {
                   </EditorialButton>
                 ))}
               </div>
-            ) : (
-              <p className="mt-5 text-xs uppercase tracking-[0.14em] text-text-muted">
-                Streaming, pre-save, purchase, performance, and press links are pending.
-              </p>
             )}
           </div>
         </div>
 
-        <section className="mt-20 border-t border-border-subtle pt-16 lg:mt-28" aria-labelledby="music-samples-heading">
-          <SectionHeading eyebrow="Listen" as="h2">
-            Music Samples
-          </SectionHeading>
-          {musicSamples.length > 0 ? (
+        {musicSamples.length > 0 && (
+          <section className="mt-20 border-t border-border-subtle pt-16 lg:mt-28" aria-labelledby="music-samples-heading">
+            <SectionHeading eyebrow="Listen" as="h2">
+              Music Samples
+            </SectionHeading>
             <div className="mt-10 space-y-6">
               {musicSamples.map((sample) => (
                 <AudioReelPlayer key={sample.id} reel={sample} />
               ))}
             </div>
-          ) : (
-            <div className="mt-8 border border-border-subtle bg-bg-secondary p-7 sm:p-9">
-              <h3 id="music-samples-heading" className="font-serif text-2xl text-text-primary">Approved audio is being prepared</h3>
-              <p className="mt-4 max-w-2xl leading-relaxed text-text-secondary">
-                This player area supports direct audio files and approved hosted links. It remains noninteractive until Bryan authorizes public samples.
-              </p>
-            </div>
-          )}
-        </section>
+          </section>
+        )}
       </Container>
     </div>
   );

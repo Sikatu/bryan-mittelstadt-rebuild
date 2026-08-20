@@ -22,7 +22,7 @@ const mediaPath = join(root, 'src/content/media.ts');
 const mediaSource = existsSync(mediaPath) ? readFileSync(mediaPath, 'utf8') : '';
 
 const requiredActingIds = ['dramatic', 'comedic', 'commercial', 'lgbtq', 'musical', 'stage'];
-const requiredVoiceIds = ['commercial', 'radio-drama-dramatic', 'radio-drama-villain'];
+const requiredVoiceIds = ['narrative', 'commercial', 'radio-drama-dramatic', 'radio-drama-villain'];
 
 function extractArray(name) {
   const match = mediaSource.match(new RegExp(`export const ${name}[^=]*=\\s*\\[([\\s\\S]*?)\\n\\];`));
@@ -34,7 +34,7 @@ function objectBlocks(arraySource) {
 }
 
 function quotedField(block, field) {
-  return block.match(new RegExp(`${field}:\\s*['\"]([^'\"]+)['\"]`))?.[1];
+  return block.match(new RegExp(`${field}:\\s*['"]([^'"]+)['"]`))?.[1];
 }
 
 function auditMediaArray(name, requiredIds, urlField) {
@@ -83,25 +83,46 @@ for (const block of objectBlocks(voiceSource)) {
   const audioUrl = quotedField(block, 'audioUrl');
   const sourceType = quotedField(block, 'sourceType');
 
-  if (availability === 'available') {
-    if (sourceType !== 'external') {
+  if (availability !== 'available') continue;
+
+  if (sourceType === 'external') {
+    const isSoundCloud = audioUrl?.startsWith(
+      'https://soundcloud.com/bryan-mittelstadt/',
+    );
+    const isClientDriveNarrative =
+      id === 'narrative' &&
+      audioUrl?.startsWith('https://drive.google.com/file/d/');
+
+    if (!isSoundCloud && !isClientDriveNarrative) {
       errors.push(
-        `voiceOverReels.${id} must use the external hosted-audio workflow.`,
+        `voiceOverReels.${id} external audio must use a supplied first-party hosting URL.`,
       );
+    }
+    continue;
+  }
+
+  if (sourceType === 'direct') {
+    if (!audioUrl?.startsWith('/audio/')) {
+      errors.push(`voiceOverReels.${id} direct audio must use a local /audio/ path.`);
+      continue;
     }
 
-    if (
-      !audioUrl?.startsWith(
-        'https://soundcloud.com/bryan-mittelstadt/',
-      )
-    ) {
-      errors.push(
-        `voiceOverReels.${id} must use Bryan’s supplied SoundCloud URL.`,
-      );
+    const publicFile = join(root, 'public', audioUrl.replace(/^\//, ''));
+    if (!existsSync(publicFile)) {
+      errors.push(`voiceOverReels.${id} direct audio file is missing: ${audioUrl}`);
     }
+    continue;
   }
+
+  errors.push(`voiceOverReels.${id} must declare direct or external sourceType.`);
 }
 
+const resolver = readFileSync(join(root, 'src/lib/media.ts'), 'utf8');
+for (const marker of ['google-drive', 'drive.google.com', '/preview']) {
+  if (!resolver.includes(marker)) {
+    errors.push(`Video resolver is missing Google Drive support: ${marker}`);
+  }
+}
 
 const pageRequirements = [
   ['src/app/acting/page.tsx', ['VideoReelGallery', 'Acting Inquiries']],

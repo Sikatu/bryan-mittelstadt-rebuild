@@ -3,6 +3,8 @@ import ResumeActions from '@/components/ResumeActions';
 import SectionHeading from '@/components/SectionHeading';
 import { representation } from '@/content/representation';
 import {
+  commercialVoiceOverSummary,
+  resumeHeading,
   resumeSections,
   specialSkills,
   trainingAndEducation,
@@ -102,11 +104,9 @@ export default function ResumePage() {
             </SectionHeading>
 
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-text-secondary">
-              A printable editorial résumé covering Bryan&apos;s
-              selected screen, stage, training, skills, and
-              representation information. The downloadable PDF will
-              be enabled after Bryan approves the final casting
-              résumé.
+              The web résumé is synchronized to Bryan&apos;s
+              client-supplied acting résumé. Use the PDF download for
+              the canonical casting document.
             </p>
           </div>
 
@@ -127,7 +127,7 @@ export default function ResumePage() {
 
             <div className="editorial-resume-identity">
               <p className="editorial-resume-kicker">
-                {siteConfig.titles.join(' / ')}
+                {resumeHeading}
               </p>
 
               <h2>{siteConfig.name}</h2>
@@ -181,10 +181,24 @@ export default function ResumePage() {
           </div>
 
           <div className="editorial-resume-body">
+            <section
+              className="editorial-resume-section break-inside-avoid"
+              aria-labelledby="resume-commercial-vo"
+            >
+              <div className="editorial-resume-section-heading">
+                <span aria-hidden="true">01</span>
+                <h3 id="resume-commercial-vo">Commercial / VO</h3>
+              </div>
+
+              <p className="editorial-resume-skills-copy">
+                {commercialVoiceOverSummary}
+              </p>
+            </section>
+
             {resumeSections.map((section, index) => (
               <ResumeCategory
                 key={section.title}
-                index={index + 1}
+                index={index + 2}
                 title={section.title}
                 items={section.items}
               />
@@ -198,7 +212,7 @@ export default function ResumePage() {
                 <div className="editorial-resume-section-heading">
                   <span aria-hidden="true">
                     {String(
-                      resumeSections.length + 1,
+                      resumeSections.length + 2,
                     ).padStart(2, '0')}
                   </span>
 
@@ -224,7 +238,7 @@ export default function ResumePage() {
                 <div className="editorial-resume-section-heading">
                   <span aria-hidden="true">
                     {String(
-                      resumeSections.length + 2,
+                      resumeSections.length + 3,
                     ).padStart(2, '0')}
                   </span>
 
@@ -244,7 +258,7 @@ export default function ResumePage() {
               <div className="editorial-resume-section-heading">
                 <span aria-hidden="true">
                   {String(
-                    resumeSections.length + 3,
+                    resumeSections.length + 4,
                   ).padStart(2, '0')}
                 </span>
 
@@ -286,7 +300,7 @@ export default function ResumePage() {
           </div>
 
           <footer className="editorial-resume-footer">
-            <span>Selected professional résumé</span>
+            <span>Professional acting résumé</span>
             <span>{siteConfig.name}</span>
           </footer>
         </article>

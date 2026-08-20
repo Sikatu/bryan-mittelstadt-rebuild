@@ -46,14 +46,12 @@ export const inquiryCategories: InquiryCategory[] = [
   },
 ];
 
-/**
- * Phase 4 ships with a direct-email workflow. Add a verified HTTPS endpoint
- * only after the production form provider, spam policy, and delivery path are approved.
- */
+export const contactFormVerificationId = 'integration.contact-form' as const;
+
 export const contactFormConfig: ContactFormConfig = {
   endpoint: deploymentEnvironment.contactFormEndpoint,
   categories: inquiryCategories,
   minimumMessageLength: 20,
   privacyNote:
-    'This website does not store inquiry details when the direct-email workflow is used. Your email application handles the message.',
+    'This website does not persist inquiry content. The configured email provider processes delivery to Bryan.',
 };

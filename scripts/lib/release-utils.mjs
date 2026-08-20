@@ -81,7 +81,7 @@ export function getLaunchInventory() {
         record.publication === 'placeholder'),
   );
   const missingClientFiles = [
-    'public/bryan-mittelstadt-resume.pdf',
+    'src/app/downloads/bryan-mittelstadt-resume.pdf/route.ts',
   ].filter((file) => !fs.existsSync(path.join(root, file)));
 
   return {
@@ -116,7 +116,7 @@ export function resolveDeploymentSettings(environment, config) {
     provider,
     origin: normalizeOrigin(configuredOrigin),
     contactFormEndpoint:
-      process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT?.trim() || '',
+      process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT?.trim() || '/api/contact',
   };
 }
 

@@ -69,19 +69,30 @@ for (const file of requiredSourceFiles) {
   if (!existsSync(join(root, file))) errors.push(`Missing Phase 8 file: ${file}`);
 }
 
-if (!manifestOnly) {
-  const zip = join(root, 'public/downloads/bryan-mittelstadt-current-site-headshots.zip');
-  if (!existsSync(zip) || statSync(zip).size < 20_000) {
-    errors.push('Recovered headshot ZIP is missing or invalid.');
+const approvedMediaRoute = join(root, 'src/app/media/approved/[asset]/route.ts');
+if (!existsSync(approvedMediaRoute)) {
+  errors.push('Approved-client media proxy route is missing.');
+} else {
+  const approvedRouteSource = readFileSync(approvedMediaRoute, 'utf8');
+  for (const marker of [
+    'headshot-theatrical',
+    'headshot-commercial',
+    'lifestyle',
+    'quiet-after-supper',
+    'drive.usercontent.google.com/download',
+  ]) {
+    if (!approvedRouteSource.includes(marker)) {
+      errors.push(`Approved-client media proxy is missing ${marker}.`);
+    }
   }
 }
 
 console.log('\nBryan Mittelstadt Phase 8 current-site media audit');
 console.log('====================================================');
-console.log(`Public image records: ${manifest.assets?.length ?? 0}`);
-console.log(`Images selected for current use: ${(manifest.assets ?? []).filter((asset) => asset.selectedForPublicUse).length}`);
-console.log(`Recovered acting reels available: ${availableReels.length}`);
-console.log(`Unrecovered categories documented: ${manifest.unrecovered?.length ?? 0}`);
+console.log(`Archived public image records: ${manifest.assets?.length ?? 0}`);
+console.log(`Recovered images still selected in archive: ${(manifest.assets ?? []).filter((asset) => asset.selectedForPublicUse).length}`);
+console.log(`Recovered acting reels documented: ${availableReels.length}`);
+console.log('Approved client media route: configured');
 console.log(`File verification: ${manifestOnly ? 'manifest-only mode' : 'enabled'}`);
 
 if (errors.length > 0) {
@@ -89,5 +100,5 @@ if (errors.length > 0) {
   for (const error of errors) console.error(`- ${error}`);
   process.exitCode = 1;
 } else {
-  console.log('\nCurrent-site media mapping and recovery integrity checks passed.');
+  console.log('\nArchived recovery manifest and approved-client media routing checks passed.');
 }

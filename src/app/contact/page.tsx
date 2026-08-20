@@ -55,10 +55,9 @@ export default function ContactPage() {
             </h2>
 
             <p className="mt-3 max-w-2xl text-sm leading-relaxed text-text-secondary">
-              Until a production form provider is
-              approved, submitting this form prepares a
-              complete message in your email application
-              rather than storing data on the website.
+              Submit your inquiry directly through the site. If
+              email delivery is temporarily unavailable, the direct
+              email address below remains the fallback.
             </p>
           </div>
 

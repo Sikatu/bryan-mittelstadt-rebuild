@@ -7,14 +7,13 @@ import type {
 } from '@/types';
 import { siteAssets } from './assets';
 
-/** Public reel links recovered from Bryan's current official website and channel. */
 export const actingReels: VideoReel[] = [
   {
     id: 'dramatic',
-    title: 'Acting Reel 2026',
+    title: 'Dramatic Reel',
     category: 'Film & Television',
-    description: 'Current public acting reel selected from Bryan’s official YouTube channel.',
-    url: 'https://www.youtube.com/watch?v=jcB9oISlmPg',
+    description: 'Client-supplied dramatic reel master.',
+    url: 'https://drive.google.com/file/d/1yFTzVNWiwkIOjo7lrRCfn0c8mzwkgy80/view',
     posterImage: siteAssets.reelPosterImage,
     year: '2026',
     availability: 'available',
@@ -22,18 +21,21 @@ export const actingReels: VideoReel[] = [
   },
   {
     id: 'comedic',
-    title: 'Comedic Reel',
+    title: 'Comedy Reel',
     category: 'Comedy',
-    description: 'The current website lists a comedic reel, but a stable public URL was not exposed.',
-    availability: 'pending',
+    description: 'Client-supplied comedy reel master dated May 2026.',
+    url: 'https://drive.google.com/file/d/1AmJg8TyaGCA0UNcUktBc62e65Abol0jX/view',
+    posterImage: siteAssets.reelPosterImage,
+    year: '2026',
+    availability: 'available',
     verificationId: 'media.acting-reel',
   },
   {
     id: 'commercial',
-    title: 'Commercial Film Reel',
+    title: 'Commercial Reel',
     category: 'Commercial',
-    description: 'Current commercial performance reel from Bryan’s public YouTube channel.',
-    url: 'https://www.youtube.com/watch?v=BCZGDyQI-LI',
+    description: 'Client-supplied commercial performance reel.',
+    url: 'https://drive.google.com/file/d/1HWgIlZ-sYYJilsAB3daiJ1IA4W2OOpqg/view',
     posterImage: siteAssets.reelPosterImage,
     availability: 'available',
     verificationId: 'media.acting-reel',
@@ -42,18 +44,18 @@ export const actingReels: VideoReel[] = [
     id: 'lgbtq',
     title: 'LGBTQ Reel',
     category: 'Identity-Led Work',
-    description: 'Public reel embedded on Bryan’s current Acting page.',
-    url: 'https://www.youtube.com/watch?v=bbqwvz7dBpA',
+    description: 'Client-supplied LGBTQ performance reel.',
+    url: 'https://drive.google.com/file/d/1xJo7309NAetHpMG2g_QR2X7m36LM0yR0/view',
     posterImage: siteAssets.reelPosterImage,
     availability: 'available',
     verificationId: 'media.acting-reel',
   },
   {
     id: 'musical',
-    title: 'Vocal Reel / Guitar',
+    title: 'Voice & Guitar Reel',
     category: 'Musical Performance',
-    description: 'Public vocal and guitar performance reel from Bryan’s current website.',
-    url: 'https://www.youtube.com/watch?v=8pURXDYgnqE',
+    description: 'Client-supplied vocal and guitar performance reel.',
+    url: 'https://drive.google.com/file/d/17hlzx--qepYe407EJ-PYu32GdPoCneik/view',
     posterImage: siteAssets.reelPosterImage,
     availability: 'available',
     verificationId: 'media.acting-reel',
@@ -62,7 +64,7 @@ export const actingReels: VideoReel[] = [
     id: 'classical-voice',
     title: 'Classical Voice',
     category: 'Classical Voice',
-    description: 'Public classical voice performance reel from Bryan’s current website.',
+    description: 'Public classical voice performance retained from Bryan’s existing site.',
     url: 'https://www.youtube.com/watch?v=bQ4o8ZrE7a0',
     posterImage: siteAssets.reelPosterImage,
     availability: 'available',
@@ -72,8 +74,10 @@ export const actingReels: VideoReel[] = [
     id: 'stage',
     title: 'Stage Reel',
     category: 'Theatre',
-    description: 'The current site lists sword, accent, and dance material, but no stable public URL was exposed.',
-    availability: 'pending',
+    description: 'Client-supplied stage performance reel.',
+    url: 'https://drive.google.com/file/d/1ioaheYg3U5LqpFqU7VHiubTwzGg1b6un/view',
+    posterImage: siteAssets.reelPosterImage,
+    availability: 'available',
     verificationId: 'media.acting-reel',
   },
 ];
@@ -82,8 +86,17 @@ export const hasAvailableActingReel = actingReels.some(
   (reel) => reel.availability === 'available' && Boolean(reel.url),
 );
 
-/** Client-supplied Voice-Over reels hosted on Bryan's official SoundCloud. */
 export const voiceOverReels: AudioReel[] = [
+  {
+    id: 'narrative',
+    title: 'Narrative VO Reel',
+    category: 'Narration',
+    description: 'Client-supplied narrative voice-over reel.',
+    audioUrl: 'https://drive.google.com/file/d/16uwRmlToiTBs7VjhBGWx5pKlY_9z_c8A/view',
+    sourceType: 'external',
+    availability: 'available',
+    verificationId: 'media.voiceover-reels',
+  },
   {
     id: 'commercial',
     title: 'Commercial VO',
@@ -116,85 +129,90 @@ export const voiceOverReels: AudioReel[] = [
   },
 ];
 
-const printRoot = '/images/bryan/current-site/print';
-const featuredRoot = '/images/bryan/current-site/featured';
+const approved = '/images/bryan/approved';
 
-/** Selected current-site portraits. Final order and download rights still need client approval. */
 export const headshots: Headshot[] = [
   {
-    id: 'current-headshot-01',
-    src: `${featuredRoot}/home-dsc-1685.jpeg`,
-    downloadUrl: `${featuredRoot}/home-dsc-1685.jpeg`,
-    alt: 'Bryan Mittelstadt in a dark blue shirt against a dark studio background',
-    label: 'Current Headshot 01',
+    id: 'approved-theatrical',
+    src: `${approved}/headshot-theatrical.webp`,
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=1jyHF5glCTphpNQTD6nePlp280b44Ehjp',
+    alt: 'Bryan Mittelstadt theatrical headshot against a warm brown background',
+    label: 'Theatrical',
     category: 'Theatrical',
     verificationId: 'asset.headshots',
   },
   {
-    id: 'current-headshot-02',
-    src: `${printRoot}/print-01-dsc-1960.jpeg`,
-    downloadUrl: `${printRoot}/print-01-dsc-1960.jpeg`,
-    alt: 'Bryan Mittelstadt smiling in an olive jacket against a warm brown background',
-    label: 'Current Headshot 02',
+    id: 'approved-commercial',
+    src: `${approved}/headshot-commercial.webp`,
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=1YCdIYfBEabaXEWeyqixs4mrxrFzZYDav',
+    alt: 'Bryan Mittelstadt smiling in a professional commercial headshot',
+    label: 'Commercial',
     category: 'Commercial',
     verificationId: 'asset.headshots',
   },
   {
-    id: 'current-headshot-03',
-    src: `${printRoot}/print-02.jpeg`,
-    downloadUrl: `${printRoot}/print-02.jpeg`,
-    alt: 'Bryan Mittelstadt professional portrait from his current print gallery',
-    label: 'Current Headshot 03',
-    category: 'Theatrical',
-    verificationId: 'asset.headshots',
-  },
-  {
-    id: 'current-headshot-04',
-    src: `${printRoot}/print-03.jpeg`,
-    downloadUrl: `${printRoot}/print-03.jpeg`,
-    alt: 'Bryan Mittelstadt professional portrait from his current print gallery',
-    label: 'Current Headshot 04',
-    category: 'Commercial',
-    verificationId: 'asset.headshots',
-  },
-  {
-    id: 'current-headshot-05',
-    src: `${printRoot}/print-04.jpeg`,
-    downloadUrl: `${printRoot}/print-04.jpeg`,
-    alt: 'Bryan Mittelstadt professional portrait from his current print gallery',
-    label: 'Current Headshot 05',
-    category: 'Theatrical',
-    verificationId: 'asset.headshots',
-  },
-  {
-    id: 'current-headshot-06',
-    src: `${printRoot}/print-05.jpeg`,
-    downloadUrl: `${printRoot}/print-05.jpeg`,
-    alt: 'Bryan Mittelstadt editorial portrait from his current print gallery',
-    label: 'Current Headshot 06',
+    id: 'approved-editorial',
+    src: `${approved}/lifestyle.webp`,
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=1uc6hwNvYKhUo3Qz80w-xV6Gd1jfweVgh',
+    alt: 'Bryan Mittelstadt seated against a dark blue studio background',
+    label: 'Editorial',
     category: 'Editorial',
-    verificationId: 'asset.headshots',
-  },
-  {
-    id: 'current-headshot-07',
-    src: `${printRoot}/print-06.jpeg`,
-    downloadUrl: `${printRoot}/print-06.jpeg`,
-    alt: 'Bryan Mittelstadt professional portrait from his current print gallery',
-    label: 'Current Headshot 07',
-    category: 'Theatrical',
-    verificationId: 'asset.headshots',
-  },
-  {
-    id: 'current-headshot-08',
-    src: `${printRoot}/print-07.jpeg`,
-    downloadUrl: `${printRoot}/print-07.jpeg`,
-    alt: 'Bryan Mittelstadt professional portrait from his current print gallery',
-    label: 'Current Headshot 08',
-    category: 'Commercial',
     verificationId: 'asset.headshots',
   },
 ];
 
-export const writingAndFilmmakingProjects: CreativeProject[] = [];
+export const writingAndFilmmakingProjects: CreativeProject[] = [
+  {
+    title: 'The Sea Ranch',
+    discipline: 'Writing & Filmmaking',
+    contribution: ['Writer'],
+    projectType: 'Other',
+    logline:
+      'Four lifelong friends reunite at the coastal home where their chosen family began, confronting how love, betrayal, and memory have reshaped them over fifty years.',
+    availability: 'available',
+    verificationId: 'media.writing-projects',
+  },
+  {
+    title: 'Carne',
+    discipline: 'Writing & Filmmaking',
+    contribution: ['Writer'],
+    projectType: 'Other',
+    logline:
+      'A lonely man’s encounters through a mysterious dating app awaken a consuming hunger that blurs the line between sexual desire, compulsion, and violence.',
+    availability: 'available',
+    verificationId: 'media.writing-projects',
+  },
+  {
+    title: 'Dry',
+    discipline: 'Writing & Filmmaking',
+    contribution: ['Writer'],
+    projectType: 'Other',
+    logline:
+      'While detoxing in a strange Glendale home, a man is drawn into a mythic underworld where he must confront his estranged brother, his abusive father’s legacy, and what it will take to break the cycle.',
+    availability: 'available',
+    verificationId: 'media.writing-projects',
+  },
+  {
+    title: 'What Remains',
+    discipline: 'Writing & Filmmaking',
+    contribution: ['Writer'],
+    projectType: 'Other',
+    logline:
+      'In a dying world where survival is tightly rationed, three people must face a brutal question: whose life is considered most valuable to humanity’s future?',
+    availability: 'available',
+    verificationId: 'media.writing-projects',
+  },
+  {
+    title: 'Bubble Gum',
+    discipline: 'Writing & Filmmaking',
+    contribution: ['Director'],
+    projectType: 'Short Film',
+    logline:
+      'A socially unconventional teacher and a lonely nine-year-old share an unexpected moment of connection that quietly changes how they see themselves and each other.',
+    availability: 'available',
+    verificationId: 'media.writing-projects',
+  },
+];
+
 export const musicLinks: ResourceLink[] = [];
 export const musicSamples: AudioReel[] = [];

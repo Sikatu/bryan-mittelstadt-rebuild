@@ -10,7 +10,7 @@ import { createPageMetadata } from '@/lib/metadata';
 
 export const metadata = createPageMetadata({
   title: 'Writing & Filmmaking',
-  description: 'Screenwriting, directing, and producing projects by Bryan Mittelstadt.',
+  description: 'Screenwriting and directing projects by Bryan Mittelstadt.',
   path: '/writing-filmmaking',
 });
 
@@ -28,7 +28,8 @@ export default function WritingFilmmakingPage() {
             </SectionHeading>
             <div className="mt-6 max-w-2xl">
               <p className="body-text text-text-secondary">
-                A structured portfolio for screenwriting, directing, and independent producing, with support for loglines, roles, status, project media, screenings, and authorized excerpts.
+                Current original writing and directing work supplied for Bryan&apos;s website,
+                presented with the client-approved project titles, contributions, and loglines.
               </p>
             </div>
           </div>
@@ -45,13 +46,11 @@ export default function WritingFilmmakingPage() {
           </div>
         ) : (
           <ContentPending
-            title="Portfolio credits are being verified"
-            description="The finished project system is ready, but this section remains withheld until Bryan confirms the projects, contributions, loglines, statuses, imagery, excerpts, and public links that may be published."
+            title="Writing and directing portfolio pending"
+            description="No client-approved project entries are currently configured."
             items={[
-              'Verified project titles and Bryan’s exact contributions',
-              'Approved loglines, statuses, and project types',
-              'Project stills, posters, scripts, or authorized excerpts',
-              'Screening, release, press, or portfolio links',
+              'Approved project titles and contributions',
+              'Approved loglines and project types',
             ]}
           />
         )}

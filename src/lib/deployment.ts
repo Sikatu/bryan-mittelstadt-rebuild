@@ -1,6 +1,8 @@
 export type SiteEnvironment = 'development' | 'staging' | 'production';
 
 const DEFAULT_PRODUCTION_ORIGIN = 'https://www.bryanmittelstadt.com';
+const DEFAULT_CONTACT_FORM_ENDPOINT = '/api/contact';
+
 const allowedEnvironments = new Set<SiteEnvironment>([
   'development',
   'staging',
@@ -12,8 +14,6 @@ function normalizeEnvironment(value: string | undefined): SiteEnvironment {
     return value as SiteEnvironment;
   }
 
-  // Preserve the existing production-canonical behavior unless an explicit
-  // staging or development environment is supplied at build time.
   return 'production';
 }
 
@@ -32,7 +32,8 @@ export const deploymentEnvironment = {
   name: normalizeEnvironment(process.env.NEXT_PUBLIC_SITE_ENV),
   siteUrl: normalizeOrigin(process.env.NEXT_PUBLIC_SITE_URL),
   contactFormEndpoint:
-    process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT?.trim() || undefined,
+    process.env.NEXT_PUBLIC_CONTACT_FORM_ENDPOINT?.trim() ||
+    DEFAULT_CONTACT_FORM_ENDPOINT,
 };
 
 export const isSearchIndexingAllowed =

@@ -17,6 +17,8 @@ const requiredFiles = [
   'src/content/assets.ts',
   'src/app/opengraph-image.tsx',
   'src/app/twitter-image.tsx',
+  'src/app/media/approved/[asset]/route.ts',
+  'src/app/downloads/bryan-mittelstadt-resume.pdf/route.ts',
   'docs/ASSET-INTEGRATION-GUIDE.md',
   'docs/PHASE-5-CHANGELOG.md',
 ];
@@ -33,10 +35,7 @@ for (const file of sourceFiles) {
     legacyReferences.push(relative(root, file));
   }
 }
-
-for (const file of legacyReferences) {
-  errors.push(`Legacy placeholder path remains in ${file}`);
-}
+for (const file of legacyReferences) errors.push(`Legacy placeholder path remains in ${file}`);
 
 const legacyPlaceholderDirectory = join(root, 'public/images/placeholders');
 if (existsSync(legacyPlaceholderDirectory)) {
@@ -78,27 +77,32 @@ requireTokens('src/content/assets.ts', [
   'disciplineImageAssets',
   'hero-primary',
   'about-portrait',
+  '/media/approved',
 ]);
-requireTokens('src/content/site.ts', ["ogImage: '/opengraph-image'"]);
+requireTokens('src/app/media/approved/[asset]/route.ts', [
+  'headshot-theatrical',
+  'headshot-commercial',
+  'lifestyle',
+  'quiet-after-supper',
+  'drive.usercontent.google.com/download',
+]);
+requireTokens('src/app/downloads/bryan-mittelstadt-resume.pdf/route.ts', [
+  '1xkXsF_iqm9LO2a6h7NO017dXntL0BCNS',
+  'application/pdf',
+  'Content-Disposition',
+]);
+requireTokens('src/content/site.ts', ["ogImage: '/opengraph-image'", "resumeUrl: '/downloads/bryan-mittelstadt-resume.pdf'"]);
 requireTokens('src/app/opengraph-image.tsx', ['new ImageResponse', 'Official Portfolio']);
-
-const resumePdf = join(root, 'public/bryan-mittelstadt-resume.pdf');
-const pendingClientFiles = [];
-if (!existsSync(resumePdf)) pendingClientFiles.push('public/bryan-mittelstadt-resume.pdf');
 
 console.log('\nBryan Mittelstadt Phase 5 asset readiness audit');
 console.log('================================================');
 console.log(`Central image slots: ${pendingSlots + approvedSlots}`);
-console.log(`Approved local images configured: ${approvedSlots}`);
+console.log(`Approved image slots configured: ${approvedSlots}`);
 console.log(`Client image slots pending: ${pendingSlots}`);
 console.log(`Legacy placeholder references: ${legacyReferences.length}`);
+console.log('Approved Drive-backed media proxy: configured');
+console.log('Canonical résumé download route: configured');
 console.log('Generated Open Graph card: configured');
-console.log(`Client launch files pending: ${pendingClientFiles.length}`);
-
-if (pendingClientFiles.length > 0) {
-  console.log('\nClient files still required:');
-  for (const file of pendingClientFiles) console.log(`- ${file}`);
-}
 
 if (errors.length > 0) {
   console.error('\nAsset readiness failures:');

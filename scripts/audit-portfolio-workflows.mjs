@@ -10,6 +10,7 @@ const requiredFiles = [
   'src/components/HeadshotGallery.tsx',
   'src/components/InquiryForm.tsx',
   'src/content/contact.ts',
+  'src/app/api/contact/route.ts',
   'src/app/about/page.tsx',
   'src/app/resume/page.tsx',
   'src/app/headshots/page.tsx',
@@ -31,7 +32,7 @@ function requireTokens(file, tokens) {
 
 requireTokens('src/components/ResumeActions.tsx', [
   'window.print()',
-  'PDF Pending',
+  'Download PDF',
   'aria-label="Résumé actions"',
 ]);
 
@@ -50,11 +51,19 @@ requireTokens('src/components/InquiryForm.tsx', [
   'minimumMessageLength',
   'config.endpoint',
   'mailto:',
-  'Continue in Email',
+  'Send Inquiry',
+]);
+
+requireTokens('src/app/api/contact/route.ts', [
+  'RESEND_API_KEY',
+  'BRYAN_CONTACT_EMAIL_FROM',
+  'BRYAN_CONTACT_EMAIL_TO',
+  'rate_limited',
+  'invalid_origin',
 ]);
 
 requireTokens('src/app/resume/page.tsx', ['ResumeActions', 'resume-sheet', 'Representation']);
-requireTokens('src/app/headshots/page.tsx', ['HeadshotGallery', 'Casting ZIP Pending']);
+requireTokens('src/app/headshots/page.tsx', ['HeadshotGallery', 'final client-supplied images']);
 requireTokens('src/app/contact/page.tsx', ['InquiryForm', 'inquiry-form', 'representation']);
 requireTokens('src/app/about/page.tsx', ['Selected Recognition', 'Casting Details', 'View Headshots']);
 requireTokens('src/app/globals.css', ['@media print', '.resume-sheet', 'dialog::backdrop']);
@@ -73,9 +82,9 @@ console.log('\nBryan Mittelstadt Phase 4 portfolio workflow audit');
 console.log('====================================================');
 console.log(`Structural workflow files: ${requiredFiles.length}`);
 console.log(`Inquiry categories: ${categoryIds.length}`);
-console.log('Résumé print workflow: configured');
-console.log('Headshot lightbox workflow: configured');
-console.log('Contact delivery mode: safe direct-email fallback');
+console.log('Résumé PDF + print workflow: configured');
+console.log('Headshot lightbox + original-download workflow: configured');
+console.log('Contact delivery mode: first-party endpoint with direct-email fallback');
 
 if (errors.length > 0) {
   console.error('\nPortfolio workflow failures:');

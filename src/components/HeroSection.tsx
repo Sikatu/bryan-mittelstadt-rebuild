@@ -14,32 +14,25 @@ import { siteConfig } from '@/content/site';
 
 const heroSlides = [
   {
-    src: '/images/bryan/current-site/featured/hero-primary.jpg',
-    label: 'Bryan Mittelstadt seated in a warmly lit interior',
-    objectPosition: '65% 43%',
-    imageClassName:
-      'brightness-[0.88] contrast-[1.03] saturate-[0.98]',
-  },
-  {
-    src: '/images/bryan/current-site/featured/home-dsc-1685.jpeg',
-    label: 'Editorial portrait of Bryan Mittelstadt',
-    objectPosition: '70% 34%',
-    imageClassName:
-      'brightness-[0.80] contrast-[1.04] saturate-[0.92]',
-  },
-  {
-    src: '/images/bryan/current-site/print/print-18-couch.jpg',
-    label: 'Bryan Mittelstadt seated on a vintage couch',
+    src: '/media/approved/lifestyle',
+    label: 'Bryan Mittelstadt seated against a dark blue studio background',
     objectPosition: '68% 42%',
     imageClassName:
-      'brightness-[0.82] contrast-[1.05] saturate-[0.92]',
+      'brightness-[0.72] contrast-[1.06] saturate-[0.92]',
   },
   {
-    src: '/images/bryan/current-site/print/print-16-staircase.jpg',
-    label: 'Bryan Mittelstadt on an architectural staircase',
-    objectPosition: '72% 42%',
+    src: '/media/approved/headshot-theatrical',
+    label: 'Bryan Mittelstadt approved theatrical headshot',
+    objectPosition: '70% 35%',
     imageClassName:
-      'brightness-[0.76] contrast-[1.08] saturate-[0.78]',
+      'brightness-[0.72] contrast-[1.04] saturate-[0.90]',
+  },
+  {
+    src: '/media/approved/headshot-commercial',
+    label: 'Bryan Mittelstadt approved commercial headshot',
+    objectPosition: '70% 34%',
+    imageClassName:
+      'brightness-[0.70] contrast-[1.04] saturate-[0.90]',
   },
 ] as const;
 
@@ -54,10 +47,6 @@ export default function HeroSection() {
     useState(false);
   const [reduceMotion, setReduceMotion] = useState(false);
 
-  /*
-   * Browser timers return a numeric ID. Keeping this ref explicitly
-   * browser-shaped avoids conflicts with the Node.js Timeout type.
-   */
   const resumeTimeoutRef = useRef<number | null>(null);
 
   const isPaused =
@@ -193,7 +182,7 @@ export default function HeroSection() {
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-r from-black/94 via-black/57 to-black/6"
+        className="absolute inset-0 -z-10 bg-gradient-to-r from-black/95 via-black/62 to-black/10"
       />
 
       <div

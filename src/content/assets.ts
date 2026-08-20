@@ -40,22 +40,17 @@ export function approvedAsset(
   };
 }
 
+const approved = '/media/approved';
 const featured = '/images/bryan/current-site/featured';
-const print = '/images/bryan/current-site/print';
 
-/**
- * Current-site media recovered from Bryan's publicly displayed Wix portfolio.
- * Final crops, captions, photographer credits, and download rights still need
- * Bryan or an authorized representative to approve before launch.
- */
 export const siteAssets: SiteAssets = {
   heroImage: approvedAsset(
     'hero-primary',
-    'Homepage cinematic still',
-    'Bryan Mittelstadt seated in a warmly lit interior scene',
-    `${featured}/hero-primary.jpg`,
+    'Approved homepage portrait',
+    'Bryan Mittelstadt seated against a dark blue studio background',
+    `${approved}/lifestyle`,
     'dark',
-    '65% 43%',
+    '68% 43%',
   ),
   reelPosterImage: approvedAsset(
     'reel-poster-primary',
@@ -67,11 +62,11 @@ export const siteAssets: SiteAssets = {
   ),
   portraitImage: approvedAsset(
     'about-portrait',
-    'About portrait',
-    'Bryan Mittelstadt in a relaxed outdoor lifestyle portrait',
-    `${featured}/bio-lifestyle.jpg`,
-    'warm',
-    '50% 30%',
+    'Approved editorial portrait',
+    'Bryan Mittelstadt seated against a dark blue studio background',
+    `${approved}/lifestyle`,
+    'neutral',
+    '60% 38%',
   ),
   verificationId,
 };
@@ -83,16 +78,17 @@ export const projectImageAssets = {
     'Approved production image for The Overview Effect',
     'accent',
   ),
-  quietAfterSupper: pendingAsset(
+  quietAfterSupper: approvedAsset(
     'project-quiet-after-supper',
     'Quiet After Supper',
-    'Approved production still from Quiet After Supper',
+    'Official poster for Quiet After Supper',
+    `${approved}/quiet-after-supper`,
     'dark',
   ),
   darling: approvedAsset(
     'project-darling',
     'Darling',
-    'Current public artwork for Bryan Mittelstadt album Darling',
+    'Current public artwork for Bryan Mittelstadt music project Darling',
     `${featured}/darling-artwork.jpg`,
     'warm',
     '50% 50%',
@@ -100,7 +96,7 @@ export const projectImageAssets = {
   julius: pendingAsset(
     'project-julius',
     'Julius',
-    'Approved production still from Julius',
+    'Approved production image for Julius',
     'neutral',
   ),
   bloodAndSexOverAmbition: pendingAsset(
@@ -147,15 +143,15 @@ export const disciplineImageAssets = {
   voiceOver: approvedAsset(
     'discipline-voice-over',
     'Voice-Over',
-    'Editorial portrait of Bryan Mittelstadt',
-    `${print}/print-05.jpeg`,
+    'Bryan Mittelstadt approved theatrical headshot',
+    `${approved}/headshot-theatrical`,
     'neutral',
-    '50% 28%',
+    '50% 30%',
   ),
   music: approvedAsset(
     'discipline-music',
     'Music',
-    'Current public artwork for Bryan Mittelstadt album Darling',
+    'Current public artwork for Bryan Mittelstadt music project Darling',
     `${featured}/darling-artwork.jpg`,
     'warm',
     '50% 50%',
@@ -163,9 +159,9 @@ export const disciplineImageAssets = {
   writing: approvedAsset(
     'discipline-writing-filmmaking',
     'Writing & Filmmaking',
-    'Editorial photograph of Bryan Mittelstadt on a staircase',
-    `${print}/print-16-staircase.jpg`,
+    'Bryan Mittelstadt approved editorial portrait',
+    `${approved}/lifestyle`,
     'accent',
-    '50% 50%',
+    '62% 42%',
   ),
 } satisfies Record<string, ImageAsset>;

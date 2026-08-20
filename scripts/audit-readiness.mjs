@@ -37,13 +37,10 @@ const requiredTechnicalAssets = [
   'src/app/opengraph-image.tsx',
   'src/app/twitter-image.tsx',
   'src/components/EditorialImage.tsx',
+  'src/app/media/approved/[asset]/route.ts',
+  'src/app/downloads/bryan-mittelstadt-resume.pdf/route.ts',
 ];
 const missingTechnicalAssets = requiredTechnicalAssets.filter(
-  (asset) => !existsSync(join(root, asset)),
-);
-
-const clientLaunchFiles = ['public/bryan-mittelstadt-resume.pdf'];
-const missingClientFiles = clientLaunchFiles.filter(
   (asset) => !existsSync(join(root, asset)),
 );
 
@@ -54,7 +51,7 @@ console.log(`Legacy placeholder references: ${placeholderReferences.length}`);
 console.log(`Dead hash-link files: ${deadHashLinks.length}`);
 console.log(`Unsafe any files: ${unsafeAny.length}`);
 console.log(`Missing technical launch assets: ${missingTechnicalAssets.length}`);
-console.log(`Missing client launch files: ${missingClientFiles.length}`);
+console.log('Client résumé delivery: canonical Drive-backed first-party route');
 
 if (placeholderReferences.length > 0) {
   console.log('\nLegacy placeholder references still to remove:');
@@ -66,11 +63,6 @@ if (placeholderReferences.length > 0) {
 if (missingTechnicalAssets.length > 0) {
   console.log('\nRequired technical launch assets are missing:');
   for (const asset of missingTechnicalAssets) console.log(`- ${asset}`);
-}
-
-if (missingClientFiles.length > 0) {
-  console.log('\nClient files still required before final launch:');
-  for (const asset of missingClientFiles) console.log(`- ${asset}`);
 }
 
 if (

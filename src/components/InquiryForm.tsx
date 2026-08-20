@@ -47,12 +47,6 @@ export default function InquiryForm({ recipientEmail, config }: InquiryFormProps
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    if (fields.company) {
-      setSubmissionState('success');
-      setStatusMessage('Thank you. Your inquiry has been received.');
-      return;
-    }
-
     if (fields.message.trim().length < config.minimumMessageLength) {
       setSubmissionState('error');
       setStatusMessage(`Please provide at least ${config.minimumMessageLength} characters in your message.`);
@@ -60,7 +54,7 @@ export default function InquiryForm({ recipientEmail, config }: InquiryFormProps
     }
 
     setSubmissionState('submitting');
-    setStatusMessage('Preparing your inquiry…');
+    setStatusMessage('Sending your inquiry…');
 
     const subject = fields.subject.trim() || selectedCategory.subjectPrefix;
     const payload = {
@@ -69,6 +63,7 @@ export default function InquiryForm({ recipientEmail, config }: InquiryFormProps
       category: selectedCategory.label,
       subject,
       message: fields.message.trim(),
+      company: fields.company.trim(),
     };
 
     if (config.endpoint) {
@@ -218,11 +213,7 @@ export default function InquiryForm({ recipientEmail, config }: InquiryFormProps
           disabled={submissionState === 'submitting'}
           className="inline-flex min-h-12 items-center justify-center rounded-sm bg-accent px-6 py-3 text-xs font-medium uppercase tracking-[0.14em] text-white transition-colors hover:bg-accent-hover disabled:cursor-wait disabled:opacity-65"
         >
-          {submissionState === 'submitting'
-            ? 'Preparing…'
-            : config.endpoint
-              ? 'Send Inquiry'
-              : 'Continue in Email'}
+          {submissionState === 'submitting' ? 'Sending…' : 'Send Inquiry'}
         </button>
         <p className="max-w-md text-xs leading-relaxed text-text-muted">{config.privacyNote}</p>
       </div>

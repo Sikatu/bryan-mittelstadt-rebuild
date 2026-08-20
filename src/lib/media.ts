@@ -1,10 +1,9 @@
 export type ResolvedVideo = {
-  platform: 'youtube' | 'vimeo' | 'external';
+  platform: 'youtube' | 'vimeo' | 'google-drive' | 'external';
   watchUrl: string;
   embedUrl?: string;
 };
 
-/** Resolve common YouTube and Vimeo links without assuming a single URL shape. */
 export function resolveVideoUrl(url?: string): ResolvedVideo | undefined {
   if (!url) return undefined;
 
@@ -51,6 +50,23 @@ export function resolveVideoUrl(url?: string): ResolvedVideo | undefined {
           platform: 'vimeo',
           watchUrl: `https://vimeo.com/${id}`,
           embedUrl: `https://player.vimeo.com/video/${id}`,
+        };
+      }
+    }
+
+    if (host === 'drive.google.com') {
+      const pathParts = parsed.pathname.split('/').filter(Boolean);
+      const fileIndex = pathParts.indexOf('d');
+      const id =
+        fileIndex > 0 && pathParts[fileIndex - 1] === 'file'
+          ? pathParts[fileIndex + 1]
+          : parsed.searchParams.get('id') ?? undefined;
+
+      if (id) {
+        return {
+          platform: 'google-drive',
+          watchUrl: `https://drive.google.com/file/d/${id}/view`,
+          embedUrl: `https://drive.google.com/file/d/${id}/preview`,
         };
       }
     }

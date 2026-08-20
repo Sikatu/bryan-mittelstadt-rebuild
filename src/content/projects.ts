@@ -6,8 +6,6 @@
 import { disciplineImageAssets, projectImageAssets } from '@/content/assets';
 import type { DisciplineInfo, Project } from '@/types';
 
-// ---- CURRENT / FEATURED PROJECTS ----
-
 export const featuredProjects: Project[] = [
   {
     title: 'The Overview Effect',
@@ -43,15 +41,13 @@ export const featuredProjects: Project[] = [
     discipline: 'Music',
     format: 'Music',
     status: 'Upcoming',
-    year: 2026,
-    description: "Bryan's debut folk album, currently planned for release in 2026.",
+    description:
+      'Bryan is preparing upcoming single releases. Final album timing, release dates, and streaming destinations will be announced when confirmed.',
     featured: true,
     image: projectImageAssets.darling,
     verificationId: 'project.darling',
   },
 ];
-
-// ---- SELECTED WORK ----
 
 export const selectedProjects: Project[] = [
   {
@@ -115,8 +111,6 @@ export const selectedProjects: Project[] = [
   },
 ];
 
-// ---- DISCIPLINE INTRODUCTIONS ----
-
 export const disciplines: DisciplineInfo[] = [
   {
     title: 'Acting',
@@ -138,7 +132,7 @@ export const disciplines: DisciplineInfo[] = [
     title: 'Music',
     slug: '/music',
     description:
-      'Tenor vocalist, songwriter, and multi-instrumentalist preparing his debut folk album, Darling.',
+      'Tenor vocalist, songwriter, and multi-instrumentalist preparing upcoming single releases.',
     image: disciplineImageAssets.music,
     verificationId: 'disciplines.editorial-copy',
   },
@@ -146,7 +140,7 @@ export const disciplines: DisciplineInfo[] = [
     title: 'Writing & Filmmaking',
     slug: '/writing-filmmaking',
     description:
-      'Screenwriting, directing, and producing work to be added after Bryan approves the public project list.',
+      'Original screenwriting and directing work including The Sea Ranch, Carne, Dry, What Remains, and Bubble Gum.',
     image: disciplineImageAssets.writing,
     verificationId: 'disciplines.editorial-copy',
   },

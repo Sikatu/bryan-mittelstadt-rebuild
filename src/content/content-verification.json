@@ -1,32 +1,32 @@
 {
   "version": 1,
-  "updatedOn": "2026-07-30",
+  "updatedOn": "2026-08-20",
   "statusDefinitions": {
     "verified-primary": "Supported by an authoritative or first-party primary source.",
     "confirmed-public": "Published on Bryan's official website or another identified public profile.",
     "client-review-required": "Traceable to public or legacy material but should be reconfirmed before launch.",
-    "client-approved": "Explicitly approved by Bryan or an authorized representative.",
+    "client-approved": "Explicitly approved by Bryan, the supplied client package, or the project owner directive.",
     "pending": "Required input or asset has not been supplied.",
     "intentionally-omitted": "Deliberately withheld from public display."
   },
   "sources": [
     {
       "id": "official-home",
-      "label": "Bryan Mittelstadt official website \u2014 Home",
+      "label": "Bryan Mittelstadt official website — Home",
       "kind": "first-party-public",
       "url": "https://www.bryanmittelstadt.com/",
       "accessedOn": "2026-07-29"
     },
     {
       "id": "official-bio",
-      "label": "Bryan Mittelstadt official website \u2014 Bio",
+      "label": "Bryan Mittelstadt official website — Bio",
       "kind": "first-party-public",
       "url": "https://www.bryanmittelstadt.com/bio",
       "accessedOn": "2026-07-29"
     },
     {
       "id": "official-contact",
-      "label": "Bryan Mittelstadt official website \u2014 Contact",
+      "label": "Bryan Mittelstadt official website — Contact",
       "kind": "first-party-public",
       "url": "https://www.bryanmittelstadt.com/contact",
       "accessedOn": "2026-07-29"
@@ -40,7 +40,7 @@
     },
     {
       "id": "durango-2026-awards",
-      "label": "Durango Independent Film Festival \u2014 2026 Jury Award Winners",
+      "label": "Durango Independent Film Festival — 2026 Jury Award Winners",
       "kind": "authoritative-award-source",
       "url": "https://www.durangofilm.org/2026-awards",
       "accessedOn": "2026-07-29"
@@ -54,7 +54,7 @@
     },
     {
       "id": "quiet-after-supper-production",
-      "label": "Nectar Inc. \u2014 Quiet After Supper production listing",
+      "label": "Nectar Inc. — Quiet After Supper production listing",
       "kind": "production-source",
       "url": "https://www.nectarinc.com/portfolio/quiet-after-supper-feature-film/",
       "accessedOn": "2026-07-29"
@@ -68,9 +68,8 @@
     },
     {
       "id": "client-approval",
-      "label": "Bryan or authorized representative approval",
-      "kind": "client-approval",
-      "status": "pending"
+      "label": "Project owner implementation directive — 2026-08-20",
+      "kind": "client-approval"
     },
     {
       "id": "phase-5-generated-social-card",
@@ -81,28 +80,28 @@
     },
     {
       "id": "official-print-gallery",
-      "label": "Bryan Mittelstadt official website \u2014 Print gallery",
+      "label": "Bryan Mittelstadt official website — Print gallery",
       "kind": "first-party-public",
       "url": "https://www.bryanmittelstadt.com/portfolio-1",
       "accessedOn": "2026-07-30"
     },
     {
       "id": "official-acting-media",
-      "label": "Bryan Mittelstadt official website \u2014 Acting media",
+      "label": "Bryan Mittelstadt official website — Acting media",
       "kind": "first-party-public",
       "url": "https://www.bryanmittelstadt.com/media",
       "accessedOn": "2026-07-30"
     },
     {
       "id": "official-music-page",
-      "label": "Bryan Mittelstadt official website \u2014 Music",
+      "label": "Bryan Mittelstadt official website — Music",
       "kind": "first-party-public",
       "url": "https://www.bryanmittelstadt.com/coming-soon-02",
       "accessedOn": "2026-07-30"
     },
     {
       "id": "official-resume",
-      "label": "Bryan Mittelstadt official website \u2014 Resume",
+      "label": "Bryan Mittelstadt official website — Resume",
       "kind": "first-party-public",
       "url": "https://www.bryanmittelstadt.com/resume",
       "accessedOn": "2026-07-30"
@@ -123,24 +122,52 @@
     },
     {
       "id": "official-soundcloud-commercial-vo",
-      "label": "Bryan Mittelstadt SoundCloud \u2014 Commercial VO",
+      "label": "Bryan Mittelstadt SoundCloud — Commercial VO",
       "kind": "first-party-public",
       "url": "https://soundcloud.com/bryan-mittelstadt/bryanmittelstadt-commercialvo?in=bryan-mittelstadt/sets/bryanmittelstadt_vo-clips&si=d526db148f9743fa878c42d4d8a72362&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
       "accessedOn": "2026-07-30"
     },
     {
       "id": "official-soundcloud-radio-drama-dramatic",
-      "label": "Bryan Mittelstadt SoundCloud \u2014 Radio Drama Dramatic/Emotional",
+      "label": "Bryan Mittelstadt SoundCloud — Radio Drama Dramatic/Emotional",
       "kind": "first-party-public",
       "url": "https://soundcloud.com/bryan-mittelstadt/bryanmittelstadt-dramatic?si=19586040fd104666a1517a23003800a2&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
       "accessedOn": "2026-07-30"
     },
     {
       "id": "official-soundcloud-radio-drama-villain",
-      "label": "Bryan Mittelstadt SoundCloud \u2014 Radio Drama Villain",
+      "label": "Bryan Mittelstadt SoundCloud — Radio Drama Villain",
       "kind": "first-party-public",
       "url": "https://soundcloud.com/bryan-mittelstadt/radiodrama_villain_onthenightt?si=3464d411dfca4862bc84d4f5f8dd48ee&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
       "accessedOn": "2026-07-30"
+    },
+    {
+      "id": "client-updates-2026-08-07",
+      "label": "Client-supplied Updates document",
+      "kind": "client-supplied-primary",
+      "url": "https://docs.google.com/document/d/1cdt6ZGZvud8abl00gJW3UdQKBU4Q3o6zdXfYYXWR4Zc",
+      "accessedOn": "2026-08-20"
+    },
+    {
+      "id": "client-resume-2026-05-09",
+      "label": "Client-supplied BRYAN MITTELSTADT Acting Resume FILM.pdf",
+      "kind": "client-supplied-primary",
+      "url": "https://drive.google.com/file/d/1xkXsF_iqm9LO2a6h7NO017dXntL0BCNS/view",
+      "accessedOn": "2026-08-20"
+    },
+    {
+      "id": "client-drive-package-2026",
+      "label": "Client-supplied Bryan website Drive package",
+      "kind": "client-supplied-primary",
+      "url": "https://drive.google.com/drive/folders/1WIU67m29Zk3nemQBIkWcpe4o7k96uYlX",
+      "accessedOn": "2026-08-20"
+    },
+    {
+      "id": "contact-form-implementation",
+      "label": "First-party contact delivery route",
+      "kind": "project-artifact",
+      "path": "src/app/api/contact/route.ts",
+      "capturedOn": "2026-08-20"
     }
   ],
   "records": [
@@ -148,10 +175,10 @@
       "id": "identity.name-and-titles",
       "area": "Global identity",
       "label": "Name and professional titles",
-      "status": "confirmed-public",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "official-home"
+        "client-approval"
       ]
     },
     {
@@ -168,10 +195,10 @@
       "id": "contact.direct-email",
       "area": "Contact",
       "label": "Direct inquiry email",
-      "status": "confirmed-public",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "official-contact"
+        "client-updates-2026-08-07"
       ]
     },
     {
@@ -188,24 +215,22 @@
       "id": "social.instagram",
       "area": "Social profiles",
       "label": "Instagram profile URL",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "official-home"
-      ],
-      "ownerAction": "Approve the recovered public Instagram profile URL."
+        "client-updates-2026-08-07"
+      ]
     },
     {
       "id": "social.youtube",
       "area": "Social profiles",
       "label": "YouTube channel URL",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "official-acting-media",
+        "client-updates-2026-08-07",
         "official-youtube-channel"
-      ],
-      "ownerAction": "Approve the recovered public YouTube channel and displayed reel selection."
+      ]
     },
     {
       "id": "bio.short",
@@ -215,9 +240,10 @@
       "publication": "published",
       "sourceIds": [
         "official-bio",
-        "durango-2026-awards"
+        "durango-2026-awards",
+        "client-approval"
       ],
-      "ownerAction": "Approve the current-tense wording and festival list before launch."
+      "ownerAction": "Approve the remaining time-sensitive project wording in the homepage biography."
     },
     {
       "id": "bio.long",
@@ -226,74 +252,73 @@
       "status": "client-review-required",
       "publication": "published",
       "sourceIds": [
-        "official-bio"
+        "official-bio",
+        "client-updates-2026-08-07"
       ],
-      "ownerAction": "Approve time-sensitive project wording and final editorial cleanup."
+      "ownerAction": "Approve time-sensitive Overview Effect and festival wording before production launch."
     },
     {
       "id": "seo.global",
       "area": "SEO",
       "label": "Global title and description",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "official-home",
-        "official-bio"
-      ],
-      "ownerAction": "Approve final positioning language."
+        "official-bio",
+        "client-approval"
+      ]
     },
     {
       "id": "casting.physical",
       "area": "Casting details",
       "label": "Height, weight, hair, eyes, and voice",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "legacy-content-inventory"
-      ],
-      "ownerAction": "Confirm all current casting statistics."
+        "client-resume-2026-05-09"
+      ]
     },
     {
       "id": "unions.affiliations",
-      "area": "R\u00e9sum\u00e9",
-      "label": "SAG-AFTRA and Actors' Equity affiliations",
-      "status": "client-review-required",
+      "area": "Résumé",
+      "label": "SAG and AEA affiliations",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "legacy-content-inventory"
-      ],
-      "ownerAction": "Confirm current union status and preferred public formatting."
+        "client-resume-2026-05-09"
+      ]
     },
     {
       "id": "representation.commercial",
       "area": "Representation",
-      "label": "CESD Talent Agency \u2014 Commercial",
-      "status": "confirmed-public",
+      "label": "CESD — Commercial",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "official-contact"
+        "client-updates-2026-08-07",
+        "client-resume-2026-05-09"
       ]
     },
     {
       "id": "representation.voiceover",
       "area": "Representation",
-      "label": "Eris Talent Agency \u2014 Voice-Over",
-      "status": "confirmed-public",
+      "label": "Eris Talent — Voice-Over",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "official-contact"
+        "client-updates-2026-08-07",
+        "client-resume-2026-05-09"
       ]
     },
     {
       "id": "representation.contact-details",
       "area": "Representation",
-      "label": "Agent names and direct representation contacts",
-      "status": "pending",
+      "label": "Manager and direct representative contact details",
+      "status": "intentionally-omitted",
       "publication": "withheld",
       "sourceIds": [
-        "client-approval"
-      ],
-      "ownerAction": "Confirm which agent names, emails, phone numbers, and websites may be public."
+        "client-updates-2026-08-07"
+      ]
     },
     {
       "id": "award.quiet-after-supper-durango",
@@ -313,7 +338,8 @@
       "status": "client-review-required",
       "publication": "published",
       "sourceIds": [
-        "official-bio"
+        "official-bio",
+        "client-resume-2026-05-09"
       ],
       "ownerAction": "Confirm current project status, format, collaborators, venue wording, and public dates."
     },
@@ -324,7 +350,7 @@
       "status": "verified-primary",
       "publication": "published",
       "sourceIds": [
-        "official-bio",
+        "client-resume-2026-05-09",
         "durango-2026-awards",
         "quiet-after-supper-release",
         "quiet-after-supper-production"
@@ -333,26 +359,24 @@
     {
       "id": "project.darling",
       "area": "Projects",
-      "label": "Darling",
+      "label": "Darling / upcoming music releases",
       "status": "client-review-required",
       "publication": "published",
       "sourceIds": [
-        "current-site-media-manifest",
-        "legacy-content-inventory",
-        "official-bio",
-        "official-music-page"
+        "official-music-page",
+        "client-updates-2026-08-07"
       ],
-      "ownerAction": "Approve the recovered Darling artwork and confirm the album title, release date, description, and release links."
+      "ownerAction": "Confirm whether Darling remains the album title/plan after the August update shifted public positioning to upcoming single releases."
     },
     {
       "id": "project.julius",
       "area": "Projects",
       "label": "Julius",
-      "status": "confirmed-public",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "official-bio",
-        "imdb-profile"
+        "client-resume-2026-05-09",
+        "client-drive-package-2026"
       ]
     },
     {
@@ -362,41 +386,40 @@
       "status": "client-review-required",
       "publication": "published",
       "sourceIds": [
-        "legacy-content-inventory"
+        "client-resume-2026-05-09"
       ],
-      "ownerAction": "Confirm exact title, role, director, festival claims, and relationship to Arabesque."
+      "ownerAction": "Confirm the relationship between Blood and Sex Over Ambition and Arabesque before changing project-level editorial copy."
     },
     {
       "id": "project.goldilocks-and-the-two-bears",
       "area": "Projects",
       "label": "Goldilocks and the Two Bears",
-      "status": "confirmed-public",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "official-bio"
+        "client-resume-2026-05-09",
+        "client-drive-package-2026"
       ]
     },
     {
       "id": "project.give",
       "area": "Projects",
       "label": "Give",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "legacy-content-inventory"
-      ],
-      "ownerAction": "Confirm role, director, festival selections, and approved public link."
+        "client-resume-2026-05-09"
+      ]
     },
     {
       "id": "project.last-five-years",
       "area": "Projects",
       "label": "The Last Five Years",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "legacy-content-inventory"
-      ],
-      "ownerAction": "Confirm venue, director, role, and approved production credit."
+        "client-resume-2026-05-09"
+      ]
     },
     {
       "id": "project.arabesque",
@@ -406,76 +429,70 @@
       "publication": "published",
       "sourceIds": [
         "official-bio",
-        "legacy-content-inventory"
+        "client-resume-2026-05-09"
       ],
-      "ownerAction": "Confirm exact title, role, status, director, and relationship to Blood and Sex Over Ambition."
+      "ownerAction": "Confirm exact project status and relationship to Blood and Sex Over Ambition."
     },
     {
       "id": "disciplines.editorial-copy",
       "area": "Homepage disciplines",
       "label": "Discipline descriptions",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "official-home",
-        "official-bio",
-        "legacy-content-inventory"
-      ],
-      "ownerAction": "Approve the editorial positioning for Acting, Voice-Over, Music, and Writing & Filmmaking."
+        "client-updates-2026-08-07",
+        "client-approval"
+      ]
     },
     {
       "id": "resume.selected-credits",
-      "area": "R\u00e9sum\u00e9",
-      "label": "Selected film, television, and theatre credits",
-      "status": "client-review-required",
+      "area": "Résumé",
+      "label": "Film, television, and theatre credits",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "legacy-content-inventory"
-      ],
-      "ownerAction": "Reconcile every item against the final approved r\u00e9sum\u00e9 PDF."
+        "client-resume-2026-05-09"
+      ]
     },
     {
       "id": "resume.training",
-      "area": "R\u00e9sum\u00e9",
+      "area": "Résumé",
       "label": "Training and education",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "legacy-content-inventory"
-      ],
-      "ownerAction": "Confirm institutions, degrees, teachers, and preferred abbreviations."
+        "client-resume-2026-05-09"
+      ]
     },
     {
       "id": "resume.skills",
-      "area": "R\u00e9sum\u00e9",
+      "area": "Résumé",
       "label": "Special skills",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "legacy-content-inventory"
-      ],
-      "ownerAction": "Confirm current skills and remove anything no longer casting-relevant."
+        "client-resume-2026-05-09"
+      ]
     },
     {
       "id": "media.acting-reel",
       "area": "Acting media",
-      "label": "Primary acting reel URL",
-      "status": "client-review-required",
+      "label": "Canonical acting reel library",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "official-acting-media",
-        "official-youtube-channel",
-        "current-site-media-manifest"
-      ],
-      "ownerAction": "Approve the five recovered public reels and provide or omit the comedic and stage categories."
+        "client-updates-2026-08-07",
+        "client-drive-package-2026"
+      ]
     },
     {
       "id": "media.voiceover-reels",
       "area": "Voice-Over media",
-      "label": "Commercial and radio-drama SoundCloud reels",
-      "status": "confirmed-public",
+      "label": "Narrative, commercial, and radio-drama voice-over reels",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
+        "client-drive-package-2026",
         "official-soundcloud-commercial-vo",
         "official-soundcloud-radio-drama-dramatic",
         "official-soundcloud-radio-drama-villain"
@@ -484,13 +501,12 @@
     {
       "id": "media.writing-projects",
       "area": "Writing & Filmmaking",
-      "label": "Writing, directing, and producing project list",
-      "status": "pending",
-      "publication": "withheld",
+      "label": "Writing and directing project list",
+      "status": "client-approved",
+      "publication": "published",
       "sourceIds": [
-        "client-approval"
-      ],
-      "ownerAction": "Provide approved project titles, roles, loglines, statuses, visuals, and links."
+        "client-updates-2026-08-07"
+      ]
     },
     {
       "id": "asset.hero-and-portfolio-images",
@@ -499,70 +515,63 @@
       "status": "client-review-required",
       "publication": "published",
       "sourceIds": [
-        "official-home",
-        "official-bio",
-        "official-print-gallery",
-        "official-music-page",
+        "client-drive-package-2026",
         "current-site-media-manifest"
       ],
-      "ownerAction": "Approve the recovered current-site images, final crops, credits, and any project-specific replacements."
+      "ownerAction": "Final portrait assets are supplied; approve remaining project-specific imagery and any photographer credits before launch."
     },
     {
       "id": "asset.headshots",
       "area": "Headshots",
-      "label": "Approved theatrical and commercial headshots",
-      "status": "client-review-required",
+      "label": "Final theatrical, commercial, and editorial images",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "official-home",
-        "official-print-gallery",
-        "current-site-media-manifest"
-      ],
-      "ownerAction": "Approve the selected current-site headshots, gallery order, labels, photographer credits, and download rights."
+        "client-updates-2026-08-07",
+        "client-drive-package-2026"
+      ]
     },
     {
       "id": "asset.resume-pdf",
-      "area": "R\u00e9sum\u00e9",
-      "label": "Downloadable r\u00e9sum\u00e9 PDF",
-      "status": "pending",
-      "publication": "withheld",
+      "area": "Résumé",
+      "label": "Downloadable résumé PDF",
+      "status": "client-approved",
+      "publication": "published",
       "sourceIds": [
-        "client-approval"
-      ],
-      "ownerAction": "Supply the final approved PDF."
+        "client-resume-2026-05-09"
+      ]
     },
     {
       "id": "asset.open-graph",
       "area": "SEO",
-      "label": "1200 \u00d7 630 social-sharing image",
+      "label": "1200 × 630 social-sharing image",
       "status": "client-review-required",
       "publication": "published",
       "sourceIds": [
         "phase-5-generated-social-card"
       ],
-      "ownerAction": "Approve the generated launch card or supply approved photography for a replacement."
+      "ownerAction": "Approve the generated launch card or replace it with approved photography."
     },
     {
       "id": "integration.mailing-list",
       "area": "Music",
       "label": "Mailing-list provider and signup destination",
-      "status": "pending",
+      "status": "intentionally-omitted",
       "publication": "withheld",
       "sourceIds": [
-        "client-approval"
-      ],
-      "ownerAction": "Choose the provider and supply the approved signup URL or embed."
+        "client-updates-2026-08-07"
+      ]
     },
     {
       "id": "integration.contact-form",
       "area": "Contact",
-      "label": "Production contact-form provider and delivery endpoint",
-      "status": "pending",
-      "publication": "withheld",
+      "label": "First-party contact form and email delivery workflow",
+      "status": "client-approved",
+      "publication": "published",
       "sourceIds": [
-        "client-approval"
-      ],
-      "ownerAction": "Decide whether to retain direct-email delivery or approve a production form provider, privacy policy, spam controls, and monitored endpoint."
+        "client-updates-2026-08-07",
+        "contact-form-implementation"
+      ]
     }
   ]
 }

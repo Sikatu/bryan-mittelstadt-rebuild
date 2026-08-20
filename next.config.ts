@@ -14,7 +14,7 @@ const contentSecurityPolicy = [
   "style-src 'self' 'unsafe-inline'",
   "script-src 'self' 'unsafe-inline'",
   "connect-src 'self' https:",
-  "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com",
+  "frame-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://player.vimeo.com https://drive.google.com",
   isProduction ? 'upgrade-insecure-requests' : '',
 ]
   .filter(Boolean)
