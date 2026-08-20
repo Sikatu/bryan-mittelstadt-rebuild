@@ -129,13 +129,13 @@ export const voiceOverReels: AudioReel[] = [
   },
 ];
 
-const approved = '/images/bryan/approved';
+const approved = '/media/approved';
 
 export const headshots: Headshot[] = [
   {
     id: 'approved-theatrical',
-    src: `${approved}/headshot-theatrical.webp`,
-    downloadUrl: 'https://drive.google.com/uc?export=download&id=1jyHF5glCTphpNQTD6nePlp280b44Ehjp',
+    src: `${approved}/headshot-theatrical`,
+    downloadUrl: `${approved}/headshot-theatrical`,
     alt: 'Bryan Mittelstadt theatrical headshot against a warm brown background',
     label: 'Theatrical',
     category: 'Theatrical',
@@ -143,8 +143,8 @@ export const headshots: Headshot[] = [
   },
   {
     id: 'approved-commercial',
-    src: `${approved}/headshot-commercial.webp`,
-    downloadUrl: 'https://drive.google.com/uc?export=download&id=1YCdIYfBEabaXEWeyqixs4mrxrFzZYDav',
+    src: `${approved}/headshot-commercial`,
+    downloadUrl: `${approved}/headshot-commercial`,
     alt: 'Bryan Mittelstadt smiling in a professional commercial headshot',
     label: 'Commercial',
     category: 'Commercial',
@@ -152,8 +152,8 @@ export const headshots: Headshot[] = [
   },
   {
     id: 'approved-editorial',
-    src: `${approved}/lifestyle.webp`,
-    downloadUrl: 'https://drive.google.com/uc?export=download&id=1uc6hwNvYKhUo3Qz80w-xV6Gd1jfweVgh',
+    src: `${approved}/lifestyle`,
+    downloadUrl: `${approved}/lifestyle`,
     alt: 'Bryan Mittelstadt seated against a dark blue studio background',
     label: 'Editorial',
     category: 'Editorial',
