@@ -7,6 +7,7 @@ import ReelPlayer from '@/components/ReelPlayer';
 import ProjectFeature from '@/components/ProjectFeature';
 import ProjectCard from '@/components/ProjectCard';
 import DisciplineLink from '@/components/DisciplineLink';
+import AboutPreview from '@/components/AboutPreview';
 import ContactCTA from '@/components/ContactCTA';
 import { featuredProjects, selectedProjects, disciplines } from '@/content/projects';
 import { siteConfig } from '@/content/site';
@@ -32,7 +33,7 @@ export default function Home() {
 
       {/* Current Work Section */}
       {featuredProjects.length > 0 && (
-        <section aria-label="Current work" className="py-20 lg:py-28 bg-bg-secondary">
+        <section aria-label="Current work" className="border-y border-[#d8d1c7] bg-[#f1ede7] py-24 sm:py-28 lg:py-36">
           <Container>
             <div className="mb-12 lg:mb-16">
               <SectionHeading eyebrow="Now" theme="dark">
@@ -40,7 +41,7 @@ export default function Home() {
               </SectionHeading>
             </div>
             
-            <div className="space-y-20 lg:space-y-32">
+            <div className="space-y-20 lg:space-y-28">
               {featuredProjects.map((project, index) => (
                 <ProjectFeature 
                   key={project.title} 
@@ -55,7 +56,7 @@ export default function Home() {
 
       {/* Selected Work Section */}
       {selectedProjects.length > 0 && (
-        <section aria-label="Selected projects portfolio" className="py-20 lg:py-28">
+        <section aria-label="Selected projects portfolio" className="bg-bg-primary py-24 sm:py-28 lg:py-36">
           <Container>
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12 lg:mb-16">
               <SectionHeading eyebrow="Portfolio">
@@ -66,7 +67,7 @@ export default function Home() {
               </EditorialButton>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+            <div className="grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-3 lg:gap-y-20">
               {selectedProjects.map((project) => (
                 <ProjectCard key={project.title} project={project} />
               ))}
@@ -76,15 +77,24 @@ export default function Home() {
       )}
 
       {/* Disciplines Section */}
-      <section aria-label="Creative disciplines" className="py-20 lg:py-28 bg-bg-secondary">
+      <section
+        aria-label="Creative disciplines"
+        className="border-t border-[#d8d1c7] bg-[#f1ede7] py-24 sm:py-28 lg:py-32"
+      >
         <Container>
-          <div className="mb-12 lg:mb-16">
-            <SectionHeading eyebrow="Disciplines" align="center" theme="dark">
+          <div className="mb-10 grid gap-5 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.42fr)] lg:items-end lg:gap-16">
+            <SectionHeading eyebrow="Disciplines" theme="dark">
               Multidisciplinary Artist
             </SectionHeading>
+
+            <p className="max-w-md text-sm leading-7 text-text-secondary lg:justify-self-end">
+              Acting leads the work. Voice-over, music,
+              writing, and filmmaking extend the same
+              performance-driven practice.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
             {disciplines.map((discipline) => (
               <DisciplineLink
                 key={discipline.title}
@@ -95,25 +105,7 @@ export default function Home() {
         </Container>
       </section>
 
-      {/* Short Biography Section */}
-      <section aria-label="About Bryan" className="py-20 lg:py-28 border-t border-border-subtle">
-        <Container narrow>
-          <div className="text-center">
-            <SectionHeading eyebrow="About" align="center" as="h2">
-              Bryan Mittelstadt
-            </SectionHeading>
-            <div className="mt-8 text-text-secondary leading-relaxed space-y-6">
-              <p>{siteConfig.shortBio}</p>
-            </div>
-            <div className="mt-10">
-              <EditorialButton href="/about" variant="secondary">
-                Read Full Biography
-              </EditorialButton>
-            </div>
-          </div>
-        </Container>
-      </section>
-
+      <AboutPreview />
       <ContactCTA />
 
       {/* Reel Structured Data */}

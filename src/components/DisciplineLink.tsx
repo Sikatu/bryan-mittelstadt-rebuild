@@ -6,46 +6,53 @@ interface DisciplineLinkProps {
   discipline: DisciplineInfo;
 }
 
-/** Consistent editorial discipline card with accessible image contrast. */
+/** Quiet cinematic discipline tile used on the homepage. */
 export default function DisciplineLink({
   discipline,
 }: DisciplineLinkProps) {
   return (
     <Link
       href={discipline.slug}
-      className="group relative block aspect-[4/5] overflow-hidden rounded-sm border border-border-subtle bg-contrast-dark shadow-sm transition duration-500 hover:-translate-y-1 hover:shadow-lg"
+      className="group relative block aspect-[5/4] overflow-hidden border border-black/10 bg-contrast-dark shadow-[0_16px_44px_rgba(40,31,24,0.08)]"
     >
       {discipline.image && (
         <EditorialImage
           asset={discipline.image}
           sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 25vw"
           decorative
-          imageClassName="brightness-[0.78] contrast-[1.04] saturate-[0.92] transition-all duration-700 ease-out group-hover:scale-[1.035] group-hover:brightness-[0.70]"
+          imageClassName="brightness-[0.74] contrast-[1.04] saturate-[0.9] transition-[transform,filter] duration-[900ms] ease-out group-hover:scale-[1.035] group-hover:brightness-[0.64]"
           fallbackLabel="Discipline photography pending"
         />
       )}
 
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/42 to-black/10 transition-colors duration-500 group-hover:from-black/94"
+        className="absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.05)_20%,rgba(0,0,0,0.22)_52%,rgba(0,0,0,0.90)_100%)]"
       />
 
-      <div className="absolute inset-x-0 bottom-0 p-4 sm:p-5">
-        <div className="rounded-sm border border-white/15 bg-black/45 p-4 shadow-lg backdrop-blur-[3px] sm:p-5">
-          <h3 className="font-serif text-[1.35rem] leading-[1.08] text-white text-shadow-sm transition-colors duration-300 group-hover:text-[#F6D3C0] sm:text-2xl">
+      <div className="absolute inset-x-0 bottom-0 p-5 sm:p-6">
+        <div className="mb-3 flex items-center justify-between gap-4">
+          <h3 className="font-serif text-[1.7rem] leading-[0.98] tracking-[-0.02em] text-white transition-colors duration-300 group-hover:text-[#f1c2a5]">
             {discipline.title}
           </h3>
 
-          <p className="mt-3 line-clamp-4 text-sm leading-[1.55] text-white/90">
-            {discipline.description}
-          </p>
-
-          <span className="mt-4 inline-flex items-center gap-2 text-xs font-medium uppercase tracking-[0.2em] text-[#F3BE9D] transition-colors duration-300 group-hover:text-white">
-            Explore
-            <span aria-hidden="true">→</span>
+          <span
+            aria-hidden="true"
+            className="text-lg text-white/58 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white"
+          >
+            →
           </span>
         </div>
+
+        <p className="line-clamp-2 max-w-[26rem] text-[0.78rem] leading-5 text-white/68">
+          {discipline.description}
+        </p>
       </div>
+
+      <span
+        aria-hidden="true"
+        className="absolute left-0 top-0 h-px w-0 bg-[#d39d78] transition-all duration-500 group-hover:w-full"
+      />
     </Link>
   );
 }

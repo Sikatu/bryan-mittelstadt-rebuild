@@ -53,30 +53,30 @@ export default function SiteFooter() {
   return (
     <footer
       role="contentinfo"
-      className="premium-site-footer bg-contrast-dark text-contrast-light"
+      className="premium-site-footer border-t border-white/8 bg-[#11100f] text-contrast-light"
     >
       <Container>
-        <div className="py-12 lg:py-16">
-          <div className="grid grid-cols-1 gap-10 md:grid-cols-3 lg:gap-16">
+        <div className="py-10 sm:py-12 lg:py-14">
+          <div className="grid gap-10 md:grid-cols-[minmax(0,1.15fr)_minmax(10rem,0.55fr)_minmax(12rem,0.6fr)] md:gap-12 lg:gap-16">
             <div>
               <Link
                 href="/"
-                className="font-serif text-xl tracking-wide text-contrast-light transition-colors duration-300 hover:text-accent"
+                className="font-serif text-[1.55rem] tracking-[-0.02em] text-contrast-light transition-colors duration-300 hover:text-accent"
               >
                 {siteConfig.name}
               </Link>
 
-              <p className="mt-2 text-sm text-contrast-light/80">
-                {siteConfig.titles.join(', ')}
+              <p className="mt-3 max-w-sm text-[0.78rem] uppercase leading-6 tracking-[0.12em] text-contrast-light/56">
+                {siteConfig.titles.join(' · ')}
               </p>
 
-              <p className="mt-1 text-sm text-contrast-light/60">
+              <p className="mt-2 text-xs text-contrast-light/38">
                 {siteConfig.location}
               </p>
             </div>
 
             <nav aria-label="Footer navigation">
-              <h2 className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-contrast-light/60">
+              <h2 className="mb-4 text-[9px] font-semibold uppercase tracking-[0.22em] text-contrast-light/38">
                 Explore
               </h2>
 
@@ -85,7 +85,7 @@ export default function SiteFooter() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-sm text-contrast-light/80 transition-colors duration-300 hover:text-contrast-light"
+                      className="text-[0.82rem] text-contrast-light/66 transition-colors duration-300 hover:text-contrast-light"
                     >
                       {item.label}
                     </Link>
@@ -95,13 +95,13 @@ export default function SiteFooter() {
             </nav>
 
             <div>
-              <h2 className="mb-4 text-xs font-medium uppercase tracking-[0.2em] text-contrast-light/60">
+              <h2 className="mb-4 text-[9px] font-semibold uppercase tracking-[0.22em] text-contrast-light/38">
                 Connect
               </h2>
 
               <Link
                 href="/contact"
-                className="text-sm text-accent underline decoration-accent/40 underline-offset-4 transition-colors duration-300 hover:text-accent-hover hover:decoration-accent"
+                className="text-[0.82rem] text-[#d39d78] underline decoration-[#d39d78]/30 underline-offset-4 transition-colors duration-300 hover:text-[#efc3a8]"
               >
                 Contact &amp; Representation
               </Link>
@@ -140,13 +140,13 @@ export default function SiteFooter() {
             </div>
           </div>
 
-          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-contrast-light/10 pt-6 sm:flex-row">
-            <p className="text-xs text-contrast-light/60">
+          <div className="mt-9 flex flex-col justify-between gap-3 border-t border-contrast-light/8 pt-5 sm:flex-row sm:items-center">
+            <p className="text-[10px] text-contrast-light/38">
               &copy; {new Date().getFullYear()}{' '}
               {siteConfig.name}. All rights reserved.
             </p>
 
-            <p className="text-xs text-contrast-light/40">
+            <p className="text-[9px] uppercase tracking-[0.18em] text-contrast-light/28">
               {siteConfig.location}
             </p>
           </div>

@@ -8,8 +8,6 @@ const professionalMarks = [
     image: '/images/brand-marks/sag-aftra.webp',
     width: 678,
     height: 360,
-    logoWidth: '13.75rem',
-    logoHeight: '5.85rem',
   },
   {
     id: 'actors-equity',
@@ -18,8 +16,6 @@ const professionalMarks = [
     image: '/images/brand-marks/actors-equity.webp',
     width: 299,
     height: 360,
-    logoWidth: '7.15rem',
-    logoHeight: '7.1rem',
   },
   {
     id: 'cesd',
@@ -28,8 +24,6 @@ const professionalMarks = [
     image: '/images/brand-marks/cesd.webp',
     width: 659,
     height: 360,
-    logoWidth: '13.5rem',
-    logoHeight: '6rem',
   },
   {
     id: 'eris',
@@ -38,101 +32,57 @@ const professionalMarks = [
     image: '/images/brand-marks/eris.webp',
     width: 553,
     height: 360,
-    logoWidth: '12.4rem',
-    logoHeight: '6.4rem',
   },
 ] as const;
 
+/**
+ * Compact universal professional-mark strip.
+ * Mounted once in the root layout so it appears on every public page.
+ */
 export default function ProfessionalLogoNetwork() {
   return (
     <section
-      className="professional-logo-network professional-logo-network--universal no-print"
+      className="professional-logo-network--universal no-print border-y border-white/8 bg-[#151311] text-[#f8f2ea]"
       aria-labelledby="professional-logo-network-title"
-      data-layout="credentials"
+      data-layout="compact-credentials"
     >
-      <div
-        aria-hidden="true"
-        className="professional-logo-network__ambient"
-      />
+      <div className="mx-auto flex w-[min(1220px,calc(100%-2.5rem))] flex-col gap-6 py-7 sm:w-[min(1220px,calc(100%-4rem))] sm:py-8 lg:flex-row lg:items-center lg:justify-between lg:gap-10">
+        <div className="shrink-0">
+          <p className="text-[9px] font-semibold uppercase tracking-[0.24em] text-[#d39d78]">
+            Professional Network
+          </p>
 
-      <div className="professional-logo-network__inner">
-        <div className="professional-logo-network__intro">
-          <div>
-            <p>
-              <span aria-hidden="true" />
-              Professional Network
-            </p>
-
-            <h2 id="professional-logo-network-title">
-              Affiliations &amp; representation
-            </h2>
-          </div>
-
-          <span>
-            The professional organizations and talent agencies
-            associated with Bryan&apos;s acting, stage, commercial,
-            and voice-over work.
-          </span>
+          <h2
+            id="professional-logo-network-title"
+            className="mt-1.5 font-serif text-[1.35rem] font-normal leading-none tracking-[-0.02em] text-[#fffaf4] sm:text-[1.55rem]"
+          >
+            Affiliations &amp; representation
+          </h2>
         </div>
 
-        <div className="professional-logo-network__grid">
-          {professionalMarks.map((mark, index) => (
+        <div className="grid flex-1 grid-cols-2 gap-2.5 sm:grid-cols-4 lg:max-w-[44rem]">
+          {professionalMarks.map((mark) => (
             <article
               key={mark.id}
-              className="professional-logo-network__card professional-logo-network__card--static"
               data-kind={
                 mark.id === 'cesd' || mark.id === 'eris'
                   ? 'representation'
                   : 'affiliation'
               }
               data-mark={mark.id}
-              style={
-                {
-                  '--professional-logo-width':
-                    mark.logoWidth,
-                  '--professional-logo-height':
-                    mark.logoHeight,
-                } as React.CSSProperties
-              }
+              className="flex min-h-[4.6rem] items-center justify-center border border-white/8 bg-[#f7f3ed] px-4 py-2.5"
+              aria-label={`${mark.label} — ${mark.category}`}
             >
-              <span className="professional-logo-network__card-topline">
-                <span>
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-
-                <span>{mark.category}</span>
-              </span>
-
-              <span className="professional-logo-network__image-stage">
-                <span
-                  aria-hidden="true"
-                  className="professional-logo-network__image-halo"
-                />
-
-                <Image
-                  src={mark.image}
-                  alt=""
-                  width={mark.width}
-                  height={mark.height}
-                  sizes="(max-width: 640px) 82vw, (max-width: 1024px) 42vw, 310px"
-                  className="professional-logo-network__image"
-                />
-              </span>
-
-              <span className="professional-logo-network__card-copy">
-                <strong>{mark.label}</strong>
-                <span>Professional reference</span>
-              </span>
+              <Image
+                src={mark.image}
+                alt={mark.label}
+                width={mark.width}
+                height={mark.height}
+                sizes="(max-width: 640px) 42vw, 160px"
+                className="h-10 w-auto max-w-full object-contain sm:h-11"
+              />
             </article>
           ))}
-        </div>
-
-        <div
-          aria-hidden="true"
-          className="professional-logo-network__closing-rule"
-        >
-          <span />
-          <i />
         </div>
       </div>
     </section>

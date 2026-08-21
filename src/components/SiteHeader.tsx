@@ -181,7 +181,7 @@ export default function SiteHeader() {
         }`}
       >
         <Container>
-          <div className="flex h-16 items-center justify-between lg:h-[4.5rem]">
+          <div className="flex h-[3.75rem] items-center justify-between lg:h-[4.15rem]">
             <Link
               href="/"
               className={`group inline-flex min-w-0 items-baseline gap-3 transition-colors duration-300 ${
@@ -191,7 +191,7 @@ export default function SiteHeader() {
               }`}
               aria-label={`${siteConfig.name} — Home`}
             >
-              <span className="truncate font-serif text-lg tracking-[0.01em] lg:text-[1.18rem]">
+              <span className="truncate font-serif text-[1.05rem] tracking-[0.005em] lg:text-[1.12rem]">
                 {siteConfig.name}
               </span>
 
@@ -227,7 +227,7 @@ export default function SiteHeader() {
                       }),
                     );
                   }}
-                  className={`group relative inline-flex items-center gap-1.5 px-3 py-2 text-[0.82rem] font-medium tracking-[0.035em] transition-colors duration-300 ${
+                  className={`group relative inline-flex items-center gap-1.5 px-2.5 py-2 text-[0.78rem] font-medium tracking-[0.035em] transition-colors duration-300 ${
                     workIsActive
                       ? activeTextClass
                       : primaryTextClass
