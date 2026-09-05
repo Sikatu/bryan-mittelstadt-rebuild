@@ -105,7 +105,7 @@ export default function AboutPage() {
                 {siteConfig.resumeUrl ? 'Download Résumé' : 'View Résumé'}
               </EditorialButton>
               <EditorialButton href="/headshots" variant="secondary">
-                View Headshots
+                View Casting Gallery
               </EditorialButton>
               <EditorialButton href="/contact#inquiry-form" variant="text">
                 Get in Touch

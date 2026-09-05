@@ -9,8 +9,7 @@ export const lmntlStudio = {
   tagline: 'The artist is the fifth element.',
   introduction:
     'LMNTL STUDIOS is a creative development studio for independent artists building work with clarity, intention, and staying power.',
-  manifesto:
-    'Earth gives the work structure. Air gives it vision. Fire gives it movement. Water gives it identity. The artist brings every element into relationship—and transforms possibility into form.',
+  manifesto: 'Earth grounds the work. Air opens the vision. Fire creates momentum. Water shapes identity. The artist brings them together\u2014and turns possibility into form.',
   founderNote:
     'Founded by multidisciplinary artist Bryan Mittelstadt, LMNTL brings performance, story, music, and production thinking into one focused creative practice.',
 } as const;
@@ -23,9 +22,8 @@ export const lmntlElements = [
     principle: 'Foundation',
     description:
       'The structure beneath the work: practice, positioning, process, and the conditions that allow an artist to build with confidence.',
-    accent: '#d0ae86',
-    image: '/images/lmntl/earth.webp',
-    objectPosition: '50% 54%',
+    accent: '#a3a67a',
+    image: '/images/lmntl/earth-mark.png',
   },
   {
     id: 'air',
@@ -34,9 +32,8 @@ export const lmntlElements = [
     principle: 'Vision',
     description:
       'The perspective that clarifies what the work is becoming—its language, audience, atmosphere, and larger creative possibility.',
-    accent: '#d5e3e8',
-    image: '/images/lmntl/air.webp',
-    objectPosition: '50% 48%',
+    accent: '#c1c1c1',
+    image: '/images/lmntl/air-mark.png',
   },
   {
     id: 'fire',
@@ -45,9 +42,8 @@ export const lmntlElements = [
     principle: 'Momentum',
     description:
       'The energy that moves an idea into action through decisive development, experimentation, collaboration, and creative courage.',
-    accent: '#ff9a58',
-    image: '/images/lmntl/fire.webp',
-    objectPosition: '50% 50%',
+    accent: '#eb8623',
+    image: '/images/lmntl/fire-mark.png',
   },
   {
     id: 'water',
@@ -56,9 +52,8 @@ export const lmntlElements = [
     principle: 'Identity',
     description:
       'The emotional current of the work: adaptability, authenticity, intuition, and the ability to remain recognizably oneself through change.',
-    accent: '#7ed4f2',
-    image: '/images/lmntl/water.webp',
-    objectPosition: '50% 42%',
+    accent: '#65949f',
+    image: '/images/lmntl/water-mark.png',
   },
 ] as const;
 

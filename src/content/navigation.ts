@@ -29,7 +29,7 @@ export const workNavItems: NavItem[] = [
     href: '/writing-filmmaking',
   },
   {
-    label: 'Headshots',
+    label: 'Casting Gallery',
     href: '/headshots',
   },
 ];
@@ -91,7 +91,7 @@ export const footerNavItems: NavItem[] = [
     href: '/about',
   },
   {
-    label: 'Headshots',
+    label: 'Casting Gallery',
     href: '/headshots',
   },
   {

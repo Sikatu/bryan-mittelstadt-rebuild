@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Container from '@/components/Container';
-import LmntlEmblem from '@/components/LmntlEmblem';
 import {
   lmntlElements,
   lmntlPathways,
@@ -16,117 +15,84 @@ export const metadata = createPageMetadata({
   path: '/lmntl-studios',
 });
 
-function ElementGlyph({ id }: { id: string }) {
-  const common = 'h-12 w-12';
-
-  if (id === 'earth') {
-    return (
-      <svg viewBox="0 0 48 48" className={common} aria-hidden="true" fill="none">
-        <path d="M8 10h32L24 38 8 10Z" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M13 19h22" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    );
-  }
-
-  if (id === 'air') {
-    return (
-      <svg viewBox="0 0 48 48" className={common} aria-hidden="true" fill="none">
-        <path d="M8 38h32L24 10 8 38Z" stroke="currentColor" strokeWidth="1.5" />
-        <path d="M13 29h22" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    );
-  }
-
-  if (id === 'water') {
-    return (
-      <svg viewBox="0 0 48 48" className={common} aria-hidden="true" fill="none">
-        <path d="M8 10h32L24 38 8 10Z" stroke="currentColor" strokeWidth="1.5" />
-      </svg>
-    );
-  }
-
-  return (
-    <svg viewBox="0 0 48 48" className={common} aria-hidden="true" fill="none">
-      <path d="M8 38h32L24 10 8 38Z" stroke="currentColor" strokeWidth="1.5" />
-    </svg>
-  );
-}
-
 export default function LmntlStudiosPage() {
   return (
-    <div className="bg-[#0b0b0a] text-[#f2eee6]">
-      <section className="relative isolate flex min-h-[100svh] items-center overflow-hidden border-b border-white/10 pt-24">
-        <div className="absolute inset-0 -z-30 bg-black">
-          <Image
-            src="/images/lmntl/spotlights.webp"
-            alt=""
-            fill
-            priority
-            sizes="100vw"
-            aria-hidden="true"
-            className="object-cover object-top opacity-72 contrast-125 saturate-50"
-          />
-        </div>
+    <div className="bg-[#0a0a09] text-[#f3efe8]">
+      <section className="relative isolate overflow-hidden border-b border-white/10 pt-24">
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_75%_35%,rgba(200,120,79,0.18),transparent_28%),linear-gradient(90deg,rgba(0,0,0,0.92)_0%,rgba(0,0,0,0.70)_44%,rgba(0,0,0,0.28)_72%,rgba(0,0,0,0.62)_100%)]"
+          className="absolute inset-0 -z-20 bg-[radial-gradient(circle_at_76%_40%,rgba(101,148,159,0.15),transparent_24%),radial-gradient(circle_at_84%_66%,rgba(199,89,48,0.11),transparent_24%),radial-gradient(circle_at_58%_78%,rgba(109,113,80,0.10),transparent_28%),linear-gradient(125deg,#0a0a09_10%,#10100f_56%,#080808_100%)]"
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-10 opacity-20 [background-image:linear-gradient(rgba(255,255,255,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.035)_1px,transparent_1px)] [background-size:72px_72px]"
+          className="absolute inset-0 -z-10 opacity-[0.1] [background-image:linear-gradient(rgba(255,255,255,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.04)_1px,transparent_1px)] [background-size:76px_76px]"
         />
 
-        <Container className="relative py-20 sm:py-28 lg:py-32">
-          <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-10">
-            <div className="lg:col-span-7">
-              <div className="mb-8 flex items-center gap-4">
-                <span className="h-px w-10 bg-[#c8784f]" aria-hidden="true" />
-                <p className="text-[10px] font-semibold uppercase tracking-[0.34em] text-white/62">
-                  {lmntlStudio.eyebrow}
-                </p>
-              </div>
+        <Container className="relative py-16 sm:py-20 lg:py-24">
+          <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-12">
+            <div className="lg:col-span-5">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.34em] text-white/52">
+                {lmntlStudio.eyebrow}
+              </p>
 
-              <h1 className="font-serif text-[clamp(4.25rem,11vw,9rem)] font-normal leading-[0.78] tracking-[-0.055em] text-white">
+              <h1 className="mt-7 font-serif text-[clamp(4.35rem,10vw,8rem)] font-normal leading-[0.8] tracking-[-0.05em] text-white">
                 <span className="block">LMNTL</span>
-                <span className="mt-4 block pl-[0.08em] text-[0.39em] tracking-[0.48em] text-white/62 sm:mt-6">
+                <span className="mt-4 block pl-[0.09em] text-[0.34em] tracking-[0.5em] text-white/54 sm:mt-5">
                   Studios
                 </span>
               </h1>
 
-              <p className="mt-10 max-w-2xl font-serif text-2xl leading-snug text-white/92 sm:text-3xl lg:text-4xl">
+              <p className="mt-8 max-w-xl font-serif text-[1.9rem] leading-tight text-white/92 sm:text-[2.25rem] lg:text-[2.55rem]">
                 {lmntlStudio.tagline}
               </p>
 
-              <p className="mt-6 max-w-xl text-base leading-8 text-white/64 sm:text-lg">
+              <p className="mt-6 max-w-lg text-base leading-8 text-white/62 sm:text-[1.02rem]">
                 {lmntlStudio.introduction}
               </p>
 
               <div className="mt-10 flex flex-col gap-3 sm:flex-row">
                 <a
                   href="#framework"
-                  className="inline-flex min-h-12 items-center justify-center border border-[#c8784f] bg-[#c8784f] px-7 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:border-[#da8c63] hover:bg-[#da8c63]"
+                  className="inline-flex min-h-12 items-center justify-center border border-[#c75930] bg-[#c75930] px-7 text-xs font-semibold uppercase tracking-[0.2em] text-white transition-colors hover:border-[#eb8623] hover:bg-[#eb8623]"
                 >
                   Explore the Framework
                 </a>
+
                 <Link
                   href="/contact#inquiry-form"
-                  className="inline-flex min-h-12 items-center justify-center border border-white/25 px-7 text-xs font-semibold uppercase tracking-[0.2em] text-white/86 transition-colors hover:border-white/60 hover:bg-white/[0.08] hover:text-white"
+                  className="inline-flex min-h-12 items-center justify-center border border-white/20 px-7 text-xs font-semibold uppercase tracking-[0.2em] text-white/82 transition-colors hover:border-white/50 hover:bg-white/[0.06] hover:text-white"
                 >
                   Start a Conversation
                 </Link>
               </div>
             </div>
 
-            <div className="relative mx-auto w-full max-w-[31rem] lg:col-span-5 lg:mr-0">
-              <div className="absolute inset-8 rounded-full bg-[#c8784f]/10 blur-3xl" aria-hidden="true" />
-              <div className="relative border border-white/12 bg-black/22 p-8 backdrop-blur-sm sm:p-12">
-                <LmntlEmblem className="mx-auto aspect-square w-full max-w-[24rem] text-[#e4d6c6]" labelled />
-                <div className="mt-8 flex flex-wrap justify-center gap-x-5 gap-y-2 text-[9px] font-medium uppercase tracking-[0.3em] text-white/46">
-                  <span>Earth</span>
-                  <span>Air</span>
-                  <span>Fire</span>
-                  <span>Water</span>
-                  <span className="text-[#c8784f]">Artist</span>
+            <div className="lg:col-span-7">
+              <div className="mx-auto max-w-[34rem] lg:ml-auto lg:mr-0">
+                <div className="relative rounded-[2rem] border border-white/10 bg-white/[0.02] px-6 py-8 shadow-[0_24px_90px_rgba(0,0,0,0.35)] backdrop-blur-sm sm:px-8 sm:py-10">
+                  <div
+                    aria-hidden="true"
+                    className="absolute inset-[8%] rounded-full bg-white/[0.03] blur-3xl"
+                  />
+
+                  <div className="relative mx-auto aspect-square w-full max-w-[29rem]">
+                    <Image
+                      src="/images/lmntl/lmntl-logo.png"
+                      alt="LMNTL Studios elemental emblem combining Earth, Air, Fire, Water, and the artist at the center"
+                      fill
+                      priority
+                      sizes="(max-width: 1024px) 92vw, 34rem"
+                      className="object-contain"
+                    />
+                  </div>
+                </div>
+
+                <div className="mt-4 flex flex-wrap justify-center gap-x-5 gap-y-2 text-[9px] font-medium uppercase tracking-[0.28em] text-white/38">
+                  <span className="text-[#a3a67a]">Earth</span>
+                  <span className="text-[#c1c1c1]">Air</span>
+                  <span className="text-[#eb8623]">Fire</span>
+                  <span className="text-[#65949f]">Water</span>
+                  <span className="text-[#838484]">Artist</span>
                 </div>
               </div>
             </div>
@@ -134,140 +100,148 @@ export default function LmntlStudiosPage() {
         </Container>
       </section>
 
-      <section className="border-b border-white/10 py-24 sm:py-32">
+      <section className="border-b border-white/10 py-20 sm:py-24 lg:py-28">
         <Container>
-          <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+          <div className="grid gap-8 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-3">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#c8784f]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#c75930]">
                 The Premise
               </p>
             </div>
-            <div className="lg:col-span-9">
-              <p className="max-w-5xl font-serif text-3xl leading-[1.22] text-white sm:text-5xl lg:text-6xl">
-                {lmntlStudio.manifesto}
-              </p>
+
+            <div className="lg:col-span-8">
+              <div className="max-w-[58rem]">
+                <div className="space-y-2 sm:space-y-3">
+                  <p className="font-serif text-[clamp(2.55rem,4.6vw,4.8rem)] leading-[0.98] tracking-[-0.038em] text-white">
+                    <span className="text-[#a3a67a]">Earth</span>{' '}
+                    grounds the work.
+                  </p>
+
+                  <p className="font-serif text-[clamp(2.55rem,4.6vw,4.8rem)] leading-[0.98] tracking-[-0.038em] text-white">
+                    <span className="text-[#c1c1c1]">Air</span>{' '}
+                    opens the vision.
+                  </p>
+
+                  <p className="font-serif text-[clamp(2.55rem,4.6vw,4.8rem)] leading-[0.98] tracking-[-0.038em] text-white">
+                    <span className="text-[#eb8623]">Fire</span>{' '}
+                    creates momentum.
+                  </p>
+
+                  <p className="font-serif text-[clamp(2.55rem,4.6vw,4.8rem)] leading-[0.98] tracking-[-0.038em] text-white">
+                    <span className="text-[#65949f]">Water</span>{' '}
+                    shapes identity.
+                  </p>
+                </div>
+
+                <p className="mt-10 max-w-[50rem] font-serif text-[clamp(2rem,3.3vw,3.55rem)] leading-[1.04] tracking-[-0.03em] text-white/92 sm:mt-12">
+                  The artist brings them together&mdash;
+                  <span className="block text-white/62">
+                    and turns possibility into form.
+                  </span>
+                </p>
+              </div>
             </div>
           </div>
         </Container>
       </section>
 
-      <section id="framework" className="scroll-mt-24 py-24 sm:py-32">
+      <section id="framework" className="scroll-mt-24 py-20 sm:py-24 lg:py-28">
         <Container>
-          <div className="mb-14 flex flex-col justify-between gap-6 border-b border-white/12 pb-8 sm:flex-row sm:items-end">
+          <div className="mb-12 grid gap-6 border-b border-white/12 pb-8 lg:grid-cols-[minmax(0,1fr)_minmax(18rem,0.42fr)] lg:items-end lg:gap-16">
             <div>
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#c8784f]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#c75930]">
                 The Elemental Framework
               </p>
-              <h2 className="mt-4 font-serif text-4xl text-white sm:text-5xl lg:text-6xl">
+              <h2 className="mt-4 font-serif text-4xl text-white sm:text-5xl lg:text-[3.8rem]">
                 Four forces. One practice.
               </h2>
             </div>
-            <p className="max-w-md text-sm leading-7 text-white/54">
+
+            <p className="max-w-md text-sm leading-7 text-white/50 lg:justify-self-end">
               Each element gives the artist a different way to examine the work. Together, they create a more complete creative system.
             </p>
           </div>
 
-          <div className="grid border-l border-t border-white/12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-5 md:grid-cols-2">
             {lmntlElements.map((element) => (
               <article
                 key={element.id}
-                className="group relative min-h-[34rem] overflow-hidden border-b border-r border-white/12 bg-black"
+                className="relative overflow-hidden rounded-[1.35rem] border border-white/10 bg-[linear-gradient(145deg,rgba(255,255,255,0.03),rgba(255,255,255,0.008))] px-6 py-6 sm:px-8 sm:py-8"
               >
-                <Image
-                  src={element.image}
-                  alt=""
-                  fill
-                  sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 25vw"
-                  aria-hidden="true"
-                  className="object-cover transition duration-700 ease-out group-hover:scale-[1.045] group-hover:saturate-125"
-                  style={{ objectPosition: element.objectPosition }}
-                />
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/25 to-black/92 transition-colors duration-500 group-hover:to-black/86"
-                />
-                <div
-                  aria-hidden="true"
-                  className="absolute inset-0 bg-[linear-gradient(135deg,rgba(255,255,255,0.08),transparent_36%)]"
-                />
-
-                <div className="relative flex min-h-[34rem] flex-col justify-between p-7 sm:p-8">
-                  <div className="flex items-start justify-between">
-                    <span className="text-[10px] font-medium tracking-[0.24em] text-white/60">
+                <div className="flex items-start justify-between gap-6">
+                  <div>
+                    <span className="text-[10px] font-medium tracking-[0.24em] text-white/40">
                       {element.number}
                     </span>
-                    <div
-                      className="drop-shadow-[0_4px_16px_rgba(0,0,0,0.55)]"
-                      style={{ color: element.accent }}
-                    >
-                      <ElementGlyph id={element.id} />
-                    </div>
-                  </div>
 
-                  <div>
                     <p
-                      className="text-[10px] font-semibold uppercase tracking-[0.24em]"
+                      className="mt-10 text-[10px] font-semibold uppercase tracking-[0.24em]"
                       style={{ color: element.accent }}
                     >
                       {element.principle}
                     </p>
-                    <h3 className="mt-3 font-serif text-4xl text-white drop-shadow-lg">
+
+                    <h3 className="mt-3 font-serif text-[2.3rem] leading-none text-white sm:text-[2.8rem]">
                       {element.name}
                     </h3>
-                    <p className="mt-5 text-sm leading-7 text-white/78">
-                      {element.description}
-                    </p>
+                  </div>
+
+                  <div className="relative h-24 w-24 shrink-0 sm:h-28 sm:w-28 lg:h-32 lg:w-32">
+                    <Image
+                      src={element.image}
+                      alt=""
+                      fill
+                      sizes="128px"
+                      className="object-contain"
+                    />
                   </div>
                 </div>
+
+                <p className="mt-8 max-w-[34rem] text-sm leading-7 text-white/66 sm:text-base">
+                  {element.description}
+                </p>
               </article>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="relative isolate overflow-hidden border-y border-white/10 bg-black py-24 sm:py-32">
-        <div className="absolute inset-0 -z-20">
-          <Image
-            src="/images/lmntl/nebula.webp"
-            alt=""
-            fill
-            sizes="100vw"
-            aria-hidden="true"
-            className="object-cover opacity-78 brightness-90 contrast-110 saturate-110"
-          />
-        </div>
+      <section className="relative isolate overflow-hidden border-y border-white/10 py-20 sm:py-24 lg:py-28">
         <div
           aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(0,0,0,0.88)_0%,rgba(0,0,0,0.62)_48%,rgba(0,0,0,0.34)_72%,rgba(0,0,0,0.68)_100%)]"
-        />
-        <div
-          aria-hidden="true"
-          className="absolute inset-0 -z-10 bg-gradient-to-b from-black/32 via-transparent to-black/55"
+          className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_22%_48%,rgba(131,132,132,0.1),transparent_25%),linear-gradient(110deg,#0c0c0b_0%,#111110_52%,#090909_100%)]"
         />
 
-        <Container className="relative">
-          <div className="grid items-center gap-12 lg:grid-cols-12 lg:gap-20">
-            <div className="lg:col-span-4">
-              <div className="mx-auto w-full max-w-[20rem] border border-white/15 bg-black/28 p-8 backdrop-blur-md">
-                <div className="relative aspect-square">
-                  <div className="absolute inset-[17%] rotate-45 border border-[#c8784f]/80" />
-                  <div className="absolute inset-[29%] rotate-45 bg-[#c8784f] shadow-[0_0_42px_rgba(200,120,79,0.38)]" />
-                  <div className="absolute inset-[39%] rotate-45 bg-black/90" />
-                  <div className="absolute inset-[47%] rounded-full bg-[#f0dfcf] shadow-[0_0_32px_rgba(240,223,207,0.65)]" />
+        <Container>
+          <div className="grid items-center gap-10 lg:grid-cols-[minmax(13rem,17rem)_minmax(0,1fr)] lg:gap-16">
+            <div className="mx-auto w-full max-w-[14rem]">
+              <div className="rounded-[1.5rem] border border-white/10 bg-white/[0.02] p-7 shadow-[0_18px_48px_rgba(0,0,0,0.3)]">
+                <div className="relative aspect-square w-full">
+                  <Image
+                    src="/images/lmntl/artist-mark.png"
+                    alt="The fifth element symbol representing the artist"
+                    fill
+                    sizes="224px"
+                    className="object-contain"
+                  />
                 </div>
-                <p className="mt-8 text-center text-[10px] font-semibold uppercase tracking-[0.3em] text-white/52">
-                  Element 05
-                </p>
               </div>
+
+              <p className="mt-5 text-center text-[10px] font-semibold uppercase tracking-[0.3em] text-white/38">
+                Element 05
+              </p>
             </div>
-            <div className="lg:col-span-8">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#e28b5d]">
+
+            <div>
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#9fa0a0]">
                 The Fifth Element
               </p>
-              <h2 className="mt-5 max-w-4xl font-serif text-4xl leading-tight text-white drop-shadow-xl sm:text-6xl lg:text-7xl">
+
+              <h2 className="mt-5 max-w-4xl font-serif text-[2.5rem] leading-[1.03] text-white sm:text-[4rem] lg:text-[4.9rem]">
                 The framework is not the artist. It exists to reveal them.
               </h2>
-              <p className="mt-8 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
+
+              <p className="mt-7 max-w-2xl text-base leading-8 text-white/62 sm:text-lg">
                 LMNTL treats the artist as the transformative center—not a product to standardize, but the force that gives every structure, vision, action, and emotion its final meaning.
               </p>
             </div>
@@ -275,17 +249,19 @@ export default function LmntlStudiosPage() {
         </Container>
       </section>
 
-      <section className="py-24 sm:py-32">
+      <section className="py-20 sm:py-24 lg:py-28">
         <Container>
-          <div className="grid gap-12 lg:grid-cols-12 lg:gap-20">
+          <div className="grid gap-12 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-4">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#c8784f]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#c75930]">
                 Studio Focus
               </p>
-              <h2 className="mt-5 font-serif text-4xl leading-tight text-white sm:text-5xl">
+
+              <h2 className="mt-5 max-w-sm font-serif text-[2.7rem] leading-[1.02] text-white sm:text-[3.4rem]">
                 Built around the work—not a template.
               </h2>
-              <p className="mt-6 max-w-md text-sm leading-7 text-white/54">
+
+              <p className="mt-6 max-w-md text-sm leading-7 text-white/52 sm:text-base">
                 LMNTL is designed for independent artists whose work crosses disciplines, evolves in public, and needs both imagination and structure.
               </p>
             </div>
@@ -295,16 +271,18 @@ export default function LmntlStudiosPage() {
                 {lmntlPathways.map((pathway) => (
                   <article
                     key={pathway.number}
-                    className="grid gap-5 py-8 sm:grid-cols-[4rem_1fr] sm:gap-8 sm:py-10"
+                    className="grid gap-4 py-7 sm:grid-cols-[3.5rem_1fr] sm:gap-7 sm:py-9"
                   >
-                    <span className="font-serif text-2xl text-[#c8784f]">
+                    <span className="font-serif text-[1.65rem] text-[#c75930]">
                       {pathway.number}
                     </span>
+
                     <div>
-                      <h3 className="font-serif text-3xl text-white sm:text-4xl">
+                      <h3 className="font-serif text-[2rem] leading-tight text-white sm:text-[2.45rem]">
                         {pathway.title}
                       </h3>
-                      <p className="mt-4 max-w-2xl text-sm leading-7 text-white/56 sm:text-base">
+
+                      <p className="mt-3 max-w-2xl text-sm leading-7 text-white/56 sm:text-base">
                         {pathway.description}
                       </p>
                     </div>
@@ -316,22 +294,24 @@ export default function LmntlStudiosPage() {
         </Container>
       </section>
 
-      <section className="bg-[#efe9df] py-24 text-[#171512] sm:py-32">
+      <section className="bg-[#efe9df] py-20 text-[#171512] sm:py-24 lg:py-28">
         <Container>
-          <div className="grid items-end gap-12 lg:grid-cols-12 lg:gap-20">
+          <div className="grid items-center gap-10 lg:grid-cols-12 lg:gap-16">
             <div className="lg:col-span-8">
-              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#9a5d3a]">
+              <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-[#8a5131]">
                 Founder & Creative Lead
               </p>
-              <h2 className="mt-5 max-w-4xl font-serif text-4xl leading-tight sm:text-6xl lg:text-7xl">
+
+              <h2 className="mt-5 max-w-4xl font-serif text-[2.6rem] leading-[1.05] sm:text-[4rem] lg:text-[4.8rem]">
                 A studio shaped by a multidisciplinary artist.
               </h2>
-              <p className="mt-8 max-w-2xl text-base leading-8 text-black/62 sm:text-lg">
+
+              <p className="mt-7 max-w-2xl text-base leading-8 text-black/62 sm:text-lg">
                 {lmntlStudio.founderNote}
               </p>
             </div>
 
-            <div className="flex flex-col gap-3 lg:col-span-4 lg:items-stretch">
+            <div className="flex flex-col gap-3 lg:col-span-4 lg:max-w-[18rem] lg:justify-self-end lg:self-center">
               <Link
                 href="/about"
                 className="inline-flex min-h-12 items-center justify-between border border-black/20 px-6 text-xs font-semibold uppercase tracking-[0.18em] transition-colors hover:border-black hover:bg-black hover:text-white"
@@ -339,9 +319,10 @@ export default function LmntlStudiosPage() {
                 About Bryan
                 <span aria-hidden="true">→</span>
               </Link>
+
               <Link
                 href="/contact#inquiry-form"
-                className="inline-flex min-h-12 items-center justify-between border border-[#9a5d3a] bg-[#9a5d3a] px-6 text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-[#7d492a] hover:bg-[#7d492a]"
+                className="inline-flex min-h-12 items-center justify-between border border-[#8a5131] bg-[#8a5131] px-6 text-xs font-semibold uppercase tracking-[0.18em] text-white transition-colors hover:border-[#704128] hover:bg-[#704128]"
               >
                 LMNTL Inquiry
                 <span aria-hidden="true">→</span>

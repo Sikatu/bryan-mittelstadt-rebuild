@@ -63,9 +63,9 @@ requireTokens('src/app/api/contact/route.ts', [
 ]);
 
 requireTokens('src/app/resume/page.tsx', ['ResumeActions', 'resume-sheet', 'Representation']);
-requireTokens('src/app/headshots/page.tsx', ['HeadshotGallery', 'final client-supplied images']);
+requireTokens('src/app/headshots/page.tsx', ['HeadshotGallery', 'Casting Gallery']);
 requireTokens('src/app/contact/page.tsx', ['InquiryForm', 'inquiry-form', 'representation']);
-requireTokens('src/app/about/page.tsx', ['Selected Recognition', 'Casting Details', 'View Headshots']);
+requireTokens('src/app/about/page.tsx', ['Selected Recognition', 'Casting Details', 'View Casting Gallery']);
 requireTokens('src/app/globals.css', ['@media print', '.resume-sheet', 'dialog::backdrop']);
 
 const contactSource = readFileSync(join(root, 'src/content/contact.ts'), 'utf8');
@@ -83,7 +83,7 @@ console.log('====================================================');
 console.log(`Structural workflow files: ${requiredFiles.length}`);
 console.log(`Inquiry categories: ${categoryIds.length}`);
 console.log('Résumé PDF + print workflow: configured');
-console.log('Headshot lightbox + original-download workflow: configured');
+console.log('Casting gallery lightbox + original-download workflow: configured');
 console.log('Contact delivery mode: first-party endpoint with direct-email fallback');
 
 if (errors.length > 0) {

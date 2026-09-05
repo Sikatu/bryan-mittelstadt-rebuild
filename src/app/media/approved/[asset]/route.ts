@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
+import { castingGalleryDriveIds } from '@/content/casting-gallery';
 
-const approvedMedia = {
+const legacyApprovedMedia = {
   'headshot-theatrical': {
     driveId: '1jyHF5glCTphpNQTD6nePlp280b44Ehjp',
     fallbackType: 'image/jpeg',
@@ -19,38 +20,119 @@ const approvedMedia = {
   },
 } as const;
 
-type ApprovedMediaKey = keyof typeof approvedMedia;
+type LegacyMediaKey = keyof typeof legacyApprovedMedia;
 
-export const revalidate = 86400;
+type ResolvedMedia = {
+  driveId: string;
+  fallbackType: string;
+};
+
+function resolveMedia(asset: string): ResolvedMedia | null {
+  const legacy =
+    legacyApprovedMedia[asset as LegacyMediaKey];
+
+  if (legacy) {
+    return legacy;
+  }
+
+  if (!asset.startsWith('drive-')) {
+    return null;
+  }
+
+  const driveId = asset.slice('drive-'.length);
+
+  if (!castingGalleryDriveIds.has(driveId)) {
+    return null;
+  }
+
+  return {
+    driveId,
+    fallbackType: 'image/jpeg',
+  };
+}
+
+async function fetchOriginal(driveId: string) {
+  return fetch(
+    `https://drive.usercontent.google.com/download?export=download&confirm=t&id=${encodeURIComponent(driveId)}`,
+    {
+      cache: 'no-store',
+      redirect: 'follow',
+    },
+  );
+}
 
 export async function GET(
-  _request: Request,
+  request: Request,
   context: { params: Promise<{ asset: string }> },
 ) {
   const { asset } = await context.params;
-  const media = approvedMedia[asset as ApprovedMediaKey];
+  const media = resolveMedia(asset);
 
   if (!media) {
-    return NextResponse.json({ error: 'Not found' }, { status: 404 });
+    return NextResponse.json(
+      { error: 'Not found' },
+      { status: 404 },
+    );
   }
 
-  const upstream = await fetch(
-    `https://drive.usercontent.google.com/download?export=download&confirm=t&id=${encodeURIComponent(media.driveId)}`,
-    { next: { revalidate } },
-  );
+  const requestUrl = new URL(request.url);
+  const preview =
+    requestUrl.searchParams.get('preview') === '1';
+  const download =
+    requestUrl.searchParams.get('download') === '1';
+
+  let upstream: Response;
+
+  if (preview) {
+    upstream = await fetch(
+      `https://drive.google.com/thumbnail?id=${encodeURIComponent(media.driveId)}&sz=w1600`,
+      {
+        cache: 'no-store',
+        redirect: 'follow',
+      },
+    );
+
+    if (!upstream.ok || !upstream.body) {
+      upstream = await fetchOriginal(media.driveId);
+    }
+  } else {
+    upstream = await fetchOriginal(media.driveId);
+  }
 
   if (!upstream.ok || !upstream.body) {
     return NextResponse.json(
-      { error: 'Approved media is temporarily unavailable' },
+      {
+        error:
+          'Approved media is temporarily unavailable',
+      },
       { status: 502 },
     );
   }
 
-  return new NextResponse(upstream.body, {
-    headers: {
-      'Content-Type': upstream.headers.get('content-type') || media.fallbackType,
-      'Cache-Control': 'public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800',
-      'X-Content-Type-Options': 'nosniff',
-    },
-  });
+  const headers: Record<string, string> = {
+    'Content-Type':
+      upstream.headers.get('content-type') ||
+      media.fallbackType,
+    'Cache-Control': preview
+      ? 'public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800'
+      : 'public, max-age=3600, s-maxage=86400, stale-while-revalidate=604800',
+    'X-Content-Type-Options': 'nosniff',
+  };
+
+  if (download) {
+    const upstreamDisposition =
+      upstream.headers.get('content-disposition');
+
+    headers['Content-Disposition'] = upstreamDisposition
+      ? upstreamDisposition.replace(
+          /^inline/i,
+          'attachment',
+        )
+      : 'attachment';
+  }
+
+  return new NextResponse(
+    upstream.body,
+    { headers },
+  );
 }

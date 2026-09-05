@@ -64,6 +64,14 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   images: {
     qualities: [75, 88],
+    localPatterns: [
+      {
+        pathname: '/images/**',
+      },
+      {
+        pathname: '/media/approved/**',
+      },
+    ],
   },
   turbopack: {
     root: process.cwd(),

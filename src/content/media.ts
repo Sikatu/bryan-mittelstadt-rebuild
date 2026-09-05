@@ -6,6 +6,7 @@ import type {
   VideoReel,
 } from '@/types';
 import { siteAssets } from './assets';
+import { castingGalleryPhotos } from './casting-gallery';
 
 export const actingReels: VideoReel[] = [
   {
@@ -129,37 +130,8 @@ export const voiceOverReels: AudioReel[] = [
   },
 ];
 
-const approved = '/media/approved';
 
-export const headshots: Headshot[] = [
-  {
-    id: 'approved-theatrical',
-    src: `${approved}/headshot-theatrical`,
-    downloadUrl: `${approved}/headshot-theatrical`,
-    alt: 'Bryan Mittelstadt theatrical headshot against a warm brown background',
-    label: 'Theatrical',
-    category: 'Theatrical',
-    verificationId: 'asset.headshots',
-  },
-  {
-    id: 'approved-commercial',
-    src: `${approved}/headshot-commercial`,
-    downloadUrl: `${approved}/headshot-commercial`,
-    alt: 'Bryan Mittelstadt smiling in a professional commercial headshot',
-    label: 'Commercial',
-    category: 'Commercial',
-    verificationId: 'asset.headshots',
-  },
-  {
-    id: 'approved-editorial',
-    src: `${approved}/lifestyle`,
-    downloadUrl: `${approved}/lifestyle`,
-    alt: 'Bryan Mittelstadt seated against a dark blue studio background',
-    label: 'Editorial',
-    category: 'Editorial',
-    verificationId: 'asset.headshots',
-  },
-];
+export const headshots: Headshot[] = castingGalleryPhotos;
 
 export const writingAndFilmmakingProjects: CreativeProject[] = [
   {
