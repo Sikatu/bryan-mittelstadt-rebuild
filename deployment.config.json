@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "project": "Bryan Mittelstadt Portfolio",
-  "provider": "unselected",
+  "provider": "node",
   "allowedProviders": [
     "unselected",
     "vercel",
@@ -9,7 +9,7 @@
     "other"
   ],
   "productionOrigin": "https://www.bryanmittelstadt.com",
-  "stagingOrigin": "",
+  "stagingOrigin": "https://staging.bryanmittelstadt.com",
   "environments": {
     "development": {
       "indexable": false
