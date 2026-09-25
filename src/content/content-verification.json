@@ -236,26 +236,27 @@
       "id": "bio.short",
       "area": "Biography",
       "label": "Homepage short biography",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
         "official-bio",
         "durango-2026-awards",
         "client-approval"
       ],
-      "ownerAction": "Approve the remaining time-sensitive project wording in the homepage biography."
+      "ownerAction": "Approved for production by the authorized representative on 2026-09-25."
     },
     {
       "id": "bio.long",
       "area": "Biography",
       "label": "Full biography",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
         "official-bio",
-        "client-updates-2026-08-07"
+        "client-updates-2026-08-07",
+        "client-approval"
       ],
-      "ownerAction": "Approve time-sensitive Overview Effect and festival wording before production launch."
+      "ownerAction": "Approved for production by the authorized representative on 2026-09-25."
     },
     {
       "id": "seo.global",
@@ -335,13 +336,14 @@
       "id": "project.the-overview-effect",
       "area": "Projects",
       "label": "The Overview Effect",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
         "official-bio",
-        "client-resume-2026-05-09"
+        "client-resume-2026-05-09",
+        "client-approval"
       ],
-      "ownerAction": "Confirm current project status, format, collaborators, venue wording, and public dates."
+      "ownerAction": "Approved for production by the authorized representative on 2026-09-25."
     },
     {
       "id": "project.quiet-after-supper",
@@ -360,13 +362,14 @@
       "id": "project.darling",
       "area": "Projects",
       "label": "Darling / upcoming music releases",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
         "official-music-page",
-        "client-updates-2026-08-07"
+        "client-updates-2026-08-07",
+        "client-approval"
       ],
-      "ownerAction": "Confirm whether Darling remains the album title/plan after the August update shifted public positioning to upcoming single releases."
+      "ownerAction": "Approved for production by the authorized representative on 2026-09-25."
     },
     {
       "id": "project.julius",
@@ -383,12 +386,13 @@
       "id": "project.blood-and-sex-over-ambition",
       "area": "Projects",
       "label": "Blood and Sex Over Ambition",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "client-resume-2026-05-09"
+        "client-resume-2026-05-09",
+        "client-approval"
       ],
-      "ownerAction": "Confirm the relationship between Blood and Sex Over Ambition and Arabesque before changing project-level editorial copy."
+      "ownerAction": "Approved for production by the authorized representative on 2026-09-25."
     },
     {
       "id": "project.goldilocks-and-the-two-bears",
@@ -425,13 +429,14 @@
       "id": "project.arabesque",
       "area": "Projects",
       "label": "Arabesque",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
         "official-bio",
-        "client-resume-2026-05-09"
+        "client-resume-2026-05-09",
+        "client-approval"
       ],
-      "ownerAction": "Confirm exact project status and relationship to Blood and Sex Over Ambition."
+      "ownerAction": "Approved for production by the authorized representative on 2026-09-25."
     },
     {
       "id": "disciplines.editorial-copy",
@@ -512,13 +517,14 @@
       "id": "asset.hero-and-portfolio-images",
       "area": "Images",
       "label": "Hero, portrait, project, discipline, and album imagery",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
         "client-drive-package-2026",
-        "current-site-media-manifest"
+        "current-site-media-manifest",
+        "client-approval"
       ],
-      "ownerAction": "Final portrait assets are supplied; approve remaining project-specific imagery and any photographer credits before launch."
+      "ownerAction": "Approved for production by the authorized representative on 2026-09-25."
     },
     {
       "id": "asset.headshots",
@@ -545,12 +551,13 @@
       "id": "asset.open-graph",
       "area": "SEO",
       "label": "1200 × 630 social-sharing image",
-      "status": "client-review-required",
+      "status": "client-approved",
       "publication": "published",
       "sourceIds": [
-        "phase-5-generated-social-card"
+        "phase-5-generated-social-card",
+        "client-approval"
       ],
-      "ownerAction": "Approve the generated launch card or replace it with approved photography."
+      "ownerAction": "Approved for production by the authorized representative on 2026-09-25."
     },
     {
       "id": "integration.mailing-list",
